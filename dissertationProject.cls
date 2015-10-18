@@ -1,40 +1,37 @@
-%-----------------------------------------------------%
-% @author: Tony Beltramelli - www.tonybeltramelli.com %
-%       IT University of Copenhagen - www.itu.dk      %
-%       creation date: 2015/06/11, version: 0.1       %
-%-----------------------------------------------------%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{masterthesis}[2015/06/11 v0.1 Master's thesis]
+\ProvidesClass{dissertationProject}
 \LoadClass[11pt, oneside, a4paper]{book}
+\usepackage{geometry}
+\usepackage{setspace}
+
+\geometry{margin=1in}
+\renewcommand{\baselinestretch}{2}
+
 
 \RequirePackage[english]{babel}
 \RequirePackage[utf8]{inputenc}
-\RequirePackage{amsmath}
-\RequirePackage{amsfonts}
-\RequirePackage{amssymb}
 \RequirePackage{graphicx}
-\RequirePackage{verbatim}
 
-\RequirePackage{color}
-\definecolor{special}{rgb}{0.3, 0.3, 0.3}
 
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
+\fancyhead[OR]{\nouppercase\rightmark}
 \lhead{\slshape\nouppercase{\leftmark}}
 \cfoot{\thepage}
 
 \renewcommand\bibname{References}
 \raggedright
 
-\definecolor{chaptergrey}{rgb}{0.5,0.5,0.5}
+\parindent 15pt
 
-\parindent 12pt
-
-\usepackage{setspace}
-
-
+\newcommand{\declaration}{
+	\newpage
+	\chapter*{Declaration}
+	\input{frontmatter/declaration}
+	\addcontentsline{toc}{chapter}{\numberline{}Declaration}
+}
 
 \newcommand{\abstractpage}{
 	\newpage
@@ -42,6 +39,7 @@
 	\input{frontmatter/abstract}
 	\addcontentsline{toc}{chapter}{\numberline{}Abstract}
 }
+
 
 \newcommand{\acknowledgments}{
     \newpage
@@ -52,33 +50,20 @@
 
 \newcommand{\contents}{
     \newpage
+    \renewcommand{\baselinestretch}{0}
     \addcontentsline{toc}{chapter}{\numberline{}Contents}
     \tableofcontents
-}
-
-\newcommand{\listfigures}{
-    \newpage
-    \addcontentsline{toc}{chapter}{\numberline{}List of figures}
-    \listoffigures
-}
-
-\newcommand{\listtables}{
-    \newpage
-    \addcontentsline{toc}{chapter}{\numberline{}List of tables}
-    \listoftables
 }
 
 \newcommand{\makefrontmatter}{
     \setcounter{page}{1}
     \pagenumbering{roman}
     
+    \declaration
+% \acknowledgments
     \abstractpage
-    \acknowledgments
     \contents
-    \listfigures
-    \listtables
-    
-    \clearpage
+% \introduction    
     
     \setcounter{page}{1}
     \pagenumbering{arabic}
@@ -89,11 +74,20 @@
 \def\location#1{\gdef\@location{#1}}
 \def\supervisor#1{\gdef\@supervisor{#1}}
 
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
 \renewcommand{\maketitle}{
+
+\definecolor{hwcolour}{RGB}{0,81,186}
     \begin{titlepage}
+    \begin{tikzpicture}[remember picture, overlay]
+ 	 \draw[hwcolour, line width = 2pt] ($(current page.north west) + (0.5in,-1in)$) rectangle ($(current page.south east) + (-0.5in,1in)$);
+        \end{tikzpicture}
+
         \begin{center}
             \begin{flushright}
-                \includegraphics[width=3cm]{images/ITUlogo}
+                \includegraphics[width=3cm]{images/HWUlogo}
             \end{flushright}
         
             {\Large {Dissertation Project} \par}
