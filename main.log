@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.10)  18 OCT 2015 23:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.10)  18 OCT 2015 23:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -58,7 +58,7 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen110
 \Gm@dimlist=\toks15
 )
-(./setspace.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/babel/babel.sty
@@ -780,8 +780,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 ] (./main.aux (./chapters/chapter1.aux)) ) 
 Here is how much of TeX's memory you used:
- 12661 strings out of 493089
- 249401 string characters out of 6134841
+ 12662 strings out of 493089
+ 249561 string characters out of 6134841
  296142 words of memory out of 5000000
  15874 multiletter control sequences out of 15000+600000
  9848 words of font info for 34 fonts, out of 8000000 for 9000
