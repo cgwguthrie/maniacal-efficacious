@@ -2,13 +2,13 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{dissertationProject}
 \LoadClass[11pt, oneside, a4paper]{book}
-\usepackage{geometry}
-\usepackage{setspace}
+\RequirePackage{geometry}
+\RequirePackage{setspace}
 
 \geometry{margin=1in}
-\renewcommand{\baselinestretch}{2}
+\renewcommand{\baselinestretch}{1.5}
 
-
+\RequirePackage{wrapfig}
 \RequirePackage[english]{babel}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{graphicx}
@@ -17,6 +17,7 @@
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
+\headheight 14pt
 \fancyhead[OR]{\nouppercase\rightmark}
 \lhead{\slshape\nouppercase{\leftmark}}
 \cfoot{\thepage}
