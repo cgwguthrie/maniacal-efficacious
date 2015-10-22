@@ -6,7 +6,7 @@
 \RequirePackage{setspace}
 
 \geometry{margin=1in}
-\renewcommand{\baselinestretch}{1.5}
+\renewcommand{\baselinestretch}{2}
 
 \RequirePackage{wrapfig}
 \RequirePackage[english]{babel}

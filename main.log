@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.15)  20 OCT 2015 16:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.15)  22 OCT 2015 12:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -786,17 +786,17 @@ Package pdftex.def Info: images/ema_logo.jpg used on input line 2.
  [2
 
 
- <./images/ema_logo.jpg>]) [3]
+ <./images/ema_logo.jpg>]) [3] [4]
 \openout2 = `chapters/chpt2_data_source.aux'.
 
 
 (./chapters/chpt2_data_source.tex
 Chapter 2.
-) [4
+) [5
 
 
 
-] (./main.bbl) [5
+] (./main.bbl) [6
 
 
 
@@ -805,7 +805,7 @@ Chapter 2.
 Here is how much of TeX's memory you used:
  12849 strings out of 493054
  251935 string characters out of 6137441
- 300193 words of memory out of 5000000
+ 300191 words of memory out of 5000000
  16087 multiletter control sequences out of 15000+600000
  10155 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -817,10 +817,10 @@ s/cm/cmr10.pfb></opt/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 12.pfb></opt/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb>
 </opt/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (8 pages, 199764 bytes).
+Output written on main.pdf (9 pages, 200991 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+ 70 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

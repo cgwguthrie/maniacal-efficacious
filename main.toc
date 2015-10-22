@@ -3,13 +3,13 @@
 \contentsline {chapter}{\hbox to\@tempdima {\hfil }Abstract}{ii}
 \contentsline {chapter}{\hbox to\@tempdima {\hfil }Contents}{1}
 \contentsline {chapter}{\numberline {1}Dataset Origins}{2}
-\contentsline {section}{\numberline {1.1}EMAP}{2}
+\contentsline {section}{\numberline {1.1}EMAP}{3}
 \contentsline {subsection}{\numberline {1.1.1}Data}{3}
 \contentsline {subsection}{\numberline {1.1.2}Purpose}{3}
 \contentsline {section}{\numberline {1.2}EMAPA}{3}
-\contentsline {subsection}{\numberline {1.2.1}Data}{3}
-\contentsline {subsection}{\numberline {1.2.2}Purpose}{3}
-\contentsline {chapter}{\numberline {2}Data Sources}{4}
-\contentsline {section}{\numberline {2.1}EMA Database}{4}
-\contentsline {section}{\numberline {2.2}OBO}{4}
-\contentsline {section}{\numberline {2.3}OWL}{4}
+\contentsline {subsection}{\numberline {1.2.1}Data}{4}
+\contentsline {subsection}{\numberline {1.2.2}Purpose}{4}
+\contentsline {chapter}{\numberline {2}Data Sources}{5}
+\contentsline {section}{\numberline {2.1}EMA Database}{5}
+\contentsline {section}{\numberline {2.2}OBO}{5}
+\contentsline {section}{\numberline {2.3}OWL}{5}
