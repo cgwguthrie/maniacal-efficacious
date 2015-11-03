@@ -3,6 +3,8 @@
 \LoadClass[11pt, oneside, a4paper]{book}
 \RequirePackage{geometry}
 \RequirePackage{setspace}
+\RequirePackage{titlesec}
+\setcounter{secnumdepth}{3}
 
 \geometry{margin=1in}
 \renewcommand{\baselinestretch}{2}
@@ -11,7 +13,7 @@
 \RequirePackage[english]{babel}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{graphicx}
-\usepackage{xr}
+\RequirePackage{xr}
 
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
