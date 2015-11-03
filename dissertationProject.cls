@@ -1,4 +1,3 @@
-
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{dissertationProject}
 \LoadClass[11pt, oneside, a4paper]{book}
@@ -12,7 +11,7 @@
 \RequirePackage[english]{babel}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{graphicx}
-
+\usepackage{xr}
 
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
@@ -60,9 +59,9 @@
     \setcounter{page}{1}
     \pagenumbering{roman}
     
-    \declaration
+%    \declaration
 % \acknowledgments
-    \abstractpage
+  %  \abstractpage
     \contents
 % \introduction    
     
