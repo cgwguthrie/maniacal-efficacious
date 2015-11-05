@@ -5,7 +5,8 @@
 \RequirePackage{setspace}
 \RequirePackage{titlesec}
 \setcounter{secnumdepth}{3}
-
+%\setcounter{tocdepth}{4}
+%\setcounter{secnumdepth}{4}
 \geometry{margin=1in}
 \renewcommand{\baselinestretch}{2}
 
@@ -63,12 +64,11 @@
     
 %    \declaration
 % \acknowledgments
-  %  \abstractpage
+ %   \abstractpage
     \contents
-% \introduction    
-    
     \setcounter{page}{1}
-    \pagenumbering{arabic}
+\pagenumbering{arabic}
+
 }
 
 \def\degree#1{\gdef\@degree{#1}}

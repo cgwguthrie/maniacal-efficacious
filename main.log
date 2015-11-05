@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.10)  3 NOV 2015 18:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.10)  5 NOV 2015 23:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -646,10 +646,9 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.0 (rcs-revision 1.9)
-)) (./main.aux (./chapters/aims_objectives.aux)
-(./chapters/technical_background.aux) (./chapters/dataset_background.aux)
-(./chapters/technical_literature.aux) (./chapters/functionality.aux)
-(./chapters/scalability.aux) (./chapters/query_performance.aux))
+)) (./main.aux (./chapters/introduction.aux)
+(./chapters/technical_background.aux) (./chapters/technical_discussion.aux)
+(./chapters/dataset_background.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
@@ -774,40 +773,34 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 4.
-)
+ [1
+
+])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [1
+ [1]
+\openout2 = `chapters/introduction.aux'.
 
-]
-\openout2 = `chapters/aims_objectives.aux'.
-
- (./chapters/aims_objectives.tex
-
-Package xr Warning: 
-No file big_data.aux
-LABELS NOT IMPORTED.
- on input line 1.
-
+ (./chapters/introduction.tex
 Chapter 1.
 [2
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 20.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 19.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 20.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 19.
 ) [3]
 \openout2 = `chapters/technical_background.aux'.
 
 
 (./chapters/technical_background.tex
 Chapter 2.
-<images/3vs.png, id=28, 502.12593pt x 398.23781pt>
+<images/3vs.png, id=31, 502.12593pt x 398.23781pt>
 File: images/3vs.png Graphic file (type png)
  <use images/3vs.png>
 Package pdftex.def Info: images/3vs.png used on input line 8.
@@ -818,66 +811,53 @@ Package pdftex.def Info: images/3vs.png used on input line 8.
 
 
  <./images/3vs.png>] [5]) [6]
+\openout2 = `chapters/technical_discussion.aux'.
+
+ (./chapters/technical_discussion.tex
+Chapter 3.
+[7
+
+
+
+] [8]) [9]
 \openout2 = `chapters/dataset_background.aux'.
 
  (./chapters/dataset_background.tex
-Chapter 3.
-<images/ema_logo.jpg, id=41, 111.9676pt x 111.9676pt>
+Chapter 4.
+<images/ema_logo.jpg, id=53, 111.9676pt x 111.9676pt>
 File: images/ema_logo.jpg Graphic file (type jpg)
 
 <use images/ema_logo.jpg>
 Package pdftex.def Info: images/ema_logo.jpg used on input line 2.
 (pdftex.def)             Requested size: 101.91708pt x 101.92142pt.
- [7
+ [10
 
 
 
- <./images/ema_logo.jpg>]) [8] [9]
-\openout2 = `chapters/technical_literature.aux'.
-
-
-(./chapters/technical_literature.tex
-Chapter 4.
-) [10
-
-
-
-]
-\openout2 = `chapters/functionality.aux'.
-
-
-No file chapters/functionality.tex.
-\openout2 = `chapters/scalability.aux'.
-
-No file chapters/scalability.tex.
-\openout2 = `chapters/query_performance.aux'.
-
-No file chapters/query_performance.tex.
-(./main.aux (./chapters/aims_objectives.aux)
-(./chapters/technical_background.aux) (./chapters/dataset_background.aux)
-(./chapters/technical_literature.aux) (./chapters/functionality.aux)
-(./chapters/scalability.aux) (./chapters/query_performance.aux)) ) 
+ <./images/ema_logo.jpg>]) [11] [12] (./main.aux
+(./chapters/introduction.aux) (./chapters/technical_background.aux)
+(./chapters/technical_discussion.aux) (./chapters/dataset_background.aux)) ) 
 Here is how much of TeX's memory you used:
- 13081 strings out of 493089
- 255845 string characters out of 6134841
- 305354 words of memory out of 5000000
- 16248 multiletter control sequences out of 15000+600000
+ 13067 strings out of 493089
+ 255400 string characters out of 6134841
+ 304668 words of memory out of 5000000
+ 16250 multiletter control sequences out of 15000+600000
  10155 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,11n,56p,1453b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (11 pages, 319688 bytes).
+</u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on main.pdf (14 pages, 334924 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 92 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
