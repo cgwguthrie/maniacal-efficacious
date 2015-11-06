@@ -9,7 +9,9 @@
 %\setcounter{secnumdepth}{4}
 \geometry{margin=1in}
 \renewcommand{\baselinestretch}{2}
-
+\usepackage{fontspec}
+%\renewcommand{\familydefault}{\sfdefault}
+\setmainfont{Georgia}
 \RequirePackage{wrapfig}
 \RequirePackage[english]{babel}
 \RequirePackage[utf8]{inputenc}
