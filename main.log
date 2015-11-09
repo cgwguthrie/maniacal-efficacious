@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.10.10)  6 NOV 2015 14:13
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.10.10)  9 NOV 2015 00:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -950,26 +950,31 @@ Chapter 3.
 
 
 
-] [8]) [9]
+]
+File: images/graphdb_twitter.png Graphic file (type QTm)
+ <use  "images/graphdb_twitter.png" > [8]
+File: images/ddelogo.png Graphic file (type QTm)
+ <use  "images/ddelogo.png" >
+[9]) [10]
 \openout2 = `chapters/dataset_background.aux'.
 
  (./chapters/dataset_background.tex
 Chapter 4.
 File: images/ema_logo.jpg Graphic file (type QTm)
-<use  "images/ema_logo.jpg" > [10
+<use  "images/ema_logo.jpg" > [11
 
 
 
-]) [11] [12] (./main.aux
+] [12]) [13] (./main.aux
 (./chapters/introduction.aux) (./chapters/technical_background.aux)
 (./chapters/technical_discussion.aux) (./chapters/dataset_background.aux)) ) 
 Here is how much of TeX's memory you used:
- 24610 strings out of 493706
- 513368 string characters out of 6145768
- 527002 words of memory out of 5000000
- 27605 multiletter control sequences out of 15000+600000
+ 24614 strings out of 493706
+ 513442 string characters out of 6145768
+ 527000 words of memory out of 5000000
+ 27607 multiletter control sequences out of 15000+600000
  6587 words of font info for 49 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  62i,11n,60p,10377b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (14 pages).
+Output written on main.pdf (15 pages).
