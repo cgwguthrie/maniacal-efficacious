@@ -8,7 +8,6 @@
 %\setcounter{tocdepth}{4}
 %\setcounter{secnumdepth}{4}
 \geometry{margin=1in}
-\renewcommand{\baselinestretch}{2}
 \usepackage{fontspec}
 %\renewcommand{\familydefault}{\sfdefault}
 \setmainfont{Georgia}
@@ -17,7 +16,6 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{graphicx}
 \RequirePackage{xr}
-
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
@@ -55,22 +53,23 @@
 
 \newcommand{\contents}{
     \newpage
-    \renewcommand{\baselinestretch}{0}
+    \singlespacing
     \addcontentsline{toc}{chapter}{\numberline{}Contents}
     \tableofcontents
 }
 
 \newcommand{\makefrontmatter}{
-    \setcounter{page}{1}
-    \pagenumbering{roman}
-    
+
 %    \declaration
 % \acknowledgments
  %   \abstractpage
-    \contents
+         \setcounter{page}{1}
+    \pagenumbering{roman}
+    	\contents
+
     \setcounter{page}{1}
 \pagenumbering{arabic}
-
+\doublespacing
 }
 
 \def\degree#1{\gdef\@degree{#1}}

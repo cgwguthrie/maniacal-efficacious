@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.10.10)  9 NOV 2015 00:01
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.10.10)  10 NOV 2015 22:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -776,31 +776,30 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 s/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.0 (rcs-revision 1.9)
 )) (./main.aux (./chapters/introduction.aux)
-(./chapters/technical_background.aux) (./chapters/technical_discussion.aux)
-(./chapters/dataset_background.aux))
+(./chapters/background.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 16.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 17.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 17.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    ... okay on input line 17.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -846,60 +845,60 @@ LaTeX Font Info:    ... okay on input line 16.
 .................................................
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 16.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 16.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 16.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 16.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 16.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 16.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 16.
-LaTeX Font Info:    Redeclaring math accent \check on input line 16.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 16.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 16.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 16.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 16.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 16.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 17.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 17.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 17.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 17.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 17.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 17.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 17.
+LaTeX Font Info:    Redeclaring math accent \check on input line 17.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 17.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 17.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 17.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 17.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 16.
+(Font)              `operators' in the math version `normal' on input line 17.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> EU1/Georgia(0)/m/n on input line 16.
+(Font)                  OT1/cmr/m/n --> EU1/Georgia(0)/m/n on input line 17.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 16.
+(Font)              `operators' in the math version `bold' on input line 17.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> EU1/Georgia(0)/m/n on input line 16.
+(Font)                  OT1/cmr/bx/n --> EU1/Georgia(0)/m/n on input line 17.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  EU1/Georgia(0)/m/n --> EU1/Georgia(0)/m/n on input line
- 16.
+ 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> EU1/Georgia(0)/m/it on input line 16.
+(Font)                  OT1/cmr/m/it --> EU1/Georgia(0)/m/it on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> EU1/Georgia(0)/bx/n on input line 16.
+(Font)                  OT1/cmr/bx/n --> EU1/Georgia(0)/bx/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 16.
+(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 16.
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 17.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  EU1/Georgia(0)/m/n --> EU1/Georgia(0)/bx/n on input lin
-e 16.
+e 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> EU1/Georgia(0)/bx/it on input line 16
+(Font)                  OT1/cmr/bx/it --> EU1/Georgia(0)/bx/it on input line 17
 .
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 16.
+(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 16.
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 17.
 ABD: EveryShipout initializing macros
 File: images/HWUlogo.jpg Graphic file (type QTm)
  <use  "images/HWUlogo.jpg" > [1
@@ -913,17 +912,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 4.
- [1
-
-])
+)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
-LaTeX Font Info:    Font shape `EU1/Georgia(0)/m/sl' in size <10.95> not availa
-ble
-(Font)              Font shape `EU1/Georgia(0)/m/it' tried instead on input lin
-e 21.
- [1]
+ [1
+
+]
 \openout2 = `chapters/introduction.aux'.
 
  (./chapters/introduction.tex
@@ -931,50 +926,41 @@ Chapter 1.
 [2
 
 
-]) [3]
-\openout2 = `chapters/technical_background.aux'.
+])
+LaTeX Font Info:    Font shape `EU1/Georgia(0)/m/sl' in size <10.95> not availa
+ble
+(Font)              Font shape `EU1/Georgia(0)/m/it' tried instead on input lin
+e 21.
+ [3]
+\openout2 = `chapters/background.aux'.
 
- (./chapters/technical_background.tex
+ (./chapters/background.tex
 Chapter 2.
-File: images/3vs.png Graphic file (type QTm)
-<use  "images/3vs.png" > [4
+[4
 
 
 
-] [5]) [6]
-\openout2 = `chapters/technical_discussion.aux'.
-
- (./chapters/technical_discussion.tex
-Chapter 3.
-[7
-
-
-
-]
-File: images/graphdb_twitter.png Graphic file (type QTm)
- <use  "images/graphdb_twitter.png" > [8]
+] [5] [6]
 File: images/ddelogo.png Graphic file (type QTm)
- <use  "images/ddelogo.png" >
-[9]) [10]
-\openout2 = `chapters/dataset_background.aux'.
+ <use  "images/ddelogo.png" > [7]
+File: images/graphdb_twitter.png Graphic file (type QTm)
 
- (./chapters/dataset_background.tex
-Chapter 4.
+<use  "images/graphdb_twitter.png" > [8] [9]
 File: images/ema_logo.jpg Graphic file (type QTm)
-<use  "images/ema_logo.jpg" > [11
+ <use  "images/ema_logo.jpg" >
+[10] [11]) [12] (./main.aux (./chapters/introduction.aux)
+(./chapters/background.aux))
 
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-
-] [12]) [13] (./main.aux
-(./chapters/introduction.aux) (./chapters/technical_background.aux)
-(./chapters/technical_discussion.aux) (./chapters/dataset_background.aux)) ) 
+ ) 
 Here is how much of TeX's memory you used:
- 24614 strings out of 493706
- 513442 string characters out of 6145768
- 527000 words of memory out of 5000000
- 27607 multiletter control sequences out of 15000+600000
+ 24597 strings out of 493706
+ 512860 string characters out of 6145768
+ 527504 words of memory out of 5000000
+ 27605 multiletter control sequences out of 15000+600000
  6587 words of font info for 49 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 62i,11n,60p,10377b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,11n,60p,10392b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (15 pages).
+Output written on main.pdf (13 pages).
