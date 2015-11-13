@@ -18,14 +18,17 @@
 \contentsline {subsection}{\numberline {2.4.2}Document-Oriented Database}{8}
 \contentsline {subsection}{\numberline {2.4.3}Graph-Orientated Database}{8}
 \contentsline {subsection}{\numberline {2.4.4}Relational Database}{9}
-\contentsline {subsection}{\numberline {2.4.5}MongoDB}{9}
-\contentsline {subsection}{\numberline {2.4.6}Neo4j}{9}
-\contentsline {subsection}{\numberline {2.4.7}Apache Cassandra}{10}
-\contentsline {section}{\numberline {2.5}MySQL}{10}
+\contentsline {section}{\numberline {2.5}Proposed Technologies}{9}
+\contentsline {subsection}{\numberline {2.5.1}MongoDB}{9}
+\contentsline {subsection}{\numberline {2.5.2}Neo4j}{10}
+\contentsline {subsection}{\numberline {2.5.3}Apache Cassandra}{10}
+\contentsline {subsection}{\numberline {2.5.4}MySQL}{10}
 \contentsline {section}{\numberline {2.6}Dataset}{10}
-\contentsline {subsection}{\numberline {2.6.1}EMAP}{11}
-\contentsline {subsection}{\numberline {2.6.2}EMAPA}{11}
-\contentsline {section}{\numberline {2.7}Data Sources}{11}
-\contentsline {subsection}{\numberline {2.7.1}EMA Database}{12}
-\contentsline {subsection}{\numberline {2.7.2}OBO}{12}
-\contentsline {subsection}{\numberline {2.7.3}OWL}{12}
+\contentsline {subsection}{\numberline {2.6.1}EMAP}{10}
+\contentsline {subsection}{\numberline {2.6.2}EMAP anatomy}{11}
+\contentsline {subsection}{\numberline {2.6.3}EMAPA anatomy}{12}
+\contentsline {subsection}{\numberline {2.6.4}EMAGE anatomy}{13}
+\contentsline {section}{\numberline {2.7}Data Sources}{13}
+\contentsline {subsection}{\numberline {2.7.1}EMA Database}{13}
+\contentsline {subsection}{\numberline {2.7.2}OBO}{13}
+\contentsline {subsection}{\numberline {2.7.3}OWL}{13}
