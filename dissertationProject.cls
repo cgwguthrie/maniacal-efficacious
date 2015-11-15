@@ -17,6 +17,8 @@
 \RequirePackage{graphicx}
 \RequirePackage{xr}
 \RequirePackage{fancyhdr}
+\RequirePackage[table]{xcolor}
+\RequirePackage{tabularx}
 \pagestyle{fancy}
 \fancyhf{}
 \headheight 14pt
