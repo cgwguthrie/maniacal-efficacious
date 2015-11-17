@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.11.15)  15 NOV 2015 23:57
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.10.10)  17 NOV 2015 00:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -957,7 +957,7 @@ Chapter 1.
 LaTeX Font Info:    Font shape `EU1/Georgia(0)/m/sl' in size <10.95> not availa
 ble
 (Font)              Font shape `EU1/Georgia(0)/m/it' tried instead on input lin
-e 21.
+e 22.
  [3]
 \openout2 = `chapters/background.aux'.
 
@@ -967,20 +967,28 @@ Chapter 2.
 
 
 
-] [5] [6]
-File: images/ddelogo.png Graphic file (type QTm)
- <use  "images/ddelogo.png" > [7]
+] [5] [6] [7]
 File: images/graphdb_twitter.png Graphic file (type QTm)
+ <use  "images/graphdb_twitter.png" > [8]
+File: images/rdbmsmodel.png Graphic file (type QTm)
 
-<use  "images/graphdb_twitter.png" > [8] [9] [10] [11] [12]) [13] (./main.aux
+<use  "images/rdbmsmodel.png" > [9]
+File: images/mongodbmodel.png Graphic file (type QTm)
+ <use  "images/mongodbmodel.png" > [10]
+File: images/cassandramodel.png Graphic file (type QTm)
+
+<use  "images/cassandramodel.png" > [11] [12] [13]
+File: images/emapachoroidplexus.png Graphic file (type QTm)
+
+<use  "images/emapachoroidplexus.png" > [14]) [15] (./main.aux
 (./chapters/introduction.aux) (./chapters/background.aux)) ) 
 Here is how much of TeX's memory you used:
- 24739 strings out of 493706
- 514612 string characters out of 6145768
- 530904 words of memory out of 5000000
- 27739 multiletter control sequences out of 15000+600000
+ 24745 strings out of 493706
+ 514751 string characters out of 6145768
+ 530903 words of memory out of 5000000
+ 27742 multiletter control sequences out of 15000+600000
  6587 words of font info for 49 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 62i,12n,60p,10392b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,11n,60p,10392b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (14 pages).
+Output written on main.pdf (16 pages).

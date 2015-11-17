@@ -19,17 +19,18 @@
 \contentsline {subsection}{\numberline {2.4.2}Document-Oriented Database}{8}
 \contentsline {subsection}{\numberline {2.4.3}Graph-Orientated Database}{8}
 \contentsline {subsection}{\numberline {2.4.4}Relational Database}{9}
-\contentsline {section}{\numberline {2.5}Proposed Technologies}{9}
-\contentsline {subsection}{\numberline {2.5.1}MongoDB}{9}
-\contentsline {subsection}{\numberline {2.5.2}Neo4j}{10}
-\contentsline {subsection}{\numberline {2.5.3}Apache Cassandra}{10}
-\contentsline {subsection}{\numberline {2.5.4}MySQL}{10}
-\contentsline {section}{\numberline {2.6}Data Source and Representation}{10}
-\contentsline {subsection}{\numberline {2.6.1}EMAP}{10}
-\contentsline {subsection}{\numberline {2.6.2}EMAP anatomy}{11}
-\contentsline {subsection}{\numberline {2.6.3}EMAPA anatomy}{12}
-\contentsline {subsection}{\numberline {2.6.4}EMAGE anatomy}{13}
-\contentsline {subsection}{\numberline {2.6.5}Data Representation Languages}{13}
-\contentsline {subsubsection}{\numberline {2.6.5.1}EMA Database}{13}
-\contentsline {subsubsection}{\numberline {2.6.5.2}Web Ontology Language OWL}{13}
-\contentsline {subsubsection}{\numberline {2.6.5.3}OBO}{13}
+\contentsline {section}{\numberline {2.5}Proposed Technologies}{10}
+\contentsline {subsection}{\numberline {2.5.1}MongoDB}{10}
+\contentsline {subsection}{\numberline {2.5.2}Neo4j}{11}
+\contentsline {subsection}{\numberline {2.5.3}Apache Cassandra}{11}
+\contentsline {subsection}{\numberline {2.5.4}MySQL}{11}
+\contentsline {section}{\numberline {2.6}Data Source and Representation}{12}
+\contentsline {subsection}{\numberline {2.6.1}EMAP}{12}
+\contentsline {subsection}{\numberline {2.6.2}EMAP anatomy}{13}
+\contentsline {subsection}{\numberline {2.6.3}EMAPA anatomy}{14}
+\contentsline {subsection}{\numberline {2.6.4}EMAGE anatomy}{15}
+\contentsline {subsection}{\numberline {2.6.5}Description Languages}{15}
+\contentsline {subsubsection}{\numberline {2.6.5.1}EMA Database}{15}
+\contentsline {subsubsection}{\numberline {2.6.5.2}Semantic Web}{15}
+\contentsline {subsubsection}{\numberline {2.6.5.3}Web Ontology Language OWL}{15}
+\contentsline {subsubsection}{\numberline {2.6.5.4}OBO}{15}

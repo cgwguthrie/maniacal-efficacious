@@ -39,16 +39,16 @@ NoSQL solutions are not bound by a definitive schema structure. This permits the
 One of the first decisions to be made when when selecting a database is the characteristics of the data you are looking to leverage. (Dash, 2013) There are a multitude of options available with many different classifications. - \textcolor{red}{EXPAND}
 
 \subsection{Distributed Database}\label{distributeddb}
-\begin{wrapfigure}{r}{0.5\textwidth}\includegraphics[width=0.9\linewidth]{images/ddelogo}\end{wrapfigure} A distributed database (DDB) comprises of two or more data files located at different sites and servers on a computer network. (DD ref) The advantage of using a DD is that as the database is distributed, multiple users can access a portion of the database at different locations locally and remotely without obstructing one another's work. It is  pivotal for the DD database management system to periodically synchronise the scattered databases to make sure that they all have consistent data. (DD ref) For example if a user updates or deletes data in one location is is essential this change is mirrored on all databases. This ability to remotely access a database from all across the world lends itself to not only multinational companies for example but also startup businesses which recruit the expertise of others from various locations.
+A distributed database (DDB) comprises of two or more data files located at different sites and servers on a computer network. (DD ref) The advantage of using a DD is that as the database is distributed, multiple users can access a portion of the database at different locations locally and remotely without obstructing one another's work. It is  pivotal for the DD database management system to periodically synchronise the scattered databases to make sure that they all have consistent data. (DD ref) For example if a user updates or deletes data in one location is is essential this change is mirrored on all databases. This ability to remotely access a database from all across the world lends itself to not only multinational companies for example but also startup businesses which recruit the expertise of others from various locations.
 
 \subsection{Document-Oriented Database}
 Document-orientated database (DODB) are designed for storing, retrieving and managing document files such as XML, JSON and BSON. The documents stored in a DODB model are data objects which describe the data in the document, as well as the data itself. - EXPAND
 
 \subsection{Graph-Orientated Database}
-A graph-oriented database (GODB), is a form of NoSQL database solution that uses graph theory to store, map and query relationships. A graph is a collection of nodes connected by relationships. "Graphs represent entities as nodes and the ways in which those entities relate to the world as relationships." (Robinson, Webber and Eifrem, 2015) The formation of the graph database structure is extremely useful and eloquent as it permits clear modelling of a vast and often ecliptic array of data types. (Robinson, Webber and Eifrem, 2015) An example of data represented in a graph structure is the Twitter relationship model. \begin{center}\includegraphics[width=0.3\linewidth]{images/graphdb_twitter}\end{center}  Figure[ADD FIGURE REF] illustrates the nodes involved in a standard tweet and the relationship link between them. The labeled nodes indicate the various operations which are involved in one the tweet. One interpretation of the [FIGURE REF] example is that a user posts a tweet, using the Twitter App which mentions another user and includes a hashtag and link. - \textcolor{red}{REVISE}
+A graph-oriented database (GODB), is a form of NoSQL database solution that uses graph theory to store, map and query relationships. A graph is a collection of nodes connected by relationships. "Graphs represent entities as nodes and the ways in which those entities relate to the world as relationships." (Robinson, Webber and Eifrem, 2015) The formation of the graph database structure is extremely useful and eloquent as it permits clear modelling of a vast and often ecliptic array of data types. (Robinson, Webber and Eifrem, 2015) An example of data represented in a graph structure is the Twitter relationship model. \begin{center}\includegraphics[width=0.5\linewidth]{images/graphdb_twitter}\end{center}  Figure[ADD FIGURE REF] illustrates the nodes involved in a standard tweet and the relationship link between them. The labeled nodes indicate the various operations which are involved in one the tweet. One interpretation of the [FIGURE REF] example is that a user posts a tweet, using the Twitter App which mentions another user and includes a hashtag and link. - \textcolor{red}{REVISE}
 
 \subsection{Relational Database}
-A relational database (RDB) is a collection of data items organised as a set of tables, records and columns from which data can be accessed or reassembled in many different ways. (RDB ref) The connected tables are known as relations and contain one or more columns which comprise of data records called rows. Relations can also be instantiated between the data rows to form functional dependencies called keys which are classified as : (RDB ref 2)
+A relational database (RDB) is a collection of data items organised as a set of tables, records and columns from which data can be accessed or reassembled in many different ways. (RDB ref)  \begin{center}\includegraphics[width=0.75\linewidth]{images/rdbmsmodel}\end{center}The connected tables are known as relations and contain one or more columns which comprise of data records called rows. Relations can also be instantiated between the data rows to form functional dependencies called keys which are classified as : (RDB ref 2)
 
 \begin{itemize}
 \item One to One: One table record relates to another record in another table.
@@ -59,7 +59,7 @@ A relational database (RDB) is a collection of data items organised as a set of 
 \section{Proposed Technologies}
 The technologies being used in this project are outlined below. \textcolor{red}{EXPAND}
 \subsection{MongoDB}\label{mongo}
-One of the most popular NoSQL technologies is MongoDB. MongoDB is an open source cross-platform DODB. The premise for using MongoDB is simplicity, speed and scalability (MongoDB White Paper, 2015). Its ever growing popularity, specifically amongst programmers, stems from the unrestrictive and flexible DODB data model which gives you the ability to query on all fields and boasts instinctive mapping of objects in modern programming languages. (MongoDB White Paper, 2015) The database design of MongoDB is based on the JSON file format named BSON.
+One of the most popular NoSQL technologies is MongoDB. MongoDB is an open source cross-platform DODB. The premise for using MongoDB is simplicity, speed and scalability (MongoDB White Paper, 2015). Its ever growing popularity, specifically amongst programmers, stems from the unrestrictive and flexible DODB data model which gives you the ability to query on all fields and boasts instinctive mapping of objects in modern programming languages. (MongoDB White Paper, 2015) The database design of MongoDB is based on the JSON file format named BSON. \begin{center}\includegraphics[width=1\linewidth]{images/mongodbmodel}\end{center}
 
 *NOTES* A record in MongoDB is stored in collections. A collection is a grouping of MongoDB documents.
 Within this free flowing environment documents can become as sophisticated and complex as required; information about a document record can be sub categorised by the integration of nested data. *NOTES*
@@ -68,7 +68,7 @@ Within this free flowing environment documents can become as sophisticated and c
 Neo4j is an open-source NoSQL GODB which imposes the Property Graph Model throughout its implementation. The team behind the development of Neo4j describe it as an "An intuitive approach to data problems"(Neo4j web ref). One of the reasons in which Neo4j is favoured predominantly amongst database administrators and developers is its efficiency and high scalability. This is in part due to its compact storage and memory caching for the graphs. "Neo4j scales up and out, supporting tens of billions of nodes and relationships, and hundreds of thousands of ACID transactions per second."(Neo4j web ref) -\textcolor{red}{ FINISH WRITNG UP NOTES}
 
 \subsection{Apache Cassandra}\label{cassandra}
-\textcolor{red}{WRITE UP NOTES}
+\textcolor{red}{WRITE UP NOTES}\begin{center}\includegraphics[width=0.75\linewidth]{images/cassandramodel}\end{center}
 
 \textcolor{red}{\subsection{MySQL}\label{mysql}}
 MySQL is a freely available open source Relational Database Management System (RDBMS) that uses Structured Query Language (SQL).
@@ -98,19 +98,41 @@ The research surrounding the EMAP resource is continually being developed, thus 
 
 
 \subsection{EMAPA anatomy}\label{emapaanatomy}
-The EMAPA is a refined and algorithmically developed non-stage specific anatomical ontology \textit{abstract} representation of the EMAP anatomy. The EMAPA implementation replaces the EMAP hierarchical tree structure for a \textit{directed acyclic graph} structure; a graph in which it is impossible to start at some vertex v and follow a sequence of edges that eventually loops back to v again.(GRAPH REF) Thus enabling the ability to represent multiple parental relationships and other forms of "is-a" relations where appropriate. (EMAP REF)
+The EMAPA is a refined and algorithmically developed non-stage specific anatomical ontology \textit{abstract} representation of the EMAP anatomy. The EMAPA implementation replaces the EMAP hierarchical tree structure for a \textit{directed acyclic graph} structure; a graph in which it is impossible to start at some vertex v and follow a sequence of edges that eventually loops back to v again.(GRAPH REF) Thus enabling the ability to represent multiple parental relationships and other forms of "is-a" relations where appropriate. (EMAP REF)\begin{center}\includegraphics[width=1\linewidth]{images/emapachoroidplexus}\end{center}
 
-Each anatomical component in the EMAPA anatomy is identified as a single term, coupled with the appropriate start and end Theiler Stage at which the component is considered to be present in the developing embryo. (EMAP REF) With the aim of enhancing user experience, the EMAPA anatomy  implements an alternative naming convention from the EMAP anatomy replacing full path names for components to \textit{"print names"}. Using the above example for comparison, "EMAP:4218" in the EMAP anatomy becomes "TS20 brain choroid plexus" in EMAPA. This naming convention supplements the requirement of uniqueness and is easily comprehensible.
+Each anatomical component in the EMAPA anatomy is identified as a single term, coupled with the appropriate start and end Theiler Stage at which the component is considered to be present in the developing embryo. (EMAP REF) With the aim of enhancing user experience, the EMAPA anatomy  implements an alternative naming convention from the EMAP anatomy replacing full path names for components to \textit{"print names"}. Using the above example for comparison, "EMAP:4218" in the EMAP anatomy becomes "TS20 brain choroid plexus" in EMAPA. This naming convention supplements the requirement of uniqueness and is easily comprehensible. EMAPA 32741  
 
-The EMAPA ontology is available in a standard ontological format developed by the Open Biological Ontologies (OBO) consortium (Section \ref{obo}) and is also available in a Web Ontology Language (OWL); a standard produced from W3C (Section \ref{owl}).This enhanced OWL version of the ontology is now considered as the primary EMAP anatomy ontology and thus will be the main source for the work on this project. 
+The EMAPA ontology is available in a standard ontological format developed by the Open Biological Ontologies (OBO) consortium (Section \ref{obo}) and is also available in a Web Ontology Language (OWL); a standard produced from W3C (Section \ref{owl}).This enhanced version of the ontology EMAPA, is now considered to be the primary EMAP anatomy ontology thus will be the main source for the work on this project. the OWL formatted
 
 
 \subsection{EMAGE anatomy}
-\subsection{Data Representation Languages}
+\subsection{Description Languages}
 \subsubsection{EMA Database}\label{emadb}
+
+\subsubsection{Semantic Web}
 \subsubsection{Web Ontology Language OWL}\label{owl}
-%http://www.w3.org/TR/2004/REC-owl-guide-20040210/#Introduction
-The Web Ontology Language OWL is language representation standard for designing and instantiating ontologies produced from the World Wide Web Consortium W3C. The OWL file format is designed to be humanly readable and also recognisable to applications required to process the content of the information. "[OWL] is intended to provide a language that can be used to describe the classes and relations between them that are inherent in Web documents and applications." (OWL REF). 
+The Web Ontology Language OWL is a language representation standard for designing and authoring Web ontologies produced from the World Wide Web Consortium W3C. (OWL REF). The OWL file format is designed to be used by applications required to process the content of the information and to be humanly readable. "[OWL] is intended to provide a language that can be used to describe the classes and relations between them that are inherent in Web documents and applications." (OWL REF). 
+
+The OWL languages are characterised by formal semantics. They are built upon a W3C XML standard for objects called the Resource Description Framework (RDF).
+
 \subsubsection{OBO}\label{obo}
 The OBO flat file format is an ontology representation language (OBO ref)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
