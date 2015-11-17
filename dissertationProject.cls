@@ -4,9 +4,8 @@
 \RequirePackage{geometry}
 \RequirePackage{setspace}
 \RequirePackage{titlesec}
-\setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{4}
-\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
 \geometry{margin=1in}
 \usepackage{fontspec}
 %\renewcommand{\familydefault}{\sfdefault}
