@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.11.15)  18 NOV 2015 03:23
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.11.15)  18 NOV 2015 09:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1007,16 +1007,26 @@ Chapter 5.
 
 
 
-]) [21] (./main.aux (./chapters/introduction.aux) (./chapters/background.aux) (
-./chapters/datasource.aux) (./chapters/technologyevaluation.aux)
+]
+Overfull \hbox (25.19998pt too wide) in paragraph at lines 31--44
+ [] 
+ []
+
+[21]
+Overfull \hbox (25.19998pt too wide) in paragraph at lines 53--61
+ [] 
+ []
+
+) [22] (./main.aux (./chapters/introduction.aux) (./chapters/background.aux)
+(./chapters/datasource.aux) (./chapters/technologyevaluation.aux)
 (./chapters/evaluationstrategy.aux)) ) 
 Here is how much of TeX's memory you used:
  24777 strings out of 493706
  515493 string characters out of 6145768
- 531737 words of memory out of 5000000
+ 531738 words of memory out of 5000000
  27753 multiletter control sequences out of 15000+600000
  6587 words of font info for 49 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  62i,12n,60p,10392b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (22 pages).
+Output written on main.pdf (23 pages).

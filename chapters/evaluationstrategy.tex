@@ -3,44 +3,65 @@ The purpose of this chapter is to discuss the methods used to carry out the prim
 
 \section{Requirements}\label{requirements}
 
-The first objective of the project is to investigate the strengths and weaknesses of the functionality each technology provides. Section \ref{techeval} of this document discusses each technology which will be evaluated in this project and their respective intended functionalities. 
-
-Compare and contrast the analytical capabilities of each technology.
+The first objective of the project is to investigate the strengths and weaknesses of the functionality each technology provides. Section \ref{techeval} of this document discusses each technology which will be evaluated in this project and their respective \textbf{intended} functionalities. In order to evaluate the limitations of each of these competency questions in section \ref{competency} will form the basis of technical database queries will give insight in to this. Each technology will undergo the following scrutiny:
 
 \begin{enumerate}
-\item E
+\item Is this query possible in database X?
+For example the first query in the competency question table asks : "For structure X, find all the ancestors." If this query is possible in a given database, move on to the next query in the list and continue until failure. Once this step has been complete for all database solutions, by way of comparison evaluate the strength of each database.
 \end{enumerate}
 
-The final key objective to be evaluated in this project is to conduct a comparative analysis of the scalability of each technology. This will be achieved by loading the data sources in to each prototype data model. The specific requirements which will measure the performance of each database are :
+\parindent 0pt Objective two of the project is to compare and contrast the analytical capabilities of each technology. This will follow on from the tasks undertaken in the first objective.
+
+\begin{enumerate}
+\item If the query is possible in a given database how rich a return of the dataset can it provide.
+\item Does any database offer any querying capabilities/functionality which compared with another (e.g. include/ exclude ) which aids the query in any way.
+\item With the dataset returned from the query how valuable in is the data in terms of data modelling * This will be expanded, developed and fed in throughout the report* 
+\end{enumerate}
+
+\parindent 0pt The final key objective to be evaluated in this project is to conduct a comparative analysis of the scalability of each technology. This will be achieved by loading the data sources in to each prototype data model. The specific requirements which will measure the performance of each database are :
 
 \begin{enumerate}
 \item Ease of ETL implementation - The focus of this requirement will be to evaluate any challenges which were faced during the ETL process.
-\item
-\item
 \end{enumerate}
 \subsection{EMAPA Competency Questions}\label{competency}
 
 Competency Questions for EMAPA:
-\begin{itemize}
-\item For structure X, find all the ancestors.
-\item For structure X, find all the decedents.
-\item For structure X, find all structures in the same group (this only makes sense in limited situations, e.g., find all "hair").
-\item Find all the structures in Theiler Stage X.
-\item Find all the structures in Theiler Stages X to Y (e.g., 17-19).
-\item What stages does structure X appear in?
-\item Given search term X return the "best match" structure (e.g., if Isearch on "heart" I would expect the output to be heart, heart atrium, heart septum  heart mesentery).
-\item Given an EMAPA ID return the name of the structure.
-\item Given a name return the EMAPA ID.
-\end{itemize}
+
+\begin{center}
+    \begin{tabular}{ | p{0.5\linewidth} | p{0.5\linewidth}|}
+    \hline
+    \textbf{English} & \textbf{SQL} \\ \hline
+    For structure X, find all the ancestors. &  \\ \hline
+    For structure X, find all the decedents. &  \\ \hline
+    For structure X, find all structures in the same group (this only makes sense in limited situations, e.g., find all "hair"). & \\ \hline
+    Find all the structures in Theiler Stage X. & \\ \hline
+    Find all the structures in Theiler Stages X to Y (e.g., 17-19). &  \\ \hline
+    What stages does structure X appear in? & \\ \hline
+    Given search term X return the "best match" structure (e.g., if Isearch on "heart" I would expect the output to be heart, heart atrium, heart septum  heart mesentery) & \\ \hline
+    Given an EMAPA ID return the name of the structure. &  \\ \hline
+    Given a name return the EMAPA ID. &  \\ \hline
+    \end{tabular}
+\end{center}
+
 %If you also have the EMAP data, you may wish to include:
 %Given an EMAPA ID retrieve the EMAP ID.
 % Given an EMAP ID retrieve the EMAPA ID.
 
 \subsection{EMAGE Competency Questions}
-Where is gene X expressed?
-What is expressed in structure X?
-Which genes are expressed in both structures X and Y?  (This is
-so-called co-expression).
-Which genes are most commonly co-expressed? (This is getting towards
-BI and is possibly out with the scope of your thesis, but it does no
-harm to discuss it.)
+
+\begin{center}
+    \begin{tabular}{ | p{0.5\linewidth} | p{0.5\linewidth}|}
+    \hline
+    \textbf{English} & \textbf{SQL} \\ \hline
+    Where is gene X expressed? &  \\ \hline
+    What is expressed in structure X? &  \\ \hline
+    Which genes are expressed in both structures X and Y?  (This is so-called co-expression). & \\ \hline
+    Which genes are most commonly co-expressed? (This is getting towards BI and is possibly out with the scope of your thesis, but it does no harm to discuss it.) & \\ \hline
+    \end{tabular}
+\end{center}
+
+
+
+
+
+
