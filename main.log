@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.10.10)  17 NOV 2015 19:05
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.11.15)  18 NOV 2015 03:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -954,69 +954,69 @@ Chapter 1.
 [2
 
 
-])
+]
 LaTeX Font Info:    Font shape `EU1/Georgia(0)/m/sl' in size <10.95> not availa
 ble
 (Font)              Font shape `EU1/Georgia(0)/m/it' tried instead on input lin
-e 22.
- [3]
+e 33.
+ [3]) [4]
 \openout2 = `chapters/background.aux'.
 
  (./chapters/background.tex
 Chapter 2.
-[4
+[5
 
 
 
-] [5] [6] [7] [8] [9]
+] [6] [7] [8] [9] [10]
 File: images/graphdb_twitter.png Graphic file (type QTm)
- <use  "images/graphdb_twitter.png" >
+ <use  "images/graphdb_twitter.png" > [11]
 File: images/rdbmsmodel.png Graphic file (type QTm)
 
-<use  "images/rdbmsmodel.png" > [10]) [11]
+<use  "images/rdbmsmodel.png" >) [12]
 \openout2 = `chapters/datasource.aux'.
 
  (./chapters/datasource.tex
 Chapter 3.
-[12
+[13
 
 
 
-] [13]
+] [14]
 File: images/emapachoroidplexus.png Graphic file (type QTm)
- <use  "images/emapachoroidplexus.png" > [14]) [15]
+ <use  "images/emapachoroidplexus.png" > [15]) [16]
 \openout2 = `chapters/technologyevaluation.aux'.
 
 
 (./chapters/technologyevaluation.tex
 Chapter 4.
 File: images/mongodbmodel.png Graphic file (type QTm)
-<use  "images/mongodbmodel.png" > [16
+<use  "images/mongodbmodel.png" > [17
 
 
 
-]
+] [18]
 File: images/cassandramodel.png Graphic file (type QTm)
- <use  "images/cassandramodel.png" >
-[17]) [18]
+
+<use  "images/cassandramodel.png" >) [19]
 \openout2 = `chapters/evaluationstrategy.aux'.
 
  (./chapters/evaluationstrategy.tex
 Chapter 5.
-) [19
+[20
 
 
 
-] (./main.aux (./chapters/introduction.aux) (./chapters/background.aux)
-(./chapters/datasource.aux) (./chapters/technologyevaluation.aux)
+]) [21] (./main.aux (./chapters/introduction.aux) (./chapters/background.aux) (
+./chapters/datasource.aux) (./chapters/technologyevaluation.aux)
 (./chapters/evaluationstrategy.aux)) ) 
 Here is how much of TeX's memory you used:
- 24770 strings out of 493706
- 515419 string characters out of 6145768
- 531657 words of memory out of 5000000
- 27746 multiletter control sequences out of 15000+600000
+ 24777 strings out of 493706
+ 515493 string characters out of 6145768
+ 531737 words of memory out of 5000000
+ 27753 multiletter control sequences out of 15000+600000
  6587 words of font info for 49 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 62i,11n,60p,10392b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,12n,60p,10392b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (20 pages).
+Output written on main.pdf (22 pages).
