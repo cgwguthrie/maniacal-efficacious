@@ -24,7 +24,9 @@
 \fancyhead[OR]{\nouppercase\rightmark}
 \lhead{\slshape\nouppercase{\leftmark}}
 \cfoot{\thepage}
-
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{epstopdf}
 \renewcommand\bibname{References}
 \raggedright
 
@@ -53,23 +55,29 @@
 }
 
 \newcommand{\contents}{
+        \addcontentsline{toc}{chapter}{\numberline{}Contents}
+            \singlespacing
+
+\tableofcontents
     \newpage
-    \singlespacing
-    \addcontentsline{toc}{chapter}{\numberline{}Contents}
-    \tableofcontents
 }
-
+\newcommand{\introduction}{
+    \newpage
+	\addcontentsline{toc}{chapter}{\numberline{}Introduction}
+	\chapter*{Introduction}
+	 \doublespacing
+	\input{frontmatter/introduction}
+}
 \newcommand{\makefrontmatter}{
-
-%    \declaration
+\setcounter{page}{1}
+\pagenumbering{roman}
+ %   \declaration
 % \acknowledgments
  %   \abstractpage
-         \setcounter{page}{1}
-    \pagenumbering{roman}
     	\contents
-
-    \setcounter{page}{1}
+	\setcounter{page}{1}
 \pagenumbering{arabic}
+		\introduction
 \doublespacing
 }
 

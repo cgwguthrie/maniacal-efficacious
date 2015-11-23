@@ -1,3 +1,100 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{semantic}
+Introduction to the semantic web, nov 2014.
+
+\bibitem{jena}
+Apache jena -, nov 2015.
+
+\bibitem{moore}
+Best 10 big data quotes of all time | smartdata collective, nov 2015.
+
+\bibitem{etlref2}
+Etl - extract transform load, nov 2015.
+
+\bibitem{etlref1}
+Etl (extract-transform-load) | data integration info, nov 2015.
+
+\bibitem{schmidt}
+Google's schmidt: We know what you're thinking, nov 2015.
+
+\bibitem{ndweb}
+Neo4j, the world's leading graph database, nov 2015.
+
+\bibitem{owl}
+Owl 2 web ontology language document overview (second edition), nov 2015.
+
+\bibitem{rdf}
+Rdf - semantic web standards, nov 2015.
+
+\bibitem{statref}
+Statistic brain | market research, rankings, financials, percentages, nov 2015.
+
+\bibitem{cassandra}
+What is apache cassandra?, nov 2015.
+
+\bibitem{ibm}
+Why only one of the 5 vs of big data really matters | the big data hub, nov
+  2015.
+
+\bibitem{emap}
+KAUFMAN M. H. DUBREUIL C. BRUNE R. M. BURGER A. BALDOCK R.~A. BARD, J.~B. and
+  D.~R. DAVIDSON.
+\newblock An internet-accessible database of mouse developmental anatomy based
+  on a systematic nomenclature.
+\newblock {\em Mechanisms of Development}, 74(1-2):111--120, 1998.
+
+\bibitem{nosql2}
+A.~BRUST.
+\newblock Rdbms vs. nosql: How do you pick? | zdnet, nov 2013.
+
+\bibitem{rdb}
+J.~L. HARRINGTON.
+\newblock {\em Relational database design clearly explained}.
+\newblock Morgan Kaufmann Publishers, first edition, 2002.
+
+\bibitem{md}
+MEMBREY~P. HOWS, D. and E.~PLUGGE.
+\newblock {\em MongoDB basics}.
+\newblock Apress, 2014, first edition, 2014.
+
+\bibitem{cd}
+S.~LAMBA~C. KUMARDWIVEDI, A. and S.~SHUKLA.
+\newblock Performance analysis of column oriented database vs row oriented
+  database.
+\newblock {\em International Journal of Computer Applications}, 50:31--34,
+  2012.
+
+\bibitem{mckinskey}
+CHUI M. BROWN B. BUGHIN J. DOBBS R. ROXBURGH~C. MANYIKA, J. and A.~HUNG~BYERS.
+\newblock {\em Big Data}.
+\newblock McKinsey Global Institute, first edition, 2011.
+
+\bibitem{bigdata}
+Yin Zhang Victor CM~Leung Min~Chen, Shiwen~Mao.
+\newblock {\em Big Data: Related Technologies, Challenges and Future
+  Prospects}.
+\newblock Springer, 2014, 2014.
+
+\bibitem{gd}
+WEBBER~J. ROBINSON, I. and E.~EIFREM.
+\newblock {\em Graph databases}.
+\newblock O'Reilly, 2013.
+
+\bibitem{nosql1}
+P.~J. SADALAGE and M.~FOWLER.
+\newblock {\em NoSQL distilled}.
+\newblock Addison-Wesley, first edition, 2013.
+
+\bibitem{obo}
+AITKEN S. MOREIRA D. A. MUNGALL C. SEQUEDA J. SHAH N.~H. TIRMIZI, S. and D.~P.
+  MIRANKER.
+\newblock Mapping between the obo and owl ontology languages.
+\newblock {\em J Biomed Sem}, 2:S3, 2011.
+
+\bibitem{dd}
+M.~T. ÖZSU and P.~VALDURIEZ.
+\newblock {\em Principles of distributed database systems}.
+\newblock Springer, first edition, 2011.
 
 \end{thebibliography}
