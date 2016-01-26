@@ -9,30 +9,32 @@
 \contentsline {section}{\numberline {1.1}Big Data}{5}
 \contentsline {subsection}{\numberline {1.1.1}5vs Model}{6}
 \contentsline {chapter}{\numberline {2}Extract Transform Load}{9}
-\contentsline {subsection}{\numberline {2.0.1}Process}{9}
-\contentsline {subsection}{\numberline {2.0.2}Tool Implementation}{10}
-\contentsline {section}{\numberline {2.1}Knowledge Representation Languages}{12}
-\contentsline {subsection}{\numberline {2.1.1}Semantic Web}{12}
-\contentsline {subsection}{\numberline {2.1.2}Web Ontology Language OWL}{12}
-\contentsline {subsection}{\numberline {2.1.3}OBO}{13}
-\contentsline {chapter}{\numberline {3}Not Only SQL}{14}
-\contentsline {section}{\numberline {3.1}Database Classification}{15}
-\contentsline {subsection}{\numberline {3.1.1}Distributed Database}{15}
-\contentsline {subsection}{\numberline {3.1.2}Document-Oriented Database}{15}
-\contentsline {subsection}{\numberline {3.1.3}Graph-Orientated Database}{15}
-\contentsline {subsection}{\numberline {3.1.4}Relational Database}{17}
-\contentsline {subsection}{\numberline {3.1.5}Column-Orientated Database}{17}
-\contentsline {section}{\numberline {3.2}Technology Evaluation}{17}
-\contentsline {subsection}{\numberline {3.2.1}MongoDB}{17}
-\contentsline {subsection}{\numberline {3.2.2}Neo4j}{18}
-\contentsline {subsection}{\numberline {3.2.3}Apache Cassandra}{19}
-\contentsline {subsection}{\numberline {3.2.4}MySQL}{20}
-\contentsline {chapter}{\numberline {4}Data Source and Representation}{21}
-\contentsline {section}{\numberline {4.1}EMAP}{21}
-\contentsline {subsection}{\numberline {4.1.1}EMAP anatomy}{22}
-\contentsline {subsection}{\numberline {4.1.2}EMAPA anatomy}{23}
-\contentsline {subsection}{\numberline {4.1.3}EMAGE anatomy}{24}
-\contentsline {chapter}{\numberline {5}Evaluation Strategy}{25}
-\contentsline {section}{\numberline {5.1}Requirements}{25}
-\contentsline {subsection}{\numberline {5.1.1}Data Source Competency Questions}{27}
-\contentsline {chapter}{\numberline {6}Risk Assessment}{28}
+\contentsline {section}{\numberline {2.1}Process}{9}
+\contentsline {subsection}{\numberline {2.1.1}Extract}{9}
+\contentsline {subsection}{\numberline {2.1.2}Transform}{10}
+\contentsline {subsection}{\numberline {2.1.3}Load}{10}
+\contentsline {chapter}{\numberline {3}Knowledge Representation Languages}{11}
+\contentsline {subsection}{\numberline {3.0.1}Semantic Web}{11}
+\contentsline {subsection}{\numberline {3.0.2}Web Ontology Language OWL}{12}
+\contentsline {subsection}{\numberline {3.0.3}OBO}{12}
+\contentsline {chapter}{\numberline {4}NoSQL}{13}
+\contentsline {section}{\numberline {4.1}Database Classification}{14}
+\contentsline {subsection}{\numberline {4.1.1}Distributed Database}{14}
+\contentsline {subsection}{\numberline {4.1.2}Document-Oriented Database}{14}
+\contentsline {subsection}{\numberline {4.1.3}Graph-Orientated Database}{14}
+\contentsline {subsection}{\numberline {4.1.4}Relational Database}{16}
+\contentsline {subsection}{\numberline {4.1.5}Column-Orientated Database}{16}
+\contentsline {section}{\numberline {4.2}Technology Evaluation}{16}
+\contentsline {subsection}{\numberline {4.2.1}MongoDB}{16}
+\contentsline {subsection}{\numberline {4.2.2}Neo4j}{17}
+\contentsline {subsection}{\numberline {4.2.3}Apache Cassandra}{18}
+\contentsline {subsection}{\numberline {4.2.4}MySQL}{19}
+\contentsline {chapter}{\numberline {5}Data Source and Representation}{20}
+\contentsline {section}{\numberline {5.1}EMAP}{20}
+\contentsline {subsection}{\numberline {5.1.1}EMAP anatomy}{21}
+\contentsline {subsection}{\numberline {5.1.2}EMAPA anatomy}{22}
+\contentsline {subsection}{\numberline {5.1.3}EMAGE anatomy}{23}
+\contentsline {chapter}{\numberline {6}Evaluation Strategy}{24}
+\contentsline {section}{\numberline {6.1}Requirements}{24}
+\contentsline {subsection}{\numberline {6.1.1}Data Source Competency Questions}{26}
+\contentsline {chapter}{\numberline {7}Risk Assessment}{27}

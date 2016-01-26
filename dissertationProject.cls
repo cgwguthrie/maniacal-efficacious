@@ -8,6 +8,7 @@
 \setcounter{secnumdepth}{2}
 \geometry{margin=1in}
 \usepackage{fontspec}
+\hbadness=10000
 %\renewcommand{\familydefault}{\sfdefault}
 \setmainfont{Georgia}
 \RequirePackage{wrapfig}
