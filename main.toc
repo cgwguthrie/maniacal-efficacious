@@ -5,34 +5,34 @@
 \contentsline {section}{\numberline {0.2}Motivation}{2}
 \contentsline {section}{\numberline {0.3}Definitions}{2}
 \contentsline {section}{\numberline {0.4}Project Plan}{3}
-\contentsline {chapter}{\numberline {1}Background Theory}{5}
+\contentsline {chapter}{\numberline {1}Big Data Defined}{5}
 \contentsline {section}{\numberline {1.1}Big Data}{5}
 \contentsline {subsection}{\numberline {1.1.1}5vs Model}{6}
-\contentsline {section}{\numberline {1.2}Extract Transform Load}{7}
-\contentsline {subsection}{\numberline {1.2.1}Process}{7}
-\contentsline {subsection}{\numberline {1.2.2}Tool Implementation}{9}
-\contentsline {section}{\numberline {1.3}Knowledge Representation Languages}{9}
-\contentsline {subsection}{\numberline {1.3.1}Semantic Web}{10}
-\contentsline {subsection}{\numberline {1.3.2}Web Ontology Language OWL}{10}
-\contentsline {subsection}{\numberline {1.3.3}OBO}{10}
-\contentsline {section}{\numberline {1.4}NoSQL}{11}
-\contentsline {section}{\numberline {1.5}Database Classification}{11}
-\contentsline {subsection}{\numberline {1.5.1}Distributed Database}{12}
-\contentsline {subsection}{\numberline {1.5.2}Document-Oriented Database}{12}
-\contentsline {subsection}{\numberline {1.5.3}Graph-Orientated Database}{13}
-\contentsline {subsection}{\numberline {1.5.4}Relational Database}{13}
-\contentsline {subsection}{\numberline {1.5.5}Column-Orientated Database}{14}
-\contentsline {section}{\numberline {1.6}Technology Evaluation}{15}
-\contentsline {subsection}{\numberline {1.6.1}MongoDB}{15}
-\contentsline {subsection}{\numberline {1.6.2}Neo4j}{15}
-\contentsline {subsection}{\numberline {1.6.3}Apache Cassandra}{16}
-\contentsline {subsection}{\numberline {1.6.4}MySQL}{16}
-\contentsline {chapter}{\numberline {2}Data Source and Representation}{18}
-\contentsline {section}{\numberline {2.1}EMAP}{18}
-\contentsline {subsection}{\numberline {2.1.1}EMAP anatomy}{19}
-\contentsline {subsection}{\numberline {2.1.2}EMAPA anatomy}{20}
-\contentsline {subsection}{\numberline {2.1.3}EMAGE anatomy}{21}
-\contentsline {chapter}{\numberline {3}Evaluation Strategy}{22}
-\contentsline {section}{\numberline {3.1}Requirements}{22}
-\contentsline {subsection}{\numberline {3.1.1}Data Source Competency Questions}{24}
-\contentsline {chapter}{\numberline {4}Risk Assessment}{25}
+\contentsline {chapter}{\numberline {2}Extract Transform Load}{9}
+\contentsline {subsection}{\numberline {2.0.1}Process}{9}
+\contentsline {subsection}{\numberline {2.0.2}Tool Implementation}{10}
+\contentsline {section}{\numberline {2.1}Knowledge Representation Languages}{12}
+\contentsline {subsection}{\numberline {2.1.1}Semantic Web}{12}
+\contentsline {subsection}{\numberline {2.1.2}Web Ontology Language OWL}{12}
+\contentsline {subsection}{\numberline {2.1.3}OBO}{13}
+\contentsline {chapter}{\numberline {3}Not Only SQL}{14}
+\contentsline {section}{\numberline {3.1}Database Classification}{15}
+\contentsline {subsection}{\numberline {3.1.1}Distributed Database}{15}
+\contentsline {subsection}{\numberline {3.1.2}Document-Oriented Database}{15}
+\contentsline {subsection}{\numberline {3.1.3}Graph-Orientated Database}{15}
+\contentsline {subsection}{\numberline {3.1.4}Relational Database}{17}
+\contentsline {subsection}{\numberline {3.1.5}Column-Orientated Database}{17}
+\contentsline {section}{\numberline {3.2}Technology Evaluation}{17}
+\contentsline {subsection}{\numberline {3.2.1}MongoDB}{17}
+\contentsline {subsection}{\numberline {3.2.2}Neo4j}{18}
+\contentsline {subsection}{\numberline {3.2.3}Apache Cassandra}{19}
+\contentsline {subsection}{\numberline {3.2.4}MySQL}{20}
+\contentsline {chapter}{\numberline {4}Data Source and Representation}{21}
+\contentsline {section}{\numberline {4.1}EMAP}{21}
+\contentsline {subsection}{\numberline {4.1.1}EMAP anatomy}{22}
+\contentsline {subsection}{\numberline {4.1.2}EMAPA anatomy}{23}
+\contentsline {subsection}{\numberline {4.1.3}EMAGE anatomy}{24}
+\contentsline {chapter}{\numberline {5}Evaluation Strategy}{25}
+\contentsline {section}{\numberline {5.1}Requirements}{25}
+\contentsline {subsection}{\numberline {5.1.1}Data Source Competency Questions}{27}
+\contentsline {chapter}{\numberline {6}Risk Assessment}{28}

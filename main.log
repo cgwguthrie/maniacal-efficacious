@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.10.10)  1 DEC 2015 15:33
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.10.10)  26 JAN 2016 16:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -865,7 +865,8 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.0 (rcs-revision 1.9)
-)) (./main.aux (./chapters/background.aux)
+)) (./main.aux (./chapters/bigdata.aux)
+(./chapters/etl.aux) (./chapters/krl.aux) (./chapters/nosql.aux)
 (./chapters/datasource.aux) (./chapters/evaluationstrategy.aux)
 (./chapters/risk.aux))
 \openout1 = `main.aux'.
@@ -1003,62 +1004,60 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 4.
-)
+ [1
+
+])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [1
-
-]
 LaTeX Font Info:    Font shape `EU1/Georgia(0)/m/sl' in size <10.95> not availa
 ble
 (Font)              Font shape `EU1/Georgia(0)/m/it' tried instead on input lin
 e 20.
  [2] (./frontmatter/introduction.tex [1
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 36--36
-[]|\EU1/Georgia(0)/m/n/10.95 Edinburgh Mouse Atlas
- []
-
-
-Underfull \hbox (badness 1087) in paragraph at lines 37--37
-[]|\EU1/Georgia(0)/m/n/10.95 A freely available, structured, \EU1/Georgia(0)/bx
-/n/10.95 stage specific \EU1/Georgia(0)/m/n/10.95 list of 13,000+
- []
-
-
+] [2]
 Underfull \hbox (badness 10000) in paragraph at lines 38--38
 []|\EU1/Georgia(0)/m/n/10.95 Edinburgh Mouse Atlas
  []
 
 
-Underfull \hbox (badness 1728) in paragraph at lines 38--38
+Underfull \hbox (badness 1087) in paragraph at lines 39--39
+[]|\EU1/Georgia(0)/m/n/10.95 A freely available, structured, \EU1/Georgia(0)/bx
+/n/10.95 stage specific \EU1/Georgia(0)/m/n/10.95 list of 13,000+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
+[]|\EU1/Georgia(0)/m/n/10.95 Edinburgh Mouse Atlas
+ []
+
+
+Underfull \hbox (badness 1728) in paragraph at lines 40--40
 []|\EU1/Georgia(0)/m/n/10.95 A refined and algorithmically developed \EU1/Georg
 ia(0)/bx/n/10.95 non-stage specific
  []
 
 
-Underfull \hbox (badness 1430) in paragraph at lines 39--39
+Underfull \hbox (badness 1430) in paragraph at lines 41--41
 []|\EU1/Georgia(0)/m/n/10.95 Edinburgh Mouse Atlas of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--43
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
 []|\EU1/Georgia(0)/m/n/10.95 Web Ontology Language
  []
 
 
-Overfull \hbox (25.19997pt too wide) in paragraph at lines 33--46
+Overfull \hbox (25.19997pt too wide) in paragraph at lines 35--48
  [] 
  []
 
-[2]
 File: images/gantt.png Graphic file (type QTm)
- <use  "images/gantt.png" >) [3] [4]
-\openout2 = `chapters/background.aux'.
+<use  "images/gantt.png" >) [3] [4]
+\openout2 = `chapters/bigdata.aux'.
 
- (./chapters/background.tex
+ (./chapters/bigdata.tex
 Chapter 1.
 [5
 
@@ -1066,32 +1065,67 @@ Chapter 1.
 ]
 File: images/3vs.png Graphic file (type QTm)
  <use  "images/3vs.png" > [6]
+File: images/worldpopgraph.png Graphic file (type QTm)
+ <use  "images/worldpopgraph.png" > [7])
+[8]
+\openout2 = `chapters/etl.aux'.
+
+ (./chapters/etl.tex
+Chapter 2.
 File: images/etl.jpg Graphic file (type QTm)
- <use  "images/etl.jpg" > [7] [8]
+<use  "images/etl.jpg" >
 
-LaTeX Warning: Reference `DATA SOURCE REF' on page 9 undefined on input line 34
-.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9] [10] [11]
+[9
+
+
+
+]
+
+LaTeX Warning: Reference `DATA SOURCE REF' on page 10 undefined on input line 1
+5.
+
+[10]) [11]
+\openout2 = `chapters/krl.aux'.
+
+ (./chapters/krl.tex [12
+
+
+]) [13]
+\openout2 = `chapters/nosql.aux'.
+
+ (./chapters/nosql.tex
+Chapter 3.
+[14
+
+
+
+]
 File: images/mongodbmodel.png Graphic file (type QTm)
- <use  "images/mongodbmodel.png" > [12]
-File: images/graphdb_twitter.png Graphic file (type QTm)
+ <use  "images/mongodbmodel.png" >
 
-<use  "images/graphdb_twitter.png" > [13]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: images/graphdb_twitter.png Graphic file (type QTm)
+<use  "images/graphdb_twitter.png" > [15] [16]
 File: images/codb.png Graphic file (type QTm)
  <use  "images/codb.png" >
 
-LaTeX Warning: Reference `cod' on page 14 undefined on input line 97.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14]
+
+LaTeX Warning: Reference `cod' on page 17 undefined on input line 36.
+
+[17] [18]
 File: images/cassandramodel.png Graphic file (type QTm)
- <use  "images/cassandramodel.png" > [15] [16]) [17]
+ <use  "images/cassandramodel.png" > [19]) [20]
 \openout2 = `chapters/datasource.aux'.
 
 
 (./chapters/datasource.tex
-Chapter 2.
-[18
+Chapter 4.
+[21
 
 
 
@@ -1101,25 +1135,25 @@ File: images/emapachoroidplexus.png Graphic file (type QTm)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19] [20]) [21]
+[22] [23]) [24]
 \openout2 = `chapters/evaluationstrategy.aux'.
 
  (./chapters/evaluationstrategy.tex
-Chapter 3.
-[22
+Chapter 5.
+[25
 
 
 
-] [23]
+] [26]
 Overfull \hbox (25.19998pt too wide) in paragraph at lines 33--46
  [] 
  []
 
-) [24]
+) [27]
 \openout2 = `chapters/risk.aux'.
 
  (./chapters/risk.tex
-Chapter 4.
+Chapter 6.
 
 Underfull \hbox (badness 10000) in paragraph at lines 8--8
 []|\EU1/Georgia(0)/m/n/10.95 Corrupt computer hard
@@ -1130,11 +1164,11 @@ Overfull \hbox (25.19997pt too wide) in paragraph at lines 5--13
  [] 
  []
 
-) [25
+) [28
 
 
 
-] (./main.bbl [26
+] (./main.bbl [29
 
 
 
@@ -1142,7 +1176,8 @@ Overfull \hbox (25.19997pt too wide) in paragraph at lines 5--13
 Invalid UTF-8 byte or sequence at line 96 replaced by U+FFFD.
 Missing character: There is no � in font Georgia/OT:script=latn;language=DFLT;m
 apping=tex-text;!
-) [27] (./main.aux (./chapters/background.aux)
+) [30] (./main.aux (./chapters/bigdata.aux)
+(./chapters/etl.aux) (./chapters/krl.aux) (./chapters/nosql.aux)
 (./chapters/datasource.aux) (./chapters/evaluationstrategy.aux)
 (./chapters/risk.aux))
 
@@ -1150,12 +1185,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 25369 strings out of 493706
- 524965 string characters out of 6145768
- 546156 words of memory out of 5000000
- 28300 multiletter control sequences out of 15000+600000
+ 25395 strings out of 493706
+ 525369 string characters out of 6145768
+ 543955 words of memory out of 5000000
+ 28305 multiletter control sequences out of 15000+600000
  6587 words of font info for 49 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 62i,11n,60p,10392b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,12n,60p,10392b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (30 pages).
+Output written on main.pdf (33 pages).
