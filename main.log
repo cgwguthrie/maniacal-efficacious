@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.10.10)  26 JAN 2016 19:13
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.10.10)  28 JAN 2016 20:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1088,7 +1088,7 @@ File: images/codb.png Graphic file (type QTm)
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `cod' on page 16 undefined on input line 36.
+LaTeX Warning: Reference `cod' on page 16 undefined on input line 37.
 
 [16] [17]
 File: images/cassandramodel.png Graphic file (type QTm)
@@ -1153,10 +1153,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 25394 strings out of 493706
- 525352 string characters out of 6145768
- 543923 words of memory out of 5000000
- 28304 multiletter control sequences out of 15000+600000
+ 25395 strings out of 493706
+ 525364 string characters out of 6145768
+ 543934 words of memory out of 5000000
+ 28305 multiletter control sequences out of 15000+600000
  6587 words of font info for 49 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  62i,11n,60p,10371b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
