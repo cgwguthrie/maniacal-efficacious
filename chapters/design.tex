@@ -1,0 +1,15 @@
+\chapter{Data Model Design}\label{design}
+
+In order for me to design a complete database model for each of the technologies, an initial investigation into the specific dataset values was required discussed in section \ref{datasetvalues}. Once this was complete I followed the same model design process for each indexing solution which is discussed in section \ref{designprocess}.
+
+\section{Dataset Values}\label{datasetvalues}
+
+The EMAGE data which was supplied was made up of 4 tab separated files. Each file contained information pertaining a certain aspect of the dataset; Annotations, Publications, Submissions and Results. On initial review each of the files contained similar, repetitive metadata values. Thus creating a level of noise which would not be add anything to the project in terms of analysis and evaluation. Therefore I undertook an initial cleansing of the data before implementing the database design.
+
+This cleansing process consisted of loading the data into Google Refine (GR) and manually manipulating the data using the filtering and editing tools the package provides. Using this tool allowed me to identify any erroneous rows of data which would affect the integrity of the dataset. In each file there was at most 5 rows of data which were either blank or inconsistent with the convention of the rest of the file. I decided to remove these rows as there inclusion in the file was unnecessary.
+
+One other irregularity found in the \textit{Publications} data file was the characters used in the title and author fields. There were over 600 rows of data which contained a non-ascii character. Therefore would be rejected when importing into the databases as by default I decided to apply a UTF-8 character encoding to each indexing solution. Despite these values only contributing to around 5\% of the file, the issue needed to be addressed. To do this I devised a regular expression which would identify and subsequently remove any of these characters.
+
+Using a software tool such as GR enabled me to manipulate and cleanse the data in such a way that I would be able to load it successfully into the databases. Despite accomplishing the cleansing successfully, from the challenges I faced, I identified some problematic circumstances which, despite not being as prevalent using the EMAGE data, may affect other big data sets.
+
+The maximum number of rows I uploaded into GR was around  As GR is a Java application that utilises the Java Virtual Machine (JVM), it is integral that allocating enough memory to handle processing large files which will avoid Java heap space errors. The GR developers suggest that a typical best practice is ``start with no more than 50\% of your available physical memory, since certain OS's will utilize up to 1 Gig or more of physical RAM." \cite{googref}
