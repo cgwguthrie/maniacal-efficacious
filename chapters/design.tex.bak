@@ -8,7 +8,7 @@ The EMAGE data which was supplied was made up of 4 tab separated files. Each fil
 
 This cleansing process consisted of loading the data into Google Refine (GR) and manually manipulating the data using the filtering and editing tools the package provides. Using this tool allowed me to identify any erroneous rows of data which would affect the integrity of the dataset. In each file there was at most 5 rows of data which were either blank or inconsistent with the convention of the rest of the file. I decided to remove these rows as there inclusion in the file was unnecessary.
 
-One other irregularity found in the \textit{Publications} data file was the characters used in the title and author fields. There were over 600 rows of data which contained a non-ascii character. These rows would be rejected when importing into the databases as by default I decided to apply a UTF-8 character encoding to each indexing solution. Despite these values only contributing to around 5\% of the file, the issue needed to be addressed. To do this I devised a regular expression which would identify and subsequently remove any of these characters.
+Another irregularity found in the \textit{Publications} data file was the characters used in the title and author fields. There were over 600 rows of data which contained a non-ascii character. These rows would be rejected when importing into the databases as by default I decided to apply a UTF-8 character encoding to each indexing solution. Despite these values only contributing to around 5\% of the file, the issue needed to be addressed. To do this I devised a regular expression which would identify and subsequently remove any of these characters.
 
 Using a software tool such as GR enabled me to manipulate and cleanse the data in such a way that I would be able to load it successfully into the databases. Despite accomplishing the cleansing successfully, from the challenges I faced, I identified some problematic circumstances which, despite not being as prevalent using the EMAGE data, may affect other big data sets.
 
@@ -22,9 +22,55 @@ In order for me to develop multiple, reliable, data models which accurately repr
 
 \subsection*{MySQL}
 
-As discussed in section \ref{mysql} MySQL is a relational database management system which stores and represents structured data through entity tables and relationships. There are a number of variations in which the design of the MySQL database could be modelled for the EMAGE data. Figure \ref{fig:mysql} is an entity-relationship (ER) diagram which illustrates the implementation of my MySQL normalised database design. Normalisation in database design is a process by which an existing schema is modified to bring its component tables into compliance through a series of progressive normal forms. It aids in better, faster, stronger searches as it entails fewer entities to scan in comparison with the earlier searches based on mixed entities. Data integrity is improved through database normalisation as it splits all the data into individual entities yet building strong linkages with the related data. \begin{figure}[h]\begin{center}\includegraphics[width=1\linewidth]{images/emage_erd_b3}\caption{MySQL ER diagram}\label{fig:mysql}\end{center}\end{figure}
+As discussed in section \ref{mysql} MySQL is a relational database management system which stores and represents structured data through entity tables and relationships. There are a number of variations in which the design of the MySQL database could be modelled for the EMAGE data. Figure \ref{fig:mysql} is an entity-relationship (ER) diagram which illustrates the implementation of my MySQL normalised database design. Normalisation in database design is a process by which an existing schema is modified to bring its component tables into compliance through a series of progressive normal forms. It aids in better, faster, stronger searches as it entails fewer entities to scan in comparison with the earlier searches based on mixed entities. Data integrity is improved through database normalisation as it splits all the data into individual entities yet building strong linkages with the related data. A description of the tables is below the diagram.
 
+\begin{figure}[H]\begin{center}\includegraphics[width=1\linewidth]{images/emage_erd}\caption{MySQL ER table diagram}\label{fig:mysql}\end{center}\end{figure}
 
+\newpage
+\begin{itemize}
+\item \textbf{AnatomyStructures} : This table contains the EMAPA ID, and the term which refers to the part of the anatomy.
+\begin{itemize}
+\item The table has a Many to One relationship with the Stages table as one anatomy structure can have the same stage.
+\item The table also has a Many to One relationship with itself on the ID as one structure can have many parts.
+\end{itemize} 
+
+\item \textbf{Assays} : This table contains the EMAGE ID number, the ID of the probe and the type of assay. The \textit{type} field refers to whether the assay is \textit{in situ} or \textit{part of}.
+\begin{itemize}
+\item The table has a Many to One relationship with the Sources table. While one assay can only have one source, many assays can have the same source.
+\end{itemize} 
+
+\item \textbf{Genes} : This table contains the accession number and symbol of each gene.
+\begin{itemize}
+\item The Genes table does not reference any other table.
+\end{itemize} 
+
+\item \textbf{Publications} : This table contains the accession, title and every author of each assay publication.
+\begin{itemize}
+\item The table has a Many to One relationship with the Assays table as there can be many publications for one assay.
+\end{itemize} 
+
+\item \textbf{Sources} : This table contains the source of the assay.
+\begin{itemize}
+\item The Sources table does not reference any other table.
+\end{itemize} 
+
+\item \textbf{Specimens} :  This table contains the ID, strain and type of each specimen. The \textit{type} field refers to whether the assay is a section, wholemount, sectioned wholemount or unknown.
+\begin{itemize}
+\item The table has a Many to One relationship with the Assays table as many specimens can have the same Assay.
+\item The table has a Many to One relationship with the Stages table as many specimens can have the same Stage.
+\end{itemize} 
+
+\item \textbf{Stages} : This table contains the theiler stage and number of days post conception (dpc) of each assay, specimen and anatomy.
+\begin{itemize}
+\item The table has a Many to One relationship with the Assays table as one assay has 
+\end{itemize} 
+
+\item \textbf{TextAnnotations} : This table contains the structure and strength of each assay.
+\begin{itemize}
+
+\end{itemize} 
+
+\end{itemize}
 
 \subsection*{MongoDB}
 \subsection*{Neo4j}
