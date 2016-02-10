@@ -75,5 +75,30 @@ As discussed in section \ref{mysql} MySQL is a relational database management sy
 \end{itemize}
 
 \subsection*{MongoDB}
+
+As discussed in section \ref{mongo}, MongoDB is a homogeneous, schema-less, NoSQL document store database. There are no formal relations between the data which makes modelling the database a little more challenging; especially with data which is so closely bound as the EMAGE dataset.
+
+Data in MongoDB sits in \textit{collections}, a grouping of documents which are stored on a database. A collection exists within a single database and is the equivalent of an RDBMS table. Documents within a collection can have different fields and typically, all documents in a collection have a similar or related purpose. 
+
+The MongoDB implementation was the second prototype data model I created for this project. I followed the same structural process which I had undertaken for the previous MySQL data model. When creating a MongoDB data model there are a number of factors and considerations which need to be identified before starting the formal implementation. Firstly the biggest decision I deliberated over was how should the data be connected. As there were a few options I decided to explore all of them to fully comprehend the pros/cons of each.
+
+My initial design was based around using multiple collections to store the various aspects of the data. The design followed the MySQL model, with were 4 collections; Assays, Text Annotations, Anatomy Structures and Genes. To connect the data and bind the values required an additional manually developed ID field for every document. While this was not a complex task, it was one which I felt was unnecessary and added extra unwanted noise to the data. Using this option would have also incurred more overhead when writing the queries for the database as one would firstly have to connect the data (similar to a RDBMS "join) and then include a further query.
+
+After some deliberation I concluded that the best way to implement the data model would be to have all of the data in the one collection. Figure \ref{fig:mongo} illustrates an example document in the developed MongoDB data model. The diagram should be read as follows:
+
+\begin{itemize}
+\item \textbf{id} : This is the EMAGE id of each assay and is the value which binds all of the data together. The id value has been manually configured to correspond with the EMAGE value.
+\item \textbf{specimen} : The specimen value is an array of size 2 which holds data regarding the strain and type of the assay.
+\item \textbf{probe id} : This value is the id of the probe accession.
+\item \textbf{assay source} : The source in which the assay has been retrieved from.
+\item \textbf{assay type} : The type of assay which is being analysed. By type I am referring to whether the assay is \textit{in situ} or otherwise.
+\item \textbf{stage} : An array containing the information regarding the stage of the assay; Theiler stage and DPC.
+\item \textbf{publication} : An array containing all publication information regarding that specific assay; id, title, author.
+\item \textbf{text annotation} : The text annotation array is the grouping of strength, anatomy structure and gene of an assay. An anatomy structure has a term id and the name of the term and a gene has the symbol and id.
+\end{itemize}
+
+\begin{figure}[H]\begin{center}\includegraphics[width=1\linewidth]{images/mongo_modeldesign}\caption{Example MongoDB document diagram}\label{fig:mongo}\end{center}\end{figure}
+
+
 \subsection*{Neo4j}
 \subsection*{Apache Cassandra}

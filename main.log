@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.2.6)  8 FEB 2016 01:50
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.2.6)  10 FEB 2016 08:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -870,7 +870,11 @@ File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.0 (rcs-revision 1.9)
 )) (./main.aux (./chapters/bigdata.aux)
 (./chapters/etl.aux) (./chapters/krl.aux) (./chapters/nosql.aux)
 (./chapters/datasource.aux) (./chapters/evaluationstrategy.aux)
-(./chapters/risk.aux) (./chapters/design.aux) (./chapters/implementation.aux))
+(./chapters/risk.aux) (./chapters/design.aux
+
+LaTeX Warning: Label `fig:mongo' multiply defined.
+
+) (./chapters/implementation.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
@@ -889,8 +893,7 @@ LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
 LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 16.
 LaTeX Font Info:    Try loading font information for T3+cmr on input line 16.
-
-(/usr/share/texmf/tex/latex/tipa/t3cmr.fd
+ (/usr/share/texmf/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
 LaTeX Font Info:    ... okay on input line 16.
@@ -1157,24 +1160,27 @@ LaTeX Warning: Citation `googref' on page 30 undefined on input line 15.
 
 [30]
 File: images/emage_erd.png Graphic file (type QTm)
- <use  "images/emage_erd.png" > [31] [32] [33]) [34]
+ <use  "images/emage_erd.png" > [31] [32] [33] [34]
+File: images/mongo_modeldesign.png Graphic file (type QTm)
+
+<use  "images/mongo_modeldesign.png" > [35]) [36] [37]
 \openout2 = `chapters/implementation.aux'.
 
 
 (./chapters/implementation.tex
 Chapter 9.
-) [35
+) [38
 
 
 
-] (./main.bbl [36
+] (./main.bbl [39
 
 
 
 ]
 Invalid UTF-8 byte or sequence at line 96 replaced by U+FFFD.
 Missing character: There is no � in font Georgia/OT:mapping=tex-text;!
-) [37] (./main.aux (./chapters/bigdata.aux)
+) [40] (./main.aux (./chapters/bigdata.aux)
 (./chapters/etl.aux) (./chapters/krl.aux) (./chapters/nosql.aux)
 (./chapters/datasource.aux) (./chapters/evaluationstrategy.aux)
 (./chapters/risk.aux) (./chapters/design.aux) (./chapters/implementation.aux))
@@ -1182,16 +1188,16 @@ Missing character: There is no � in font Georgia/OT:mapping=tex-text;!
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25482 strings out of 495637
- 524685 string characters out of 6187763
- 542184 words of memory out of 5000000
- 28243 multiletter control sequences out of 15000+600000
+ 25484 strings out of 495637
+ 524734 string characters out of 6187763
+ 542224 words of memory out of 5000000
+ 28244 multiletter control sequences out of 15000+600000
  6587 words of font info for 49 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  62i,11n,60p,10371b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (40 pages).
+Output written on main.pdf (43 pages).
