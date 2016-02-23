@@ -7,7 +7,7 @@ NoSQL solutions are not bound by a definitive schema structure. This permits the
 
 
 \section{Database Classification}\label{dbclass}
-One of the first decisions to be made when when selecting a database is the characteristics of the data you are looking to leverage. \cite{nosql2} There are a multitude of options available with many different classifications. The following sections discuss a subset of these which are relevant to this project.
+One of the first decisions to be made when selecting a database is the characteristics of the data you are looking to leverage. \cite{nosql2} There are a multitude of options available with many different classifications. The following sections discuss a subset of these which are relevant to this project.
 
 \subsection{Distributed Database}\label{distributeddb}
 A distributed database (DDB) comprises of two or more data files located at different sites and servers on a computer network. \cite{dd} The advantage of using a DD is that as the database is distributed, multiple users can access a portion of the database at different locations locally and remotely without obstructing one another's work. It is  pivotal for the DD database management system to periodically synchronise the scattered databases to make sure that they all have consistent data.  \cite{dd} For example if a user updates or deletes data in one location is is essential this change is mirrored on all databases. This ability to remotely access a database from all across the world lends itself to not only multinational companies for example but also startup businesses which recruit the expertise of others from various locations.
@@ -30,11 +30,11 @@ A relational database (RDB) is a collection of data items organised as a set of 
 
 
 \subsection{Column-Orientated Database}
-A column-orientated database (CODB) is a database management system that stores data tables as columns of data rather than as rows of data. The main objective of a CODB is to write and read data from the hard disk efficiently in an attempt to speed up querying time. A CODB has the ability to self index which uses less disk space than RDBMS which holds the same data. A CODB can also be highly compressed, resulting in aggregate functions such as MIN, MAX and SUM to be performed at a extremely high rate.  \cite{cd}.
+A column-orientated database (CODB) is a database management system that stores data tables as columns of data rather than as rows of data. The main objective of a CODB is to write and read data from the hard disk efficiently in an attempt to speed up querying time. A CODB has the ability to self index which uses less disk space than RDBMS which holds the same data. A CODB can also be highly compressed, resulting in aggregate functions such as MIN, MAX and SUM to be performed at a extremely high rate. \cite{cd}.
 
 \begin{figure}[h]\begin{center}\includegraphics[width=1\linewidth]{images/codb}\caption{Column orientated database example}\label{fig:cod}\end{center}\end{figure}
 
-Figure \ref{cod} illustrates the comparison of a RDB model against a CODB model. Within the row based model the data contains both multiple values per record and null values. However in the CODB model null values are not required as each record contains a minimum and maximum of one value.
+Figure \ref{fig:cod} illustrates the comparison of a RDB model against a CODB model. Within the row based model the data contains both multiple values per record and null values. However in the CODB model null values are not required as each record contains a minimum and maximum of one value.
 
 \section{Technology Evaluation}\label{techeval}
 The technologies being evaluated in this project are outlined below.

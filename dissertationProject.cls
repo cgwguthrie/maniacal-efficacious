@@ -9,6 +9,8 @@
 \setcounter{secnumdepth}{2}
 \geometry{margin=1in}
 \usepackage{fontspec}
+\usepackage{tabularx}
+\usepackage{booktabs}
 \hbadness=10000
 %\renewcommand{\familydefault}{\sfdefault}
 \setmainfont{Georgia}
@@ -87,6 +89,7 @@
 \def\university#1{\gdef\@university{#1}}
 \def\location#1{\gdef\@location{#1}}
 \def\supervisor#1{\gdef\@supervisor{#1}}
+\def\secondreader#1{\gdef\@secondreader{#1}}
 
 \usepackage{tikz}
 \usetikzlibrary{calc}
@@ -98,21 +101,18 @@
     \begin{tikzpicture}[remember picture, overlay]
  	 \draw[hwcolour, line width = 2pt] ($(current page.north west) + (0.5in,-1in)$) rectangle ($(current page.south east) + (-0.5in,1in)$);
         \end{tikzpicture}
-
+ \vspace*{15mm}
         \begin{center}
-            \begin{flushright}
-                \includegraphics[width=3cm]{images/HWUlogo}
-            \end{flushright}
+                \includegraphics[width=8cm]{images/HWULogo}
         
             {\Large {Dissertation Project} \par}
             \vspace*{5mm}
             
             {\huge {\bfseries \@title} \par}
             
-            \vspace*{20mm}
+            \vspace*{10mm}
             
             {\large {\textit{Author:} \@author} \par}
-            {\large {\textit{Supervisor:} \@supervisor} \par}
             
             \vspace*{10mm}
             
@@ -122,9 +122,12 @@
             
             {\large\it {\@degree} \par}
             
-            \vspace*{5mm}
+            \vspace*{10mm}
             
             {\large \@date \par}
+            
+            \vspace*{10mm}
+            {\large {\textit{Project Supervisor:} \@supervisor} \hspace{10mm} {\textit{Second Reader:} \@secondreader} \par}
         \end{center}
     \end{titlepage}
 }

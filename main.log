@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.2.6)  10 FEB 2016 08:52
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.2.6)  23 FEB 2016 15:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -397,13 +397,52 @@ LaTeX Info: Redefining \scshape on input line 2242.
 LaTeX Info: Redefining \upshape on input line 2247.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2014/10/28 v2.10 `tabularx' package (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen152
+\extrarowheight=\dimen153
+\NC@list=\toks21
+\extratabsurround=\skip51
+\backup@length=\skip52
+)
+\TX@col@width=\dimen154
+\TX@old@table=\dimen155
+\TX@old@col=\dimen156
+\TX@target=\dimen157
+\TX@delta=\dimen158
+\TX@cols=\count124
+\TX@ftn=\toks22
+)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen159
+\lightrulewidth=\dimen160
+\cmidrulewidth=\dimen161
+\belowrulesep=\dimen162
+\belowbottomsep=\dimen163
+\aboverulesep=\dimen164
+\abovetopsep=\dimen165
+\cmidrulesep=\dimen166
+\cmidrulekern=\dimen167
+\defaultaddspace=\dimen168
+\@cmidla=\count125
+\@cmidlb=\count126
+\@aboverulesep=\dimen169
+\@belowrulesep=\dimen170
+\@thisruleclass=\count127
+\@lastruleclass=\count128
+\@thisrulewidth=\dimen171
+)
 \g__file_internal_ior=\read1
 .................................................
 . fontspec info: "no-scripts"
 . 
 . Font Georgia does not contain any OpenType `Script' information.
 .................................................
-\g__fontspec_family_Georgia_int=\count124
+\g__fontspec_family_Georgia_int=\count129
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -446,11 +485,11 @@ LaTeX Info: Redefining \upshape on input line 2247.
 .................................................
 
 (/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen152
-\WF@size=\dimen153
-\c@WF@wrappedlines=\count125
+\wrapoverhang=\dimen172
+\WF@size=\dimen173
+\c@WF@wrappedlines=\count130
 \WF@box=\box44
-\WF@everypar=\toks21
+\WF@everypar=\toks23
 Package: wrapfig 2003/01/31  v 3.6
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
@@ -461,8 +500,8 @@ Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2014/09/25 3.9l Babel common definitions
-\babel@savecnt=\count126
-\U@D=\dimen154
+\babel@savecnt=\count131
+\U@D=\dimen174
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/xebabel.def))
 \l@british = a dialect from \language\l@english 
@@ -473,8 +512,8 @@ File: babel.def 2014/09/25 3.9l Babel common definitions
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks22
-\inpenc@posthook=\toks23
+\inpenc@prehook=\toks24
+\inpenc@posthook=\toks25
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -483,15 +522,15 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package: xr 1994/05/28 v5.02 eXternal References (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip51
-\f@ncyO@elh=\skip52
-\f@ncyO@erh=\skip53
-\f@ncyO@olh=\skip54
-\f@ncyO@orh=\skip55
-\f@ncyO@elf=\skip56
-\f@ncyO@erf=\skip57
-\f@ncyO@olf=\skip58
-\f@ncyO@orf=\skip59
+\fancy@headwidth=\skip53
+\f@ncyO@elh=\skip54
+\f@ncyO@erh=\skip55
+\f@ncyO@olh=\skip56
+\f@ncyO@orh=\skip57
+\f@ncyO@elf=\skip58
+\f@ncyO@erf=\skip59
+\f@ncyO@olf=\skip60
+\f@ncyO@orf=\skip61
 )
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
@@ -503,19 +542,10 @@ Package xcolor Info: Driver file: xetex.def on input line 225.
 
 (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
-
-(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen155
-\extrarowheight=\dimen156
-\NC@list=\toks24
-\extratabsurround=\skip60
-\backup@length=\skip61
-)
-\everycr=\toks25
+\everycr=\toks26
 \minrowclearance=\skip62
 )
-\rownum=\count127
+\rownum=\count132
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
 Package xcolor Info: Model `RGB' extended on input line 1353.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
@@ -524,16 +554,6 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
-Package: tabularx 2014/10/28 v2.10 `tabularx' package (DPC)
-\TX@col@width=\dimen157
-\TX@old@table=\dimen158
-\TX@old@col=\dimen159
-\TX@target=\dimen160
-\TX@delta=\dimen161
-\TX@cols=\count128
-\TX@ftn=\toks26
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
@@ -544,7 +564,7 @@ Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count129
+\c@r@tfl@t=\count133
 \rotFPtop=\skip63
 \rotFPbot=\skip64
 \rot@float@box=\box45
@@ -603,8 +623,8 @@ Package epstopdf Warning: Drivers other than `pdftex.def' are not supported.
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks28
-\pgfutil@tempdima=\dimen162
-\pgfutil@tempdimb=\dimen163
+\pgfutil@tempdima=\dimen175
+\pgfutil@tempdimb=\dimen176
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
 ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
@@ -630,20 +650,20 @@ Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
 ex
 \pgfkeys@tmptoks=\toks31
 ))
-\pgf@x=\dimen164
-\pgf@y=\dimen165
-\pgf@xa=\dimen166
-\pgf@ya=\dimen167
-\pgf@xb=\dimen168
-\pgf@yb=\dimen169
-\pgf@xc=\dimen170
-\pgf@yc=\dimen171
+\pgf@x=\dimen177
+\pgf@y=\dimen178
+\pgf@xa=\dimen179
+\pgf@ya=\dimen180
+\pgf@xb=\dimen181
+\pgf@yb=\dimen182
+\pgf@xc=\dimen183
+\pgf@yc=\dimen184
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count130
-\c@pgf@countb=\count131
-\c@pgf@countc=\count132
-\c@pgf@countd=\count133
+\c@pgf@counta=\count134
+\c@pgf@countb=\count135
+\c@pgf@countc=\count136
+\c@pgf@countd=\count137
 \t@pgf@toka=\toks32
 \t@pgf@tokb=\toks33
 \t@pgf@tokc=\toks34
@@ -662,13 +682,13 @@ File: pgfsys-dvipdfmx.def 2013/08/28  (rcs-revision 1.12)
 f
 File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )
-\pgfsys@objnum=\count134
+\pgfsys@objnum=\count138
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count135
-\pgfsyssoftpath@bigbuffer@items=\count136
+\pgfsyssoftpath@smallbuffer@items=\count139
+\pgfsyssoftpath@bigbuffer@items=\count140
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -681,8 +701,8 @@ Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen172
-\pgfmath@count=\count137
+\pgfmath@dimen=\dimen185
+\pgfmath@count=\count141
 \pgfmath@box=\box47
 \pgfmath@toks=\toks35
 \pgfmath@stack@operand=\toks36
@@ -706,37 +726,37 @@ tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
 thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count138
+\c@pgfmathroundto@lastzeros=\count142
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
 x
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
-\pgf@picminx=\dimen173
-\pgf@picmaxx=\dimen174
-\pgf@picminy=\dimen175
-\pgf@picmaxy=\dimen176
-\pgf@pathminx=\dimen177
-\pgf@pathmaxx=\dimen178
-\pgf@pathminy=\dimen179
-\pgf@pathmaxy=\dimen180
-\pgf@xx=\dimen181
-\pgf@xy=\dimen182
-\pgf@yx=\dimen183
-\pgf@yy=\dimen184
-\pgf@zx=\dimen185
-\pgf@zy=\dimen186
+\pgf@picminx=\dimen186
+\pgf@picmaxx=\dimen187
+\pgf@picminy=\dimen188
+\pgf@picmaxy=\dimen189
+\pgf@pathminx=\dimen190
+\pgf@pathmaxx=\dimen191
+\pgf@pathminy=\dimen192
+\pgf@pathmaxy=\dimen193
+\pgf@xx=\dimen194
+\pgf@xy=\dimen195
+\pgf@yx=\dimen196
+\pgf@yy=\dimen197
+\pgf@zx=\dimen198
+\pgf@zy=\dimen199
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
 code.tex
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
-\pgf@path@lastx=\dimen187
-\pgf@path@lasty=\dimen188
+\pgf@path@lastx=\dimen200
+\pgf@path@lasty=\dimen201
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
 .tex
 File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
-\pgf@shorten@end@additional=\dimen189
-\pgf@shorten@start@additional=\dimen190
+\pgf@shorten@end@additional=\dimen202
+\pgf@shorten@start@additional=\dimen203
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
 x
@@ -744,19 +764,19 @@ File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
 \pgfpic=\box48
 \pgf@hbox=\box49
 \pgf@layerbox@main=\box50
-\pgf@picture@serial@count=\count139
+\pgf@picture@serial@count=\count143
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
 File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
-\pgflinewidth=\dimen191
+\pgflinewidth=\dimen204
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
 s.code.tex
 File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
-\pgf@pt@x=\dimen192
-\pgf@pt@y=\dimen193
-\pgf@pt@temp=\dimen194
+\pgf@pt@x=\dimen205
+\pgf@pt@y=\dimen206
+\pgf@pt@temp=\dimen207
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
@@ -772,12 +792,12 @@ File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
 x
 File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
-\pgfarrowsep=\dimen195
+\pgfarrowsep=\dimen208
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
-\pgf@max=\dimen196
-\pgf@sys@shading@range@num=\count140
+\pgf@max=\dimen209
+\pgf@sys@shading@range@num=\count144
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
@@ -808,8 +828,8 @@ File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
 .sty
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen197
-\pgf@nodesepend=\dimen198
+\pgf@nodesepstart=\dimen210
+\pgf@nodesepend=\dimen211
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
 .sty
@@ -823,8 +843,8 @@ Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
 Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen199
-\pgffor@skip=\dimen200
+\pgffor@iter=\dimen212
+\pgffor@skip=\dimen213
 \pgffor@stack=\toks38
 \pgffor@toks=\toks39
 ))
@@ -834,31 +854,31 @@ Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
-\pgf@plot@mark@count=\count141
-\pgfplotmarksize=\dimen201
+\pgf@plot@mark@count=\count145
+\pgfplotmarksize=\dimen214
 )
-\tikz@lastx=\dimen202
-\tikz@lasty=\dimen203
-\tikz@lastxsaved=\dimen204
-\tikz@lastysaved=\dimen205
-\tikzleveldistance=\dimen206
-\tikzsiblingdistance=\dimen207
+\tikz@lastx=\dimen215
+\tikz@lasty=\dimen216
+\tikz@lastxsaved=\dimen217
+\tikz@lastysaved=\dimen218
+\tikzleveldistance=\dimen219
+\tikzsiblingdistance=\dimen220
 \tikz@figbox=\box53
 \tikz@figbox@bg=\box54
 \tikz@tempbox=\box55
 \tikz@tempbox@bg=\box56
-\tikztreelevel=\count142
-\tikznumberofchildren=\count143
-\tikznumberofcurrentchild=\count144
-\tikz@fig@count=\count145
+\tikztreelevel=\count146
+\tikznumberofchildren=\count147
+\tikznumberofcurrentchild=\count148
+\tikz@fig@count=\count149
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count146
-\pgfmatrixcurrentcolumn=\count147
-\pgf@matrix@numberofcolumns=\count148
+\pgfmatrixcurrentrow=\count150
+\pgfmatrixcurrentcolumn=\count151
+\pgf@matrix@numberofcolumns=\count152
 )
-\tikz@expandcount=\count149
+\tikz@expandcount=\count153
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -997,8 +1017,8 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 16.
 ABD: EveryShipout initializing macros
-File: images/HWUlogo.jpg Graphic file (type QTm)
- <use  "images/HWUlogo.jpg" > [1
+File: images/HWULogo.jpg Graphic file (type QTm)
+ <use  "images/HWULogo.jpg" > [1
 
 
 ]
@@ -1032,54 +1052,53 @@ File: images/gantt.png Graphic file (type QTm)
 
  (./chapters/bigdata.tex
 Chapter 1.
-[5
-
-
-]
 File: images/3vs.png Graphic file (type QTm)
- <use  "images/3vs.png" > [6]
+<use  "images/3vs.png" > [5
+
+
+] [6]
 File: images/worldpopgraph.png Graphic file (type QTm)
- <use  "images/worldpopgraph.png" > [7])
-[8]
+ <use  "images/worldpopgraph.png" >) [7]
 \openout2 = `chapters/etl.aux'.
 
- (./chapters/etl.tex
+
+(./chapters/etl.tex
 Chapter 2.
 
-LaTeX Warning: Reference `etltool' on page 9 undefined on input line 2.
+LaTeX Warning: Reference `etltool' on page 8 undefined on input line 2.
 
 File: images/etl.jpg Graphic file (type QTm)
 <use  "images/etl.jpg" >
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9
+[8
 
 
 
 ]
 
-LaTeX Warning: Reference `grefine' on page 10 undefined on input line 18.
+LaTeX Warning: Reference `grefine' on page 9 undefined on input line 18.
 
-) [10] [11]
+) [9] [10]
 \openout2 = `chapters/krl.aux'.
 
  (./chapters/krl.tex
 Chapter 3.
-[12
+[11
 
 
 
 ]
 
-LaTeX Warning: Reference `etltool' on page 13 undefined on input line 12.
+LaTeX Warning: Reference `etltool' on page 12 undefined on input line 12.
 
-) [13]
+) [12]
 \openout2 = `chapters/nosql.aux'.
 
  (./chapters/nosql.tex
 Chapter 4.
-[14
+[13
 
 
 
@@ -1090,24 +1109,21 @@ File: images/mongodbmodel.png Graphic file (type QTm)
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: images/graphdb_twitter.png Graphic file (type QTm)
-<use  "images/graphdb_twitter.png" > [15] [16]
+<use  "images/graphdb_twitter.png" > [14] [15]
 File: images/codb.png Graphic file (type QTm)
  <use  "images/codb.png" >
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Reference `cod' on page 17 undefined on input line 37.
-
-[17] [18]
+[16] [17]
 File: images/cassandramodel.png Graphic file (type QTm)
- <use  "images/cassandramodel.png" > [19]) [20]
+ <use  "images/cassandramodel.png" > [18]) [19]
 \openout2 = `chapters/datasource.aux'.
 
 
 (./chapters/datasource.tex
 Chapter 5.
-[21
+[20
 
 
 
@@ -1117,21 +1133,21 @@ File: images/emapachoroidplexus.png Graphic file (type QTm)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22] [23]) [24]
+[21] [22]) [23]
 \openout2 = `chapters/evaluationstrategy.aux'.
 
  (./chapters/evaluationstrategy.tex
 Chapter 6.
-[25
+[24
 
 
 
-] [26]
+] [25]
 Overfull \hbox (25.19998pt too wide) in paragraph at lines 33--46
  [] 
  []
 
-) [27]
+) [26]
 \openout2 = `chapters/risk.aux'.
 
  (./chapters/risk.tex
@@ -1141,7 +1157,7 @@ Overfull \hbox (25.19997pt too wide) in paragraph at lines 5--13
  [] 
  []
 
-) [28
+) [27
 
 
 
@@ -1150,20 +1166,20 @@ Overfull \hbox (25.19997pt too wide) in paragraph at lines 5--13
 
  (./chapters/design.tex
 Chapter 8.
-[29
+[28
 
 
 
 ]
 
-LaTeX Warning: Citation `googref' on page 30 undefined on input line 15.
+LaTeX Warning: Citation `googref' on page 29 undefined on input line 25.
 
-[30]
+[29] [30]
 File: images/emage_erd.png Graphic file (type QTm)
- <use  "images/emage_erd.png" > [31] [32] [33] [34]
+ <use  "images/emage_erd.png" > [31] [32] [33] [34] [35]
 File: images/mongo_modeldesign.png Graphic file (type QTm)
 
-<use  "images/mongo_modeldesign.png" > [35]) [36] [37]
+<use  "images/mongo_modeldesign.png" > [36]) [37]
 \openout2 = `chapters/implementation.aux'.
 
 
@@ -1192,12 +1208,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25484 strings out of 495637
- 524734 string characters out of 6187763
- 542224 words of memory out of 5000000
- 28244 multiletter control sequences out of 15000+600000
+ 25540 strings out of 495637
+ 525498 string characters out of 6187763
+ 544071 words of memory out of 5000000
+ 28296 multiletter control sequences out of 15000+600000
  6587 words of font info for 49 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 62i,11n,60p,10371b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,11n,60p,10377b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on main.pdf (43 pages).
