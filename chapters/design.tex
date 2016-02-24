@@ -112,11 +112,20 @@ After some deliberation I concluded that the best way to implement the data mode
 
 \newpage
 \subsection*{Neo4j}
-Neo4j is a graph orientated, NoSQL database solution. It uses the Property Graph Model methodology of connecting data by nodes and weighted edges which are the equivalent of a MySQL relation. A full description of Neo4j can be found in section \ref{neo}.
+Neo4j is a graph orientated, NoSQL database solution. It uses the Property Graph Model methodology of connecting data by nodes and weighted edges. Nodes are the equivalent of a MySQL table and edges are the equivalent of a relation. A full description of Neo4j can be found in section \ref{neo}.
 
-The data model I have constructed for Neo4j, is semantically similar to that of the MySQL implementation. There are 8 nodes, which contain relatively the same data as that of each MySQL table. The main difference between the two systems is how the data is joined. Where MySQL has a foreign key join on (mostly) an ID, Neo4j has an edge which joins the nodes.
+The data model I have constructed for Neo4j, is semantically similar to that of the MySQL implementation. There are 8 nodes, which contain relatively the same data as that of each MySQL table. The main difference between the two systems is how the data is joined. Where MySQL has a foreign key join, Neo4j has an edge, which connects the nodes.
 
-As with MongoDB and certainly many of the NoSQL systems, there is no formal way to diagramatically convey the database ``schema''. To illustrate the Neo4j data model I have created two diagrams. The first is a entity relationship esque diagram which 
+As with MongoDB and many NoSQL systems, there is no formal way to diagrammatically convey the database ``schema''. To illustrate the Neo4j data model, I have created two diagrams. The first is an entity relationship (ER) diagram - figure \ref{fig:neo1} - and the second - figure \ref{fig:neo2} - is an example visualisation, aiming to convey the look and feel of the graph model. In terms of the ER diagram, it should be translated as, an entity is a node and a join is a relationship. The data within the nodes is:
+
+\begin{itemize}
+\item \textbf{Assay} - This node contains data such as EMAGE ID, probe ID and type e.g. in situ. The Assay node has 4 self-defining relationships.
+\begin{itemize}
+\item Assay COMES FROM Source
+\item Assay HAS Specimen
+\item Assay HAS Stage
+\end{itemize}
+\end{itemize}
 
 \subsection*{Apache Cassandra}
 
