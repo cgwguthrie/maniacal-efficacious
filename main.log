@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.2.6)  24 FEB 2016 17:44
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.2.6)  24 FEB 2016 22:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1179,30 +1179,29 @@ File: images/emage_erd.png Graphic file (type QTm)
  <use  "images/emage_erd.png" > [31] [32] [33] [34] [35]
 File: images/mongo_modeldesign.png Graphic file (type QTm)
 
-<use  "images/mongo_modeldesign.png" > [36]
+<use  "images/mongo_modeldesign.png" > [36] [37]
+File: images/neo4j_model_er.png Graphic file (type QTm)
 
-LaTeX Warning: Reference `fig:neo1' on page 37 undefined on input line 119.
-
-
-LaTeX Warning: Reference `fig:neo2' on page 37 undefined on input line 119.
-
-) [37]
+<use  "images/neo4j_model_er.png" >
+File: images/neo4j_model3.png Graphic file (type QTm)
+ <use  "images/neo4j_model3.png" > [38]
+[39]) [40]
 \openout2 = `chapters/implementation.aux'.
 
  (./chapters/implementation.tex
 Chapter 9.
-) [38
+) [41
 
 
 
-] (./main.bbl [39
+] (./main.bbl [42
 
 
 
 ]
 Invalid UTF-8 byte or sequence at line 96 replaced by U+FFFD.
 Missing character: There is no � in font Georgia/OT:mapping=tex-text;!
-) [40] (./main.aux (./chapters/bigdata.aux)
+) [43] (./main.aux (./chapters/bigdata.aux)
 (./chapters/etl.aux) (./chapters/krl.aux) (./chapters/nosql.aux)
 (./chapters/datasource.aux) (./chapters/evaluationstrategy.aux)
 (./chapters/risk.aux) (./chapters/design.aux) (./chapters/implementation.aux))
@@ -1214,12 +1213,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25542 strings out of 495637
- 525518 string characters out of 6187763
- 544071 words of memory out of 5000000
- 28298 multiletter control sequences out of 15000+600000
+ 25546 strings out of 495637
+ 525600 string characters out of 6187763
+ 544093 words of memory out of 5000000
+ 28300 multiletter control sequences out of 15000+600000
  6587 words of font info for 49 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  62i,11n,60p,10377b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (43 pages).
+Output written on main.pdf (46 pages).

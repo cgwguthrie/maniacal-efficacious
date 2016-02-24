@@ -116,27 +116,39 @@ Neo4j is a graph orientated, NoSQL database solution. It uses the Property Graph
 
 The data model I have constructed for Neo4j, is semantically similar to that of the MySQL implementation. There are 8 nodes, which contain relatively the same data as that of each MySQL table. The main difference between the two systems is how the data is joined. Where MySQL has a foreign key join, Neo4j has an edge, which connects the nodes.
 
-As with MongoDB and many NoSQL systems, there is no formal way to diagrammatically convey the database ``schema''. To illustrate the Neo4j data model, I have created two diagrams. The first is an entity relationship (ER) diagram - figure \ref{fig:neo1} - and the second - figure \ref{fig:neo2} - is an example visualisation, aiming to convey the look and feel of the graph model. In terms of the ER diagram, it should be translated as, an entity is a node and a join is a relationship. The data within the nodes is:
+As with MongoDB and indeed many NoSQL system, there is no formal way to diagrammatically convey the database ``schema''. To illustrate the Neo4j data model, I have created two diagrams. The first is an entity relationship (ER) diagram - figure \ref{fig:neo1} - and the second - figure \ref{fig:neo2} - is an example visualisation, aiming to convey the look and feel of the graph model. In terms of the ER diagram, it should be translated as, an entity is a node and a join is a relationship. The data within the nodes is:
 
 \begin{itemize}
-\item \textbf{Assay} - This node contains data such as EMAGE ID, probe ID and type e.g. in situ. The Assay node has 4 self-defining relationships.
+\item \textbf{Assay}: This node contains data such as EMAGE ID, probe ID and type e.g. in situ. The Assay node has 4 self-defining relationships.
 \begin{itemize}
 \item Assay COMES FROM Source
 \item Assay HAS Specimen
 \item Assay HAS Stage
 \end{itemize}
-
-\item \textbf{Publication} - This node contains the information regarding each assay publication. Information such as; publication ID, title, author(s)
+\item \textbf{Publication}: This node contains all publication data, which includes; title, author and id of each assay publication. The Publication node has one relationship.
 \begin{itemize}
-\item
+\item Publication DESCRIBES Assay
+\end{itemize}
+\item \textbf{Source}: The source node has just one field, source name. It defines the source of each assay.
+\item \textbf{Specimen}: Each assay has a specimen node. This node stores the specimen strain and specimen type. It has one relationship, which is the link between the stage node.
+\begin{itemize}
+\item Specimen HAS Stage
+\end{itemize}
+\item \textbf{Stage}: The stage node contains each Theiler Stage and DPC value.
+\item \textbf{Annotation}: This node contains information regarding the strength of each annotation. It is the join between the Gene and Anatomy Structure nodes. The annotation node has two relationships.
+\begin{itemize}
+\item Annotation REPORTS Assay
+\item Annotation HAS AnatomyStructure
+\end{itemize}
+\item \textbf{Gene}: This node contains all data regarding each gene found. Data such as; gene name and gene accession. The Gene node has one relationship.
+\begin{itemize}
+\item Gene HAS Annotation
+\end{itemize}
+\item \textbf{AnatomyStructure}: This node contains all of the data regarding the respective anatomy structures, such as; structure ID and structure term name
 \end{itemize}
 
-\end{itemize}
+\begin{figure}[H]\begin{center}\includegraphics[width=1\linewidth]{images/neo4j_model_er}\caption{Neo4j graph model ER diagram}\label{fig:neo1}\end{center}\end{figure}
 
+\begin{figure}[H]\begin{center}\includegraphics[width=1\linewidth]{images/neo4j_model3}\caption{Example Neo4j graph model diagram}\label{fig:neo2}\end{center}\end{figure}
+\newpage
 \subsection*{Apache Cassandra}
-
-
-
-
-
-
