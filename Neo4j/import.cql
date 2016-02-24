@@ -1,52 +1,108 @@
-// Create AnatomyStructure
-USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/Data/AnatomyStructures.csv" AS row
-CREATE (:AnatomyStructure {structureID: toInt(row.anatomystructure_id), accession: toInt(row.term_id), term: row.term, stage: toInt(row.stage_id)})
-
-// Create Assays
-USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/Data/Assays.csv" AS row
-CREATE (:Assay {emageID: toInt(row.assay_emage_id), probeID: row.probe_id, type: row.type, source:toInt(row.source_id)});
-
-// Create Genes
-USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/Data/Genes.csv" AS row
-CREATE (:Gene {geneID: toInt(row.gene_id), accession: row.accession, name: row.symbol});
-
-// Create Publications
-USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/Data/Publications.csv" AS row
-CREATE (:Publication {publicationID: toInt(row.id), accession: row.publication_id, title: row.title, author : row.author, emageID: toInt(row.emage_id)});
+CREATE CONSTRAINT ON (a:AnatomyStructure) ASSERT a.id IS UNIQUE;
+CREATE CONSTRAINT ON (e:Assay) ASSERT e.id IS UNIQUE;
+CREATE CONSTRAINT ON (au:Author) ASSERT au.name IS UNIQUE;
+CREATE CONSTRAINT ON (g:Gene) ASSERT g.id IS UNIQUE;
+CREATE CONSTRAINT ON (s:Source) ASSERT s.id IS UNIQUE;
+CREATE CONSTRAINT ON (sp:Specimen) ASSERT sp.id IS UNIQUE;
+CREATE CONSTRAINT ON (st:Stage) ASSERT st.id IS UNIQUE;
 
 // Create Sources
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/Data/Sources.csv" AS row
-CREATE (:Source {sourceID: toInt(row.source_id), sourceName: row.name});
 
-// Create Specimen
-USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/Data/Specimens.csv" AS row
-CREATE (:Specimen {specimenID: toInt(row.id), strain: row.strain, type: row.type, emageID: toInt(row.emage_id), stage:toInt(row.stage_id)});
+MERGE (source:Source {sourceID: TOINT(row.source_id), sourceName: row.name})
+
+;
 
 // Create Stage
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/Data/Stages.csv" AS row
-CREATE (:Stage {stageID: toInt(row.stage_id), theilerStage: row.theilerstage, dpc: row.dpc, emageID: toInt(row.emage_id)});
+
+CREATE (stage:Stage {stageID: TOINT(row.id), theilerStage: TOINT(row.theilerstage), dpc: row.dpc})
+
+;
+
+// Create Specimen
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/Data/Specimens.csv" AS row
+
+MATCH (stage:Stage {stageID: TOINT(row.stage_id)}) 
+
+CREATE (specimen:Specimen {specimenID: TOINT(row.id), strain: row.strain, type: row.type})
+
+CREATE (specimen)-[:HAS]->(stage)
+
+;
+
+// Create AnatomyStructure
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/Data/AnatomyStructures.csv" AS row
+
+MATCH (stage:Stage {stageID: TOINT(row.stage_id)})
+
+CREATE (anatomyStructure:AnatomyStructure {
+						  structureID: TOINT(row.id),
+						  accession: TOINT(row.accession),
+						  term: row.term
+						  })
+
+CREATE (anatomyStructure)-[:HAS]->(stage)
+;
+
+
+// Create Assays
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/Data/Assays.csv" AS row
+
+MATCH (source:Source {sourceID : TOINT(row.source_id)})
+MATCH (specimen:Specimen {specimenID : TOINT(row.specimen_id)})
+MATCH (stage:Stage {stageID : TOINT(row.stage_id)})
+
+CREATE (assay:Assay {emageID: TOINT(row.emage_id), probeID: row.probe_id, type: row.type})
+
+CREATE (assay)-[:COMES_FROM]->(source)
+CREATE (assay)-[:HAS]->(specimen)
+CREATE (assay)-[:HAS]->(stage)
+
+;
+
+
+// Create Publications
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/Data/Publications.csv" AS row
+
+MATCH (assay:Assay {emageID : TOINT(row.emage_id)})
+
+CREATE (publication:Publication {
+	author: row.author,
+	accession: TOINT(row.accession),
+	title: row.title
+	})
+
+CREATE (publication)-[:DESCRIBES]->(assay)
+
+;
+
+// Create Genes
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/Data/Genes.csv" AS row
+MERGE (gene:Gene {geneID: TOINT(row.id), accession: row.accession, name: row.name});
 
 // Create TextAnnotation
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/Data/TextAnnotations.csv" AS row
-CREATE (:TextAnnotation {annotationID: toInt(row.id), strength: row.strength, emageID: toInt(row.emage_id), structureID: toInt(row.structure_id), geneID:toInt(row.gene_id), detected: toInt(row.detected)});
 
-CREATE INDEX ON :AnatomyStructure(structureID);
-CREATE INDEX ON :AnatomyStructure(stage);
-CREATE INDEX ON :Assay(source);
-CREATE INDEX ON :Gene(geneID);
-CREATE INDEX ON :Publication(emageID);
-CREATE INDEX ON :Sources(sourceID);
-CREATE INDEX ON :Specimen(emageID);
-CREATE INDEX ON :Specimen(stage);
-CREATE INDEX ON :Stage(emageID);
-CREATE INDEX ON :TextAnnotation(emageID);
-CREATE INDEX ON :TextAnnotation(structureID);
-CREATE INDEX ON :TextAnnotation(geneID);
+MATCH (assay:Assay {emageID : TOINT(row.emage_id)})
+MATCH (structureID:AnatomyStructure {structureID: TOINT(row.structure_id)})
+MATCH (gene:Gene {geneID: TOINT(row.gene_id)})
+
+CREATE (annotation:TextAnnotation {
+	strength: row.strength
+	})
+
+CREATE (annotation)-[:REPORTS]->(assay)
+CREATE (annotation)-[:HAS]->(anatomyStructure)
+CREATE (annotation)-[:HAS]->(gene)
+
+;
+
