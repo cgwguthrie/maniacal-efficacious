@@ -1,0 +1,96 @@
+Where is Gene X expressed?
+
+SELECT t1.name AS GeneID, t2.emage_id AS EMAGE_ID, t3.accession AS StructureID
+FROM Genes AS t1
+INNER JOIN TextAnnotations AS t2
+ON t1.id = t2.gene_id
+INNER JOIN AnatomyStructures AS t3
+ON t2.structure_id = t3.id
+WHERE t2.detected = 1
+AND t1.name = 'Hoxb13'
+ORDER BY 2,3
+
+What is expressed in structure X?
+
+Detected
+
+SELECT t1.name AS GeneName, t2.accession AS StructureID, t2.term AS TermName, t4.theilerstage AS TheilerStage, t3.emage_id AS EMAGE_ID
+FROM Genes AS t1
+INNER JOIN emage.TextAnnotations AS t3
+ON t1.id = t3.gene_id
+INNER JOIN emage.AnatomyStructures AS t2
+ON t3.structure_id = t2.id
+INNER JOIN Stages AS t4
+ON t2.stage_id = t4.id
+INNER JOIN Assays AS t5
+ON t3.emage_id = t5.emage_id
+WHERE t3.detected = 1
+AND t2.accession = 17451
+ORDER BY 5;
+
+Non detected
+
+SELECT t1.name AS GeneName, t2.accession AS StructureID, t2.term AS TermName, t4.theilerstage AS TheilerStage, t3.emage_id AS EMAGE_ID, t3.strength as Strength
+FROM Genes AS t1
+INNER JOIN emage.TextAnnotations AS t3
+ON t1.id = t3.gene_id
+INNER JOIN emage.AnatomyStructures AS t2
+ON t3.structure_id = t2.id
+INNER JOIN Stages AS t4
+ON t2.stage_id = t4.id
+INNER JOIN Assays AS t5
+ON t3.emage_id = t5.emage_id
+WHERE t2.accession = 17451
+ORDER BY 6, 5;
+
+Which genes are stored in structures X and Y?
+
+SELECT t1.name AS GeneName
+FROM Genes AS t1
+INNER JOIN TextAnnotations AS t3
+ON t1.id = t3.gene_id
+INNER JOIN AnatomyStructures AS t2
+ON t2.id = t3.structure_id
+WHERE t3.detected = 1
+AND t2.accession IN (16062, 16069)
+GROUP BY 1
+HAVING COUNT(DISTINCT t2.accession) > 1;
+
+Which Genes are most commonly co-expressed?
+
+SELECT t1.name AS GeneName, COUNT(DISTINCT t2.accession) AS Co_Expressed_Count
+FROM Genes AS t1
+INNER JOIN TextAnnotations AS t3
+ON t1.id = t3.gene_id
+INNER JOIN AnatomyStructures AS t2
+ON t2.id = t3.structure_id
+WHERE t3.detected = 1
+GROUP BY 1
+HAVING COUNT(DISTINCT t2.accession) > 1
+ORDER BY 2 DESC
+LIMIT 5;
+
+Mongo - Query, Projection, Sort
+
+Where is Gene X expressed?
+
+db.emage.find({ $and: [ { "textannotation.gene.symbol": "Hoxb13" }, { $or: [ { "textannotation.strength": "detected" }, { "textannotation.strength": "strong" } ] } ] }).pretty();
+
+What is expressed in structure X?
+
+db.emage.find({ "textannotation.anatomystructure.term_id": 16251 },{},{"_id":1}).limit(3).pretty();
+
+Can not do co-expression?
+
+Extras :
+
+All structures at theiler stage X
+
+SELECT t1.accession, t2.theilerstage
+FROM AnatomyStructures AS t1
+INNER JOIN Stages AS t2
+ON t1.stage_id = t2.id
+WHERE t2.theilerstage = 3
+GROUP BY 1
+
+db.emage.find({ "stage.theiler_stage": "18" }).limit(3).pretty()
