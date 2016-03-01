@@ -5,56 +5,12 @@ CREATE CONSTRAINT ON (s:Source) ASSERT s.id IS UNIQUE;
 CREATE CONSTRAINT ON (sp:Specimen) ASSERT sp.id IS UNIQUE;
 CREATE CONSTRAINT ON (st:Stage) ASSERT st.id IS UNIQUE;
 
-
-
 CREATE INDEX ON :AnatomyStructure(structureID);
 CREATE INDEX ON :Assay(emageID);
 CREATE INDEX ON :Gene(geneID);
 CREATE INDEX ON :Specimen(specimenID);
 CREATE INDEX ON :Stage(stageID);
 CREATE INDEX ON :TextAnnotation(strength);
-CREATE INDEX ON :IsA(parentID);
-CREATE INDEX ON :PartOf(childID);
-
-
-
-USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/EMAPA/results.csv" AS row
-
-MERGE (parent:IsA{parentID: TOINT(row.parent_id), term : row.parent_term})
-MERGE (child:PartOf{childID: TOINT(row.child_id), term : row.parent_term})
-
-;
-
-USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/EMAPA/results.csv" AS row
-
-MATCH (parent:IsA{parentID: TOINT(row.parent_id)})
-MATCH (child:PartOf{childID: TOINT(row.child_id)})
-
-CREATE (parent)-[:IS_PARENT_OF]->(child)
-;
-
-
-// Create PartOf
-USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/EMAPA/results.csv" AS row
-
-MERGE (partof:PartOf {childID: TOINT(row.child_id)})
-
-SET partof.term = row.child_term
-
-;
-
-// Create IsA
-USING PERIODIC COMMIT
-LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/EMAPA/results.csv" AS row
-
-MERGE (isa:IsA {parentID: TOINT(row.parent_id)})
-
-SET isa.term = row.parent_term
-
-;
 
 // Create Sources
 USING PERIODIC COMMIT
@@ -70,8 +26,7 @@ SET source.sourceName = row.name
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/Data/Stages.csv" AS row
 
-CREATE (stage:Stage {stageID: TOINT(row.id)})
-
+MERGE (stage:Stage {stageID: TOINT(row.id)})
 SET stage.theilerStage = TOINT(row.theilerstage),
 	stage.dpc = row.dpc
 
@@ -83,10 +38,9 @@ LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/
 
 MATCH (stage:Stage {stageID: TOINT(row.stage_id)}) 
 
-CREATE (specimen:Specimen {specimenID: TOINT(row.id)})
-
-SET specimen.strain = row.strain,
-	specimen.type = row.type
+MERGE (specimen:Specimen {specimenID: TOINT(row.id)})
+SET stage.strain = row.strain,
+	stage.type = row.type
 
 CREATE (specimen)-[:GROUPED_BY]->(stage)
 
@@ -98,10 +52,9 @@ LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/
 
 MATCH (stage:Stage {stageID: TOINT(row.stage_id)})
 
-CREATE (anatomyStructure:AnatomyStructure {structureID: TOINT(row.id)})
-
+MERGE (anatomyStructure:AnatomyStructure {structureID: TOINT(row.id)})
 SET anatomyStructure.accession = TOINT(row.accession),
-	anatomyStructure.term = row.term
+anatomyStructure.term = row.term
 
 CREATE (anatomyStructure)-[:GROUPED_BY]->(stage)
 ;
@@ -156,11 +109,24 @@ CREATE (annotation:TextAnnotation {
 	strength: row.strength
 	})
 
-CREATE (annotation)-[:HAS]->(anatomyStructure)
+CREATE (annotation)-[:HAS]->(structureID)
 CREATE (annotation)-[:RECORDS]->(gene)
 CREATE (annotation)-[r:REPORTS]->(assay)
 
 SET r.detected = CASE row.detected WHEN 1 THEN true ELSE false END
+
+;
+
+// Create Closure
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/EMAPA/results.csv" AS row
+
+MERGE(parent:Parent {parentID : TOINT(row.parent_id)})
+SET parent.term = row.parent_term
+MERGE(child:Child{childID : TOINT(row.child_id)})
+SET child.term = row.child_term
+
+CREATE (child)-[:PART_OF]->(parent)
 
 ;
 
