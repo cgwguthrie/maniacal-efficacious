@@ -40,7 +40,8 @@
 \contentsline {section}{\numberline {6.1}Requirements}{24}
 \contentsline {subsection}{\numberline {6.1.1}Data Source Competency Questions}{26}
 \contentsline {chapter}{\numberline {7}Risk Assessment}{27}
-\contentsline {chapter}{\numberline {8}Data Model Design}{28}
-\contentsline {section}{\numberline {8.1}Dataset Values}{28}
-\contentsline {section}{\numberline {8.2}Database Design}{30}
-\contentsline {chapter}{\numberline {9}Implementation}{41}
+\contentsline {chapter}{\numberline {8}Database Modelling}{28}
+\contentsline {section}{\numberline {8.1}Cleansing the data}{28}
+\contentsline {section}{\numberline {8.2}Designing the data models}{30}
+\contentsline {chapter}{\numberline {9}Database Implementation}{41}
+\contentsline {section}{\numberline {9.1}Creating database systems}{41}

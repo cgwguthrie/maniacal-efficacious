@@ -1,1 +1,99 @@
-\chapter{Implementation}\label{implementation}
+\chapter{Database Implementation}\label{implementation}
+This chapter focuses on the implementation of the data models discussed in chapter \ref{design}. Each database management system has their own procedure for instantiating a new collection, table, node or column family. This chapter discusses the methods and strategies I imposed to create the database solution designs; with a focus on any challenges faced in doing so. Section \ref{load} evaluates the process undertaken to physically load the data into the systems.
+
+\section{Creating database systems}\label{dbcreate}
+Once the process of modelling of the database systems was complete, the next stage was to transform the model plan into actual databases. For each database system, this was relatively simple. However, with this simplicity, brought limitations and restrictions of which I had to construe, to fully achieve my target model.
+
+\subsubsection*{MySQL}
+The MySQL data model consists of 8 tables; AnatomyStructures, Assays, Genes, Publications, Sources, Specimens, Stages and TextAnnotations. Each of which are discussed in detail, in section \ref{mysqldesign}. The creation of these tables was a relatively straightforward undertaking. While the ease in which I found this process, may be due to my previous experience of using MySQL, the intuitive and logical way in which relational databases are constructed, make the implementation of a data model, an all round elementary procedure. An example of how a table is created in MySQL can be found in the code snippet \ref{code:mysqlass} below. This code illustrates the creation of the Assays table, the indexes and the constraints.
+\newpage
+\begin{lstlisting}[caption=Creation of Assays table, label=code:mysqlass]
+--
+-- Table structure for table `Assays`
+--
+CREATE TABLE IF NOT EXISTS `Assays` (
+  `emage_id` int(11) NOT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `probe_id` varchar(255) DEFAULT NULL,
+  `source_id` int(11) NOT NULL,
+  `specimen_id` int(11) NOT NULL,
+  `stage_id` int(11) NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+--
+-- Indexes for table `Assays`
+--
+ALTER TABLE `Assays`
+  ADD PRIMARY KEY (`emage_id`),
+  ADD KEY `source_id` (`source_id`),
+  ADD KEY `specimen_id` (`specimen_id`),
+  ADD KEY `stage_id` (`stage_id`);
+--
+-- Constraints for table `Assays`
+--
+ALTER TABLE `Assays`
+  ADD CONSTRAINT `fk_Assays_Sources` FOREIGN KEY (`source_id`)
+  REFERENCES `Sources` (`source_id`),
+  ADD CONSTRAINT `fk_Assays_Specimens` FOREIGN KEY (`specimen_id`)
+  REFERENCES `Specimens` (`id`),
+  ADD CONSTRAINT `fk_Assays_Stages` FOREIGN KEY (`stage_id`)
+  REFERENCES `Stages` (`id`);
+\end{lstlisting}
+
+As you can see in lines 4 - 11, the creation of each column takes the form of; column name, data type with length and the default attributes and values i.e. null or not null. The character set for each table, by default was set to utf8. You will notice here that the key values were not in fact instantiated at time of creation. This was as a result of an experiment to evaluate the affect the exclusion of index keys and constraints has at time of data load on each database. The findings of this experiment are illustrated in figure \ref{fig:index} with reference to the performance of the other database solutions for comparison.
+
+This figure clearly illustrates that the time taken to load the data without index keys and constraints had little, to no true affect on load performance. While there is slight variance in load time, this can be expected and attributed to a number of reasons, such as other processes running simultaneously on the CPU for example.
+
+MySQL tables are linked by joining the (unique) primary key of one column to the (unique or non unique) foreign key of another. Lines 15-19 in code snippet \ref{code:mysqlass}, is where the key columns are created and lines 23 - 29 is where the foreign key constraints are expressed. The notion of keys joining tables can often be a slightly confusing concept to understand on first encounter. Primary and foreign keys are, not always, but in most cases confined to integer values. This is as a result of, data often containing inconsistent, ambiguous and non universal values. For example, a primary key may have the value ``Mouse'' and a foreign key may have the value ``mouse''. Both valid strings however as they do not match exactly the join would fail. The rigidity of these constructs have as many advantages as they do disadvantages. While the concept of joining two tables on matching integers seems logical, many situations occur where there is no unique ID present in the dataset and therefore the ID has to be manually created based on the data available.
+
+The process to create multiple tables and join them together in MySQL is relatively straightforward. While the formality of definitively expressing each term and its data type then stipulating the index keys and constrains, can be a tedious process, it is done so in a logical and objective manner, which makes it coherent and understandable for the programmer.
+
+\subsection*{MongoDB}
+Creating a document inside a MongoDB collection (the equivalent to a MySQL table) is done by inserting field and value pairs. Each time a new field and value pair is inserted into a collection, a new document is created. By default, each document in a collection is provided with a unique ID which has an object data type. ObjectIds are small, fast to generate, and ordered. These values consists of 12-bytes, where the first four bytes are a timestamp that reflect the ObjectId’s creation \cite{mongo}. A unique ID can also be manually inserted for each document, if available.
+
+The data types which MongoDB accepts are:
+
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|l|}
+\hline
+\textbf{String} & String in mongodb must be UTF-8 valid. \\ \hline
+\textbf{Integer} & Integer can be 32 bit or 64 bit depending upon server. \\ \hline
+\textbf{Boolean} & This type is used to store a boolean (true/ false) value. \\ \hline
+\textbf{Double} & This type is used to store floating point values. \\ \hline
+\textbf{Min/ Max keys} & This type is used to compare a value against the lowest and highest BSON elements. \\ \hline
+\textbf{Arrays} & This type is used to store arrays or list or multiple values into one key. \\ \hline
+\textbf{Timestamp} & ctimestamp. \\ \hline
+\textbf{Object} & This datatype is used for embedded documents. \\ \hline
+\textbf{Null} & This type is used to store a Null value. \\ \hline
+\textbf{Symbol} & This datatype is used identically to a string however it's generally reserved for languages that use a specific symbol type. \\ \hline
+\textbf{Date} & This datatype is used to store the current date or time in UNIX time format.\\ \hline
+\textbf{Object ID} & This datatype is used to store the document’s ID. \\ \hline
+\textbf{Binary data} & This datatype is used to store binay data. \\ \hline
+\textbf{Code} & This datatype is used to store javascript code into document. \\ \hline
+\textbf{Regular expression} & This datatype is used to store regular expression \\ \hline
+\end{tabular}
+}
+\caption{My caption}
+\label{my-label}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
