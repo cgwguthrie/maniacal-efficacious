@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.2.6)  29 FEB 2016 01:00
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.2.6)  1 MAR 2016 09:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -643,9 +643,6 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
@@ -1230,7 +1227,9 @@ LaTeX Warning: Reference `load' on page 41 undefined on input line 2.
 
 
 
-]
+] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 11.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -1243,17 +1242,26 @@ LaTeX Warning: Reference `fig:index' on page 42 undefined on input line 42.
 
 LaTeX Warning: Citation `mongo' on page 43 undefined on input line 51.
 
-[43]) [44] (./main.bbl [45
+[43]
+
+LaTeX Warning: Reference `mongoload' on page 44 undefined on input line 55.
+
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 57.
+
+(/usr/share/texlive/texmf-dist/tex/latex/euenc/eu1lmtt.fd
+File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [44]) [45]
+(./main.bbl [46
 
 
 
 ]
 Invalid UTF-8 byte or sequence at line 96 replaced by U+FFFD.
 Missing character: There is no � in font Georgia/OT:mapping=tex-text;!
-) [46] (./main.aux (./chapters/bigdata.aux)
-(./chapters/etl.aux) (./chapters/krl.aux) (./chapters/nosql.aux)
-(./chapters/datasource.aux) (./chapters/evaluationstrategy.aux)
-(./chapters/risk.aux) (./chapters/design.aux) (./chapters/implementation.aux))
+) [47] (./main.aux (./chapters/bigdata.aux) (./chapters/etl.aux) (./chapters/kr
+l.aux) (./chapters/nosql.aux) (./chapters/datasource.aux)
+(./chapters/evaluationstrategy.aux) (./chapters/risk.aux)
+(./chapters/design.aux) (./chapters/implementation.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -1262,12 +1270,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27033 strings out of 495637
- 546843 string characters out of 6187763
- 647377 words of memory out of 5000000
- 29764 multiletter control sequences out of 15000+600000
- 7531 words of font info for 56 fonts, out of 8000000 for 9000
+ 27114 strings out of 495637
+ 548089 string characters out of 6187763
+ 664046 words of memory out of 5000000
+ 29840 multiletter control sequences out of 15000+600000
+ 7539 words of font info for 57 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 62i,12n,60p,10377b,1234s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,12n,60p,10377b,1274s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (49 pages).
+Output written on main.pdf (50 pages).

@@ -7,7 +7,7 @@ Once the process of modelling of the database systems was complete, the next sta
 \subsubsection*{MySQL}
 The MySQL data model consists of 8 tables; AnatomyStructures, Assays, Genes, Publications, Sources, Specimens, Stages and TextAnnotations. Each of which are discussed in detail, in section \ref{mysqldesign}. The creation of these tables was a relatively straightforward undertaking. While the ease in which I found this process, may be due to my previous experience of using MySQL, the intuitive and logical way in which relational databases are constructed, make the implementation of a data model, an all round elementary procedure. An example of how a table is created in MySQL can be found in the code snippet \ref{code:mysqlass} below. This code illustrates the creation of the Assays table, the indexes and the constraints.
 \newpage
-\begin{lstlisting}[caption=Creation of Assays table, label=code:mysqlass]
+\begin{lstlisting}[language=SQL, caption=Creation of Assays table, label=code:mysqlass]
 --
 -- Table structure for table `Assays`
 --
@@ -50,50 +50,45 @@ The process to create multiple tables and join them together in MySQL is relativ
 \subsection*{MongoDB}
 Creating a document inside a MongoDB collection (the equivalent to a MySQL table) is done by inserting field and value pairs. Each time a new field and value pair is inserted into a collection, a new document is created. By default, each document in a collection is provided with a unique ID which has an object data type. ObjectIds are small, fast to generate, and ordered. These values consists of 12-bytes, where the first four bytes are a timestamp that reflect the ObjectId’s creation \cite{mongo}. A unique ID can also be manually inserted for each document, if available.
 
-The data types which MongoDB accepts are:
+MongoDB is an extremely flexible data store. It accepts multiple different data types, from the standard; string, double and boolean values to the more complex regular expressions and even Javascript code.
 
-\begin{table}[H]
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{cl}
-\hline
-\textbf{Data type} & \multicolumn{1}{c}{\textbf{Definition}} \\ \hline
-\multicolumn{1}{c|}{String} & \multicolumn{1}{l|}{String in mongodb must be UTF-8 valid.} \\ \hline
-\multicolumn{1}{c|}{Integer} & \multicolumn{1}{l|}{Integer can be 32 bit or 64 bit depending upon server.} \\ \hline
-\multicolumn{1}{c|}{Boolean} & \multicolumn{1}{l|}{This type is used to store a boolean (true/ false) value.} \\ \hline
-\multicolumn{1}{c|}{Double} & \multicolumn{1}{l|}{This type is used to store floating point values.} \\ \hline
-\multicolumn{1}{c|}{Min/ Max keys} & \multicolumn{1}{l|}{This type is used to compare a value against the lowest and highest BSON elements.} \\ \hline
-\multicolumn{1}{c|}{Arrays} & \multicolumn{1}{l|}{This type is used to store arrays or list or multiple values into one key.} \\ \hline
-\multicolumn{1}{c|}{Timestamp} & \multicolumn{1}{l|}{ctimestamp.} \\ \hline
-\multicolumn{1}{c|}{Object} & \multicolumn{1}{l|}{This datatype is used for embedded documents.} \\ \hline
-\multicolumn{1}{c|}{Null} & \multicolumn{1}{l|}{This type is used to store a Null value.} \\ \hline
-\multicolumn{1}{c|}{Symbol} & \multicolumn{1}{l|}{This datatype is used identically to a string however it's generally reserved for languages that use a specific symbol type.} \\ \hline
-\multicolumn{1}{c|}{Date} & \multicolumn{1}{l|}{This datatype is used to store the current date or time in UNIX time format.} \\ \hline
-\multicolumn{1}{c|}{Object ID} & \multicolumn{1}{l|}{This datatype is used to store the document’s ID.} \\ \hline
-\multicolumn{1}{c|}{Binary data} & \multicolumn{1}{l|}{This datatype is used to store binay data.} \\ \hline
-\multicolumn{1}{c|}{Code} & \multicolumn{1}{l|}{This datatype is used to store javascript code into document.} \\ \hline
-\multicolumn{1}{c|}{Regular expression} & \multicolumn{1}{l|}{This datatype is used to store regular expression} \\ \hline
-\end{tabular}
-}
-\caption{My caption}
-\label{my-label}
-\end{table}
+Documents can be created by either manually inserting on the command line, or by conducting a data dump. The latter is discussed in more detail in section \ref{mongoload}. Code snippet \ref{code:mongoinsert} below, is an example of how a document can be created and data inserted from the command line.
 
+\begin{lstlisting}[language=json,caption=Inserting data into a mongo document, label=code:mongoinsert]
+db.emage.insert(
+   [
+     { 
+     _id: 15423,
+     probeID: "T31182",
+     source: "eurexpress",
+     type: "in situ",
+    [
+    		{
+     				strain : "C57BL/6",
+     				type : "section"
+     		}
+    ],
+    [
+    		{
+     				dpc : "14.5 dpc",
+     				theilerstage : 23
+     		}
+     ]
+     }
+)
+\end{lstlisting}
+\newpage
 
+As illustrated in code snippet \ref{code:mongoinsert}, creating documents in MongoDB is an extremely simple process. One command and you can insert an entire database of information. While it is unlikely that one would manually insert a large volume of data using the \textit{db.collection.insert(\{\})} method, it is an available option. By default any value without a type cast will be presumed to be either a sting or integer value. This attribute is common of NoSQL systems. It adds to the simplicity and smooth process of implementing a data model.
 
-
-
-
+In comparison to a MySQL implementation; where tables are constructed and data inserted after, MongoDB allows the programmer to see exactly what and how the data will be populated in the database.
 
 
+\subsection*{Neo4j}
+TO BE COMPLETE
 
-
-
-
-
-
-
-
+\subsection*{Cassandra}
+TO BE COMPLETE
 
 
 

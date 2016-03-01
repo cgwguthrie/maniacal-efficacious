@@ -28,20 +28,20 @@
 \fancyhead[OR]{\nouppercase\rightmark}
 \lhead{\slshape\nouppercase{\leftmark}}
 \cfoot{\thepage}
+\definecolor{background}{HTML}{EEEEEE}
 \usepackage{lscape}
 \usepackage{rotating}
 \usepackage{epstopdf}
 \renewcommand\bibname{References}
 \raggedright
 \usepackage{listings}
-\lstset{ %
-language=SQL,                % choose the language of the code
+\lstset{ %                % choose the language of the code
 basicstyle=\footnotesize,       % the size of the fonts that are used for the code
 numbers=left,                   % where to put the line-numbers
 numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
 stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
 numbersep=10pt,                  % how far the line-numbers are from the code
-backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+backgroundcolor=\color{background},  % choose the background color. You must add \usepackage{color}
 showspaces=false,               % show spaces adding particular underscores
 showstringspaces=false,         % underline spaces within strings
 showtabs=false,                 % show tabs within strings adding particular underscores
@@ -53,6 +53,41 @@ breakatwhitespace=false,    % sets if automatic breaks should only happen at whi
 escapeinside={\%*}{*)}          % if you want to add a comment within your code
 }
 \renewcommand{\lstlistingname}{Code snippet}
+
+\colorlet{punct}{red!60!black}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=b,
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {"}{{{\color{delim}{"}}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
 \parindent 15pt
 
 \newcommand{\declaration}{
