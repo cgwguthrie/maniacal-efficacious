@@ -23,7 +23,7 @@ LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/EMAPA/
 
 MERGE (parent:IsA{parentID: TOINT(row.parent_id), term : row.parent_term})
 MERGE (child:PartOf{childID: TOINT(row.child_id), term : row.parent_term})
-
+CREATE (parent)-[:IS_PARENT_OF]->(child)
 ;
 
 USING PERIODIC COMMIT
@@ -32,7 +32,7 @@ LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/EMAPA/
 MATCH (parent:IsA{parentID: TOINT(row.parent_id)})
 MATCH (child:PartOf{childID: TOINT(row.child_id)})
 
-CREATE (parent)-[:IS_PARENT_OF]->(child)
+MERGE (parent)-[:IS_PARENT_OF]->(child)
 ;
 
 
