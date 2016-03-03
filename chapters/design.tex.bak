@@ -13,14 +13,16 @@ The EMAGE data which was supplied was made up of 4 tab separated files. Each fil
 
 \item \textbf{Submissions} - Information on each EMAGE assay. Data such as EMAGE ID, Theiler Stage, probe ID, type of assay (in situ or part of), specimen type and specimen strain.
 
+\item \textbf{Results} - Results from each gene expression. Much of the data in this file was a replicated in the submissions file. Data included Theiler Stage, EMAGE ID, data source, assay type and gene name.
 \end{itemize}
-On initial review each of the files contained similar, repetitive, meta-data values. Thus creating a level of noise which would not be add anything to the project in terms of analysis and evaluation. Therefore I undertook an initial cleansing of the data before implementing the database design.
 
-This cleansing process consisted of loading the data into Open Refine (OR) and manually manipulating the data using the filtering and editing tools the package provides. Using this tool allowed me to identify any erroneous rows of data which would affect the integrity of the dataset. In each file there was at most 5 rows of data which were either blank or inconsistent with the convention of the rest of the file. I decided to remove these rows as there inclusion in the file was unnecessary.
+On initial review each of the files contained similar, repetitive, meta-data values. Thus creating a level of noise which would not add anything to the project in terms of analysis and evaluation. Therefore I undertook an initial cleansing of the data before implementing the database design.
+
+The cleansing process consisted of loading the data into Open Refine (OR) and manually manipulating the data using the filtering and editing tools the package provides. Using OR allowed me to identify any erroneous rows of data which would affect the integrity of the dataset. In each file there was at most 5 rows of data which were either blank or inconsistent with the convention of the rest of the file. I decided to remove these rows as there inclusion in the file was unnecessary.
 
 Another irregularity found in the \textit{Publications} data file was the characters used in the title and author fields. There were over 600 rows of data which contained a non-ascii character. For example - ten Berge D, Brouwer A, el Bahi S, GuÃ©net JL, Robert B, Meijlink F. These rows would be rejected when importing into the databases as by default I decided to apply a UTF-8 character encoding to each indexing solution. Despite these values only contributing to around 5\% of the file, the issue needed to be addressed. To do this I devised a regular expression which would identify and subsequently remove any of these characters.
 
-Using a software tool such as OR enabled me to manipulate and cleanse the data in such a way that I would be able to load it successfully into the databases. Despite accomplishing the cleansing successfully, from the challenges I faced, I identified some problematic circumstances which, despite not being as prevalent using the EMAGE data, may affect other big data sets.
+Using a software tool such as OR enabled me to manipulate and cleanse the data meaning I would be able to load it successfully into the databases. Despite cleansing the datasets successfully, I identified some potential problematic circumstances. While the identified circumstances may not be as prevalent using the EMAGE dataset, they may affect other big data sets.
 
 The maximum number of rows uploaded into OR was around 150,000. The EMAGE dataset is relatively small in comparison to large scale data collation, however the volume of data was a factor in my decision to use a software tool in an ETL workflow as opposed to rolling my own scripting solution. It is important when choosing a methodology or tool to enhance the veracity of a dataset that the volume of data is taken into consideration. OR is a Java application that utilises the Java Virtual Machine (JVM) and therefore it is integral to allocate enough memory to handle processing large files and thus avoid Java heap space errors. The OR developers suggest that a typical best practice is ``start with no more than 50\% of your available physical memory, since certain OS's will utilize up to 1 Gig or more of physical RAM." \cite{googref}. While using this software solution was sufficient for the data in this project, should the dataset be of a greater scale, a more robust and resilient system would need to be considered.
 
@@ -28,7 +30,7 @@ As discussed in section \ref{5vs} a major challenge in data collection and manip
 
 \section{Designing the data models}\label{dbdesign}
 
-In order for me to develop multiple and reliable data models which accurately represent the dataset, I created a database diagram for each indexing solution. Each diagram effectively illustrates the relationship between the data entities. The order in which I decided to create the database model designs, was based upon two main reasons; which hinge upon aiding the readers comprehension of this thesis. The first reason was based upon my previous experience of using each of the database systems. My previous experience ranged from a competent level to the complete unknown. Secondly, as MySQL is a well known database management system, and is widely used for a number of applications, it is expected that the reader will have an already functioning knowledge of the system. As a result I decided the first data model I would develop would be for the relational database management system, MySQL. The next system I developed was MongoDB, followed by Neo4j and finally Apache Cassandra. Each implementation presented a different challenge all of which will be discussed below.
+In order for me to develop multiple and reliable data models which accurately represent the dataset, I created a database diagram for each indexing solution. Each diagram effectively illustrates the relationship between the data entities. The order in which I decided to create the database model designs was based upon two main reasons; which hinge upon aiding the reader's comprehension of this thesis. The first reason was based upon my previous experience of using each of the database systems. My previous experience ranged from a competent level to the complete unknown. Secondly, as MySQL is a well known database management system, and is widely used for a number of applications, it is expected that the reader will already have a functioning knowledge of the system. As a result I decided the first data model I would develop would be for the relational database management system, MySQL. The next system I developed was MongoDB, followed by Neo4j and finally Apache Cassandra. Each implementation presented a different challenge all of which will be discussed below.
 
 \subsection*{MySQL}\label{mysqldesign}
 
@@ -44,7 +46,7 @@ As discussed in section \ref{mysql} MySQL is a relational database management sy
 \item Many to One relationship with itself on the ID as one structure can have many parts.
 \end{itemize} 
 
-\item \textbf{Assays} : This table contains the EMAGE ID number, the ID of the probe and the type of assay. The \textit{type} field refers to whether the assay is \textit{in situ} or \textit{part of}.
+\item \textbf{Assays} : This table contains the EMAGE ID number, the ID of the probe and the type of assay. The type field refers to whether the assay is ``in situ'' or ``part of''.
 \begin{itemize}
 \item Many to One relationship with the Sources table. While one assay can only have one source, many assays can have the same source.
 \end{itemize} 
@@ -64,7 +66,7 @@ As discussed in section \ref{mysql} MySQL is a relational database management sy
 \item The Sources table does not reference any other table.
 \end{itemize} 
 
-\item \textbf{Specimens} :  This table contains the ID, strain and type of each specimen. The \textit{type} field refers to whether the assay is a section, wholemount, sectioned wholemount or unknown.
+\item \textbf{Specimens} :  This table contains the ID, strain and type of each specimen. The type field refers to whether the assay is a section, wholemount, sectioned wholemount or unknown.
 \begin{itemize}
 \item One to One relationship with the Assays table as one assay has one specimen.
 \item Many to One relationship with the Stages table as many specimens can have the same Stage.
@@ -84,15 +86,15 @@ As discussed in section \ref{mysql} MySQL is a relational database management sy
 
 \end{itemize}
 
-\subsection*{MongoDB}
+\subsection*{MongoDB}\label{mongodesign}
 
 As discussed in section \ref{mongo}, MongoDB is a homogeneous, schema-less, NoSQL document store database. There are no formal relations between the data which makes modelling the database a little more challenging; especially with data which is so closely bound as the EMAGE dataset.
 
-Data in MongoDB sits in \textit{collections}, a grouping of documents which are stored on a database. A collection exists within a single database and is the equivalent of an RDBMS table. Documents within a collection can have different fields and typically, all documents in a collection have a similar or related purpose. 
+Data in MongoDB sits in \textit{collections}, a grouping of documents which are stored on a database. A collection exists within a single database and is the equivalent of an RDBMS table. Documents within a collection can have different fields and typically all documents in a collection have a similar or related purpose. 
 
 The MongoDB implementation was the second prototype data model I created for this project. I followed the same structural process which I had undertaken for the previous MySQL data model. When creating a MongoDB data model there are a number of factors and considerations which need to be identified before starting the formal implementation. Firstly the biggest decision I deliberated over was how should the data be connected. As there were a few options I decided to explore all of them to fully comprehend the pros/cons of each.
 
-My initial design was based around using multiple collections to store the various aspects of the data. The design followed the MySQL model, with were 4 collections; Assays, Text Annotations, Anatomy Structures and Genes. To connect the data and bind the values required an additional manually developed ID field for every document. While this was not a complex task, it was one which I felt was unnecessary and added extra unwanted noise to the data. Using this option would have also incurred more overhead when writing the queries for the database as one would firstly have to connect the data (similar to a RDBMS join) and then include a further query.
+My initial design was based around using multiple collections to store the various aspects of the data. The design followed the MySQL model, with 4 collections; Assays, Text Annotations, Anatomy Structures and Genes. To connect the data and bind the values, required an additional manually developed ID field for every document. While this was not a complex task, it was one which I felt was unnecessary and added extra unwanted noise to the data. Using this option would have also incurred more overhead when writing the queries for the database. One would firstly have to connect the data (similar to a RDBMS join) and then include a further query. This can only be done at the application level as opposed to querying directly with the database. Depending on the query and number of collection joins, this may not be overly time consuming. Nevertheless, additional resource is still required. 
 
 After some deliberation I concluded that the best way to implement the data model would be to have all of the data in the one collection. Figure \ref{fig:mongo} illustrates an example document in the developed MongoDB data model. The diagram should be read as follows:
 
@@ -112,7 +114,7 @@ After some deliberation I concluded that the best way to implement the data mode
 
 \newpage
 \subsection*{Neo4j}
-Neo4j is a graph orientated, NoSQL database solution. It uses the Property Graph Model methodology of connecting data by nodes and weighted edges. Nodes are the equivalent of a MySQL table and edges are the equivalent of a relation. A full description of Neo4j can be found in section \ref{neo}.
+Neo4j is a graph orientated, NoSQL database solution. It uses the Property Graph Model methodology of connecting data by nodes and weighted edges. Nodes are the equivalent of a row in a MySQL table and edges are the equivalent of a relation. A full description of Neo4j can be found in section \ref{neo}.
 
 The data model I have constructed for Neo4j, is semantically similar to that of the MySQL implementation. There are 8 nodes, which contain relatively the same data as that of each MySQL table. The main difference between the two systems is how the data is joined. Where MySQL has a foreign key join, Neo4j has an edge, which connects the nodes.
 

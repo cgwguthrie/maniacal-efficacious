@@ -9,6 +9,7 @@
 \setcounter{secnumdepth}{2}
 \geometry{margin=1in}
 \usepackage{fontspec}
+\usepackage[hidelinks]{hyperref}
 \usepackage{tabularx}
 \usepackage{booktabs}
 \hbadness=10000
@@ -53,20 +54,22 @@ breakatwhitespace=false,    % sets if automatic breaks should only happen at whi
 escapeinside={\%*}{*)}          % if you want to add a comment within your code
 }
 \renewcommand{\lstlistingname}{Code snippet}
-
 \colorlet{punct}{red!60!black}
 \definecolor{delim}{RGB}{20,105,176}
 \colorlet{numb}{magenta!60!black}
-
 \lstdefinelanguage{json}{
-    basicstyle=\normalfont\ttfamily,
+    basicstyle=\footnotesize,
     numbers=left,
-    numberstyle=\scriptsize,
+    numberstyle=\footnotesize,
     stepnumber=1,
     numbersep=10pt,
+    breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
     captionpos=b,
+    showspaces=false,               % show spaces adding particular underscores
     showstringspaces=false,
+    showtabs=false,                 % show tabs within strings adding particular underscores
     breaklines=true,
+    tabsize=2,          % sets default tabsize to 2 spaces
     frame=single,
     backgroundcolor=\color{background},
     literate=
@@ -80,64 +83,65 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
       {7}{{{\color{numb}7}}}{1}
       {8}{{{\color{numb}8}}}{1}
       {9}{{{\color{numb}9}}}{1}
+      {"}{{{\color{delim}{"}}}}{1}
       {:}{{{\color{punct}{:}}}}{1}
-      {"}{{{\color{punct}{"}}}}{1}
-            {"}{{{\color{punct}{"}}}}{1}
       {,}{{{\color{punct}{,}}}}{1}
       {\{}{{{\color{delim}{\{}}}}{1}
       {\}}{{{\color{delim}{\}}}}}{1}
       {[}{{{\color{delim}{[}}}}{1}
-      {]}{{{\color{delim}{]}}}}{1},
+      {]}{{{\color{delim}{]}}}}{1}
 }
 \parindent 15pt
 
 \newcommand{\declaration}{
-	\newpage
-	\chapter*{Declaration}
+\newpage
+	\vspace*{\fill}
+	\section*{Declaration}
 	\input{frontmatter/declaration}
-	\addcontentsline{toc}{chapter}{\numberline{}Declaration}
+		\vspace*{\fill}
 }
 
 \newcommand{\abstractpage}{
-	\newpage
-	\chapter*{Abstract}
+\newpage
+	\vspace*{\fill}
+	\section*{\centering{Abstract}}
 	\input{frontmatter/abstract}
-	\addcontentsline{toc}{chapter}{\numberline{}Abstract}
+		\vspace*{\fill}
 }
 
 
 \newcommand{\acknowledgments}{
-    \newpage
-	\chapter*{Acknowledgments}
+\newpage
+	\vspace*{\fill}
+	\section*{\centering{Acknowledgments}}
 	\input{frontmatter/acknowledgments}
-	\addcontentsline{toc}{chapter}{\numberline{}Acknowledgments}
+	\vspace*{\fill}
 }
 
 \newcommand{\contents}{
-        \addcontentsline{toc}{chapter}{\numberline{}Contents}
-            \singlespacing
-
 \tableofcontents
     \newpage
 }
 \newcommand{\introduction}{
     \newpage
+    \setcounter{chapter}{1}
 	\addcontentsline{toc}{chapter}{\numberline{}Introduction}
 	\chapter*{Introduction}
-	 \doublespacing
 	\input{frontmatter/introduction}
 }
 \newcommand{\makefrontmatter}{
 \setcounter{page}{1}
 \pagenumbering{roman}
- %   \declaration
-% \acknowledgments
- %   \abstractpage
+\doublespacing
+\declaration
+ \acknowledgments
+     \abstractpage
+
     	\contents
+    	\doublespacing
 	\setcounter{page}{1}
 \pagenumbering{arabic}
 		\introduction
-\doublespacing
 }
 
 \def\degree#1{\gdef\@degree{#1}}
