@@ -4,7 +4,7 @@ This chapter focuses on the implementation of the data models discussed in chapt
 \section{Creating database systems}\label{dbcreate}
 Once the process of modelling of the database systems was complete, the next stage was to transform the model plan into actual databases. For each database system, this was relatively simple. However, with this simplicity, brought limitations and restrictions of which I had to construe, to fully achieve my target model.
 
-\subsubsection*{MySQL}
+\subsection{MySQL - schema implementation}
 The MySQL data model consists of 8 tables; AnatomyStructures, Assays, Genes, Publications, Sources, Specimens, Stages and TextAnnotations. Each of which are discussed in detail in section \ref{mysqldesign}. The creation of these tables was a relatively straightforward undertaking. The ease in which I found this process, may be due to my previous experience of using MySQL. Another rational explanation would be that the intuitive and logical way in which relational databases are constructed, make implementing a data model, an all round elementary procedure. An example of how a table is created in MySQL can be found in the code snippet \ref{code:mysqlass} below. This code illustrates the creation of the Assays table, the indexes and the constraints.
 \newpage
 \vspace*{\fill}
@@ -48,9 +48,9 @@ Intuitively, one would expect quicker load times and a slower querying performan
 
 MySQL tables are linked by joining the (unique) primary key of one column to the (unique or non unique) foreign key of another. Lines 15-19 in code snippet \ref{code:mysqlass}, is where the key columns are created and lines 23 - 29 is where the foreign key constraints are expressed. The notion of keys joining tables can often be a slightly confusing concept to understand on first encounter. Primary and foreign keys are, not always, but in most cases confined to integer values. This is as a result of, data often containing inconsistent, ambiguous and non universal values. For example, a primary key may have the value ``Mouse'' and a foreign key may have the value ``mouse''. Both valid strings however as they do not match exactly the join would fail. The rigidity of these constructs have as many advantages as they do disadvantages. While the concept of joining two tables on matching integers seems logical, many situations occur where there is no unique ID present in the dataset and therefore the ID has to be manually created based on the data available.
 
-The process to create multiple tables and join them together in MySQL is relatively straightforward. While the formality of definitively expressing each term and its data type then stipulating the index keys and constrains, can be a tedious process, it is done so in a logical and objective manner, which makes it coherent and understandable for the programmer.
+The process described was repeated for each of the tables in the devised data model. Creating multiple tables and joining them together in MySQL is relatively straightforward. While the formality of definitively expressing each term and its data type then stipulating the index keys and constrains, can be a tedious process, it is done so in a logical and objective manner, which makes it coherent and understandable for the programmer.
 
-\subsection*{MongoDB}
+\subsection{MongoDB - schema implementation}
 Creating a document inside a MongoDB collection (the equivalent to a MySQL table) is done by inserting field and value pairs. Each time a new field and value pair is inserted into a collection, a new document is created. By default, each document in a collection is provided with a unique ID which has an object data type. ObjectIds are small, fast to generate, and ordered. These values consists of 12-bytes, where the first four bytes are a timestamp that reflect the ObjectId’s creation \cite{mongo}. A unique ID can also be manually created for each document, if available. By this I mean, if a dataset has a unique identifier, which will be used as a reference, this can be implemented by definitively expressing the ``\_id'' field, to a value. For example ``\_id : 1234'' would by the ID of a single document. This concept is illustrated in line 2 of code snippet \ref{code:mongoinsert}.
 
 MongoDB is an extremely flexible data store. It accepts multiple different data types, from the standard; string, double and boolean values to the more complex regular expressions and even Javascript code. By default, any value without a type cast will be presumed to be either a sting or integer value. This attribute is common of NoSQL systems. It adds to the simplicity and smooth process of implementing a data model.
@@ -102,43 +102,54 @@ db.emage.insert({
 \end{lstlisting} 
 
 
-\subsection*{Neo4j}
+\subsection{Neo4j - schema implementation}
 To implement a Neo4j structure we use a query language namely Cypher Query Language (CQL). Cypher, is a declarative graph query language that allows for expressive and efficient querying and updating of a graph store \cite{nd}. CQL was designed to be as user friendly as possible for both programmers and operations professionals alike \cite{nd}. The structure of CQL is based upon SQL and shares many of its attributes. CQL queries are built using various clauses. For a detailed insight into CQL, see section \ref{neo}.
 
-As Neo4j is based upon the property graph model, a database is implemented by constructing nodes and relationships. A node is made up of either a single or a number of properties. A property is a value which is named by a string. The accepted property values in Neo4j are: Numeric, String, Boolean and Collections of any other value type, for example, an array of Strings. By default, all values in Neo4j are of property type String. A type cast, has to be declared in order to manipulate the property value type. A relationship organises the nodes by joining two nodes together on a shared common value. As with nodes, relationships can have definitive value properties.
+As Neo4j is based upon the property graph model, a database is implemented by constructing nodes and relationships. A node is made up of either a single or a number of properties. A property is a value which is named by a string. The accepted property values in Neo4j are: Numeric, String, Boolean and Collections of any other value type, for example, an array of Strings. A relationship organises the nodes by joining two nodes together on a shared common value. As with nodes, relationships can have definitive value properties.
 
 A node created in Neo4j is automatically instantiated with an ID value. Each and every node in the database has a unique numerical ID, which is incremented from the first node to the last inserted. This value can not be changed. Creating relationships between the nodes and querying the graph, is generally done by imposing various clauses upon the node values as opposed to this unique ID. However this ID value can indeed be used as or within a query clause by using the ``ID'' clause function.
 
-Creating a Neo4j structure can either be done by implementing a Cypher file; containing the indexes, nodes, constraints and relationships of the data model. The Cypher file can then be bulk loaded into the database. Alternatively a data model can be manually implemented using the Neo4j shell command prompt. I will detail an example of how to create a structure from the command line. However, for the full EMAGE dataset instantiation, I created a Cypher file and imported the dataset simultaneously. The implementation of this is discussed in section \ref{neoload}, which also describes how to load data into Neo4j fom a CSV file. Code snippet \ref{code:neocreate} illustrates the implementation of an example data structure in Neo4j based on the EMAGE data model.
-
+Creating a Neo4j structure can either be done by implementing a Cypher file; containing the indexes, nodes, constraints and relationships of the data model. The Cypher file can then be bulk loaded into the database. Alternatively a data model can be manually implemented using the Neo4j shell command prompt. Code snippet \ref{code:neocreate} is an example of how to create a structure from the command line. However, for the full EMAGE dataset instantiation, I created a Cypher file and imported the dataset simultaneously. The implementation of this is discussed in section \ref{neoload}, which also describes how to load data into Neo4j fom a CSV file. Code snippet \ref{code:neocreate} illustrates the implementation of an assay, publication, indexes and constraints via the command prompt.
 \newpage
 \vspace*{\fill}
-\begin{lstlisting}[language=SQL, caption=Creation of example data structure in Neo4j., label=code:neocreate]
+\begin{lstlisting}[language=SQL, caption=Example creation of an assay\, publication\, indexes and constraints in Neo4j., label=code:neocreate]
+---
+--- Create node indexes and constraints
+---
+CREATE CONSTRAINT ON (e:Assay) ASSERT e.id IS UNIQUE;
+CREATE INDEX ON :Assay(emageID);
+---
+--- Create Assays
+---
+MATCH (source:Source {source : 'emage'})
+MATCH (specimen:Specimen {strain : 'unspecified', type : 'wholemount'})
+MATCH (stage:Stage {theilerstage : TOINT('15'), dpc : '9.5 dpc'})
 
-CREATE (assay:Assay { title : 'The Matrix', year : '1999-03-31' })
-CREATE (matrix2:Movie { title : 'The Matrix Reloaded', year : '2003-05-07' })
-CREATE (matrix3:Movie { title : 'The Matrix Revolutions', year : '2003-10-27' })
-CREATE (keanu:Actor { name:'Keanu Reeves' })
-CREATE (laurence:Actor { name:'Laurence Fishburne' })
-CREATE (carrieanne:Actor { name:'Carrie-Anne Moss' })
-CREATE (keanu)-[:ACTS_IN { role : 'Neo' }]->(matrix1)
-CREATE (keanu)-[:ACTS_IN { role : 'Neo' }]->(matrix2)
-CREATE (keanu)-[:ACTS_IN { role : 'Neo' }]->(matrix3)
-CREATE (laurence)-[:ACTS_IN { role : 'Morpheus' }]->(matrix1)
-CREATE (laurence)-[:ACTS_IN { role : 'Morpheus' }]->(matrix2)
-CREATE (laurence)-[:ACTS_IN { role : 'Morpheus' }]->(matrix3)
-CREATE (carrieanne)-[:ACTS_IN { role : 'Trinity' }]->(matrix1)
-CREATE (carrieanne)-[:ACTS_IN { role : 'Trinity' }]->(matrix2)
-CREATE (carrieanne)-[:ACTS_IN { role : 'Trinity' }]->(matrix3)
+CREATE (assay:Assay {emageID: TOINT('10001'), probeID : 'Epas1 probeA',
+		type : 'in situ'})
 
+CREATE (assay)-[:COMES_FROM]->(source)
+CREATE (assay)-[:CLASSIFIED_AS]->(specimen)
+CREATE (assay)-[:GROUPED_BY]->(stage);
+---
+--- Create Publications
+---
+MATCH (assay:Assay {emageID : TOINT('10001')})
+
+CREATE (publication:Publication { accession: TOINT('9113979'), title : 'A novel bHLH-PAS factor with close sequence similarity to hypoxia-inducible factor 1alpha regulates the VEGF expression and is potentially involved in lung and vascular development.', author : 'Ema M, Taya S, Yokotani N, Sogawa K, Matsuda Y, Fujii-Kuriyama Y'})
+
+CREATE (publication)-[:DESCRIBES]->(assay);
 \end{lstlisting}
 \vspace*{\fill}
 \newpage
 
+Creating an indexes and constraints in Neo4j can be done at any time during implementation. The process is a simple, one line command for each. Lines 4 and 5 in code snippet \ref{code:neocreate} illustrate this. Imposing unique constraints on a node is more relevant when importing multiple nodes at one time by using the ``merge'' command. This is discussed in detail, in section \ref{neoload}.
+
+As illustrated in code snippet \ref{code:neocreate}, there are 3 main stages when creating a node in my Neo4j data model. Let's take a look at the creation of the Publications node on lines 22-26. Firstly we match another node, ``Assay'', with a value which we corresponds with our publication node. In SQL terms this is essentially a join. Line 22 is saying ``Join this node I am creating, with the assay node which has an ID of 10001''. We then move on to create the publication node. To do this, we state the name of the node, then add in the field and value pairs we are looking to associate with this node, in a JSON format. Finally we create the relationship of the publication node. Line 26 represents the creation of this relationship. State the name of the parent node, define the relationship (with a string value of your choosing) then state the name of the child node. As a publication describes an assay, I have named the relationship in this case ``DESCRIBES''. The two nodes are then joined together as a result of the match we created in step 1. The ordering of this process can be rearranged. The creation of the node can come before the matching stage, however the match must come before the relationship creation. It is evident when creating a Neo4j data model, that the attributes of CQL were certainly implemented with simplicity in mind. The ease in which nodes and relationships are created is effortless.
+
+\subsection{Apache Cassandra - schema implementation}
 
 
-\subsection*{Cassandra}
-TO BE COMPLETE
 
 
 

@@ -21,7 +21,7 @@ The mysqlimport command can take a number of parameters some of which include, d
 ---
 ---Import data into all tables in one command
 ---
-mysqlimport -u root -p --local --fields-terminated-by=, emage assays.csv publications.csv sources.csv specimens.csv stages.csv textannotations.csv genes.csv anatomystructures.csv
+mysqlimport -u root -p --local --fields-terminated-by=, test assays.csv publications.csv sources,
 
 \end{lstlisting}
 

@@ -40,9 +40,19 @@
 \contentsline {chapter}{\numberline {4}Database Modelling}{25}{chapter.4}
 \contentsline {section}{\numberline {4.1}Cleansing the data}{25}{section.4.1}
 \contentsline {section}{\numberline {4.2}Designing the data models}{27}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}MySQL - data model design}{28}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}MongoDB - data model design}{31}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Neo4j - data model design}{34}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Apache Cassandra - data model design}{37}{subsection.4.2.4}
 \contentsline {chapter}{\numberline {5}Schema Implementation}{38}{chapter.5}
 \contentsline {section}{\numberline {5.1}Creating database systems}{38}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}MySQL - schema implementation}{38}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}MongoDB - schema implementation}{41}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Neo4j - schema implementation}{44}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Apache Cassandra - schema implementation}{46}{subsection.5.1.4}
 \contentsline {chapter}{\numberline {6}Importing Data}{47}{chapter.6}
-\contentsline {chapter}{\numberline {7}Evaluation Results}{48}{chapter.7}
-\contentsline {chapter}{\numberline {8}Comparison and Discussion}{49}{chapter.8}
-\contentsline {chapter}{\numberline {9}Conclusion}{50}{chapter.9}
+\contentsline {section}{\numberline {6.1}Put the data in databases}{47}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}MySQL - data load}{47}{subsection.6.1.1}
+\contentsline {chapter}{\numberline {7}Evaluation Results}{49}{chapter.7}
+\contentsline {chapter}{\numberline {8}Comparison and Discussion}{50}{chapter.8}
+\contentsline {chapter}{\numberline {9}Conclusion}{51}{chapter.9}

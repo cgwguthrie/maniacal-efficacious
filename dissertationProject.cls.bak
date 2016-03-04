@@ -91,6 +91,28 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
       {[}{{{\color{delim}{[}}}}{1}
       {]}{{{\color{delim}{]}}}}{1}
 }
+
+\definecolor{dkgreen}{rgb}{0,.6,0}
+\definecolor{dkblue}{rgb}{0,0,.6}
+\definecolor{dkyellow}{cmyk}{0,0,.8,.3}
+%
+%\lstset{
+ % language        = php,
+ % basicstyle      = \footnotesize,
+ % captionpos=b,
+ %   showspaces=false,               % show spaces adding particular underscores
+ %  showstringspaces=false,
+ %   showtabs=false,
+  %      stepnumber=1,
+  %  numbersep=10pt,
+ % keywordstyle    = \color{dkblue},
+ % stringstyle     = \color{red},
+ % identifierstyle = \color{dkgreen},
+ % commentstyle    = \color{gray},
+ % emph            =[1]{php},
+ % emphstyle       =[1]\color{black},
+ % emph            =[2]{if,and,or,else},
+ % emphstyle       =[2]\color{dkyellow}}
 \parindent 15pt
 
 \newcommand{\declaration}{
