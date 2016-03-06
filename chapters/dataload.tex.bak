@@ -6,7 +6,7 @@ The final stage in the data modelling process was to import the EMAGE dataset in
 
 \subsection{MySQL - data load}
 There are a couple of main ways in which data can be loaded into a MySQL database. You can manually insert the data, row by row in the MySQL shell command prompt, using an \textbf{INSERT INTO} statement. However, to implement a full database using this method would be extremely time consuming and laborious. While time may not be of the essence in certain circumstances, manually writing 200,000 rows of insert statements is in no way the optimal solution to complete this task. An alternative option available is to use the \textbf{mysqlimport} command. The mysqlimport client is simply a command-line interface to the \textbf{LOAD DATA INFILE} statement. For readers unfamiliar with this statement, code snippet \ref{code:ldi} represents an example LOAD DATA INFILE implementation.
-
+\newpage
 \begin{lstlisting}[language=SQL, caption=Example LOAD DATA INFILE statement., label=code:ldi]
 mysql > LOAD DATA INFILE '/home/callum/emageData/assay.csv'
 	 	 -> INTO TABLE assays
@@ -15,16 +15,17 @@ mysql > LOAD DATA INFILE '/home/callum/emageData/assay.csv'
 		 -> (emageID, probeID, type);
 \end{lstlisting}
 
-The mysqlimport command can take a number of parameters some of which include, delete (empty the table before import), lock (lock all tables for writing before processing any text files) and force (continue even if an SQL error occurs). While these are noteworthy and useful functions, they are not required in this instance. The mysqlimport statements used to load the EMAGE dataset into MySQL can be found in code snippet \ref{code:mysqlload}.
-
-\begin{lstlisting}[language=SQL, caption=Example LOAD DATA INFILE statement., label=code:ldi]
+The mysqlimport command can take a number of parameters some of which include, delete (empty the table before import), lock (lock all tables for writing before processing any text files) and force (continue even if an SQL error occurs). While these are noteworthy and useful functions, they are not required in this instance. The mysqlimport statement used to load the EMAGE dataset into MySQL can be found below in code snippet \ref{code:mysqlload}.
+\begin{lstlisting}[language=SQL, caption=Command used to load data into the MySQL database., label=code:mysqlload]
 ---
 ---Import data into all tables in one command
 ---
-mysqlimport -u root -p --local --fields-terminated-by=, test assays.csv publications.csv sources,
-
+mysqlimport -u root -p --ignore-lines=1 --fields-terminated-by=, emage assays.csv publications.csv sources.csv specimens.csv stages.csv textannotations.csv genes.csv anatomystructures.csv
 \end{lstlisting}
+\parindent 0pt
+The command works by, firstly connecting to the MySQL database as the root user and accepting a password. All of the data files I imported included headings, the ``ignore-lines=1'' parameter simply imports the data starting on line 2 thus skipping the headings row. The ''fields-terminated-by=,'' parameter allows one to stipulate the delimiter of the file, whether it be a comma, semicolon or tab for example. The name of the database is then required to be stated in the command, hence the inclusion of ``emage''. Finally the name of the files being imported are required. When using the mysqlimport statement, multiple files can be loaded into multiple tables in one command. The name of the table is matched with the name of the file and the data is imported for each. It is therefore crucial that the ordering of the data in the file matches that of the table. If the two do not match, it is likely that 1. The load will fail due to an incompatible data type with the values found in the file 2. The wrong data will me mapped into the wrong columns.
 
+\parindent 15pt
 
 
 
