@@ -53,6 +53,7 @@ breaklines=true,        % sets automatic line breaking
 breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
 escapeinside={\%*}{*)}          % if you want to add a comment within your code
 }
+
 \renewcommand{\lstlistingname}{Code snippet}
 \colorlet{punct}{red!60!black}
 \definecolor{delim}{RGB}{20,105,176}

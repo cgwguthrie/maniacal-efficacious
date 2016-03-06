@@ -23,13 +23,64 @@ The mysqlimport command can take a number of parameters some of which include, d
 mysqlimport -u root -p --ignore-lines=1 --fields-terminated-by=, emage assays.csv publications.csv sources.csv specimens.csv stages.csv textannotations.csv genes.csv anatomystructures.csv
 \end{lstlisting}
 \parindent 0pt
-The command works by, firstly connecting to the MySQL database as the root user and accepting a password. All of the data files I imported included headings, the ``ignore-lines=1'' parameter simply imports the data starting on line 2 thus skipping the headings row. The ''fields-terminated-by=,'' parameter allows one to stipulate the delimiter of the file, whether it be a comma, semicolon or tab for example. The name of the database is then required to be stated in the command, hence the inclusion of ``emage''. Finally the name of the files being imported are required. When using the mysqlimport statement, multiple files can be loaded into multiple tables in one command. The name of the table is matched with the name of the file and the data is imported for each. It is therefore crucial that the ordering of the data in the file matches that of the table. If the two do not match, it is likely that 1. The load will fail due to an incompatible data type with the values found in the file 2. The wrong data will me mapped into the wrong columns.
-
+The command works by, firstly connecting to the MySQL database as the root user and accepting a password. All of the data files I imported included headings, the ``ignore-lines=1'' parameter simply imports the data starting on line 2 thus skipping the headings row. The ''fields-terminated-by=,'' parameter allows one to stipulate the delimiter of the file, whether it be a comma, semicolon or tab for example. The name of the database is then required to be stated in the command, hence the inclusion of ``emage''. Finally the name of the files being imported are required. When using the mysqlimport statement, multiple files can be loaded into multiple tables in one command. The name of the table is matched with the name of the file and the data is imported for each. It is therefore crucial that the ordering of the data in the file matches that of the table. If the two do not match, it is likely that 1. The load will fail due to an incompatible data type with the values found in the file 2. The wrong data will me mapped into the wrong columns. As each row in a CSV file is a record, there is a clear commonality between the file format and a MySQL database. Thus resulting in a relatively straightforward dataset load.
 \parindent 15pt
 
+\subsection{MongoDB - data load}\label{mongoload}
+As discussed in section \ref{mongocreate}, MongoDB documents can be created by using the \textit{db.collection.insert(\{\})} command. One simply writes a piece of valid JSON within the curly braces of this command and the document is created. A sleek and straightforward method however not the most efficient nor optimal process available for inserting datasets of large volume.
+
+MongoDB provides an alternative to this procedure in the form of a mongoimport tool. The mongoimport tool imports content from a JSON, CSV, or TSV file into the database. When importing a dataset which maps from your flat file into the format of your data model exactly, this method is extremely resourceful. However, should your dataset be in any other format or require structure manipulation, the mongoimport tool would not be of any use as it is a literal import. As the data model I created for MongoDB includes embedded data and value arrays, and the EMAGE dataset is not in a JSON file format, using the mongoimport tool was not a feasible approach.
+
+To load the dataset into the data model, I used the Python MongoDB API, namely PyMongo. PyMongo is a Python distribution containing tools for working with MongoDB, and is the recommended way to work with MongoDB from Python \cite{mongo}. The PyMongo script I created can be simply broken down into three stages; connect, insert and update.
+
+\begin{enumerate}
+\item Connect
+\begin{itemize}
+\item The first step is to connect to the running MongoDB instance. This is an easy step an consists of simply calling ``MongoClient()'' which by default connects to the host and port which is running locally.
+\item We can then use the running instance to select the relevant database we want to load data into.
+\end{itemize}
+\item Insert
+\begin{itemize}
+\item 
+\end{itemize}
+\item Update
+\begin{itemize}
+\item
+\end{itemize}
+\end{enumerate}
 
 
+Code snippet \ref{code:pymongo} represents the full PyMongo script I wrote to load the data into the database.
 
 
+\newpage
+\vspace*{\fill}
+\begin{lstlisting}[language=Python, caption=PyMongo script implemented to load data into MongoDB., label=code:pymongo]
+import csv
+from pymongo import MongoClient
+connection = MongoClient()
+db = connection["mongomodel3"]
+emage = db["emage"]
 
+with open("Data/Assays.csv") as file1:
+    reader1 = csv.DictReader(file1, delimiter=",")
+    for row in reader1:
+      emage.insert({
+         '_id': int(row['emage_id']), 'probeID': row['probe_id'], 'type': row['assay_type'], 'source': row['name'], 'specimen' : {'type':row['type'],'strain' : row['strain']}, 'stage' : {'theilerstage' : int(row['theilerstage']),'dpc' : row['dpc']}})
 
+with open("Data/Publications.csv") as file2:
+   reader2 = csv.DictReader(file2, delimiter=",")
+   for row in reader2:
+      emage.update_many({'_id': int(row['emage_id'])},
+         {'$push' : {'publication' : {'publicationID' : int(row['accession']), 'title' : row['title'], 'author' : row['author']}}}, upsert=False)
+
+with open("Data/TextAnnotations.csv") as file3:
+   reader3 = csv.DictReader(file3, delimiter=",")
+   for row in reader3:
+      emage.update_many({'_id': int(row['emage_id'])},
+         {'$push' : { 'textannotation' : {'strength' : row['strength'],
+         'anatomystructure' : {'structureID' : int(row['EMAPA']),'term' : row['term']},
+         'gene' : {'geneID' : row['accession'],'name' : row['name']}}}}, upsert=False)
+\end{lstlisting}
+\vspace*{\fill}
+\newpage

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.2.6)  6 MAR 2016 16:11
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.2.6)  6 MAR 2016 23:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1007,12 +1007,9 @@ File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.0 (rcs-revision 1.9)
 
 LaTeX Warning: Label `fig:mongo' multiply defined.
 
-) (./chapters/implementation.aux) (./chapters/dataload.aux
-
-LaTeX Warning: Label `code:ldi' multiply defined.
-
-) (./chapters/results.aux) (./chapters/discussion.aux)
-(./chapters/conclusion.aux))
+) (./chapters/implementation.aux) (./chapters/dataload.aux)
+(./chapters/results.aux) (./chapters/discussion.aux) (./chapters/conclusion.aux
+))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
@@ -1310,14 +1307,7 @@ LaTeX Warning: Reference `fig:index' on page 40 undefined on input line 47.
 
 LaTeX Warning: Citation `mongo' on page 40 undefined on input line 54.
 
-[40]
-
-LaTeX Warning: Reference `mongoload' on page 41 undefined on input line 58.
-
-
-LaTeX Warning: Reference `neoload' on page 41 undefined on input line 60.
-
-[41] [42] [43]
+[40] [41] [42] [43]
 
 LaTeX Warning: Citation `nd' on page 44 undefined on input line 106.
 
@@ -1340,17 +1330,19 @@ Chapter 6.
 
 
 
-]
+] [48]
 
-LaTeX Warning: Reference `code:mysqlload' on page 48 undefined on input line 18
-.
+LaTeX Warning: Citation `mongo' on page 49 undefined on input line 34.
 
-) [48]
+[49] [50] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+[51])
 \openout2 = `chapters/results.aux'.
 
  (./chapters/results.tex
 Chapter 7.
-) [49
+) [52
 
 
 
@@ -1359,7 +1351,7 @@ Chapter 7.
 
  (./chapters/discussion.tex
 Chapter 8.
-) [50
+) [53
 
 
 
@@ -1368,18 +1360,18 @@ Chapter 8.
 
  (./chapters/conclusion.tex
 Chapter 9.
-) [51
+) [54
 
 
 
-] (./main.bbl [52
+] (./main.bbl [55
 
 
 
 ]
 Invalid UTF-8 byte or sequence at line 96 replaced by U+FFFD.
 Missing character: There is no � in font Georgia/OT:mapping=tex-text;!
-) [53]
+) [56]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 34.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 34.
  (./main.aux (./chapters/literaturereview.aux)
@@ -1399,12 +1391,12 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 34.
  ) 
 Here is how much of TeX's memory you used:
- 33652 strings out of 495637
- 641570 string characters out of 6187763
- 793280 words of memory out of 5000000
- 36354 multiletter control sequences out of 15000+600000
+ 33801 strings out of 495637
+ 643165 string characters out of 6187763
+ 828640 words of memory out of 5000000
+ 36501 multiletter control sequences out of 15000+600000
  7891 words of font info for 57 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  62i,12n,60p,10388b,1290s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (60 pages).
+Output written on main.pdf (63 pages).
