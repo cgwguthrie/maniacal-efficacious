@@ -31,7 +31,7 @@ As discussed in section \ref{mongocreate}, MongoDB documents can be created by u
 
 MongoDB provides an alternative to this procedure in the form of a mongoimport tool. The mongoimport tool imports content from a JSON, CSV, or TSV file into the database. When importing a dataset which maps from your flat file into the format of your data model exactly, this method is extremely resourceful. However, should your dataset be in any other format or require structure manipulation, the mongoimport tool would not be of any use as it is a literal import. As the data model I created for MongoDB includes embedded data and value arrays, and the EMAGE dataset is not in a JSON file format, using the mongoimport tool was not a feasible approach.
 
-To load the dataset into the data model, I used the Python MongoDB API, namely PyMongo. PyMongo is a Python distribution containing tools for working with MongoDB, and is the recommended way to work with MongoDB from Python \cite{mongo}. The PyMongo script I created can be simply broken down into three stages; connect, insert and update.
+To load the dataset into the data model, I used the Python MongoDB API, namely PyMongo. PyMongo is a Python distribution containing tools for working with MongoDB, and is the recommended way to work with MongoDB from Python \cite{mongo}. The PyMongo script I created can be simply broken down into three stages; connect, insert and update. Code snippet \ref{code:pymongo} represents the full PyMongo script I wrote to load the data into the database.
 
 \begin{enumerate}
 \item Connect
@@ -45,42 +45,41 @@ To load the dataset into the data model, I used the Python MongoDB API, namely P
 \end{itemize}
 \item Update
 \begin{itemize}
-\item 
+\item To embed the Publications and Text Annotations data within the MongoDB documents I used the ``update\_ many'' command. This simply looks for a given value, which in this case was the EMAGE ID and updates the document with the stipulated values.
+\item The ``upsert'' parameter is set to false in this instance. Upsert is the equivalent of saying ``If the value I am inserting is not currently in the database, what do I do with it?''. As I have set this to false the data will only be added if there is a match on the EMAGE ID.
 \end{itemize}
 \end{enumerate}
-
-
-Code snippet \ref{code:pymongo} represents the full PyMongo script I wrote to load the data into the database.
-
-
-\newpage
-\vspace*{\fill}
 \begin{lstlisting}[language=Python, caption=PyMongo script implemented to load data into MongoDB., label=code:pymongo]
 import csv
 from pymongo import MongoClient
 connection = MongoClient()
 db = connection["mongomodel3"]
 emage = db["emage"]
-
 with open("Data/Assays.csv") as file1:
     reader1 = csv.DictReader(file1, delimiter=",")
     for row in reader1:
       emage.insert({
          '_id': int(row['emage_id']), 'probeID': row['probe_id'], 'type': row['assay_type'], 'source': row['name'], 'specimen' : {'type':row['type'],'strain' : row['strain']}, 'stage' : {'theilerstage' : int(row['theilerstage']),'dpc' : row['dpc']}})
-
 with open("Data/Publications.csv") as file2:
    reader2 = csv.DictReader(file2, delimiter=",")
    for row in reader2:
       emage.update_many({'_id': int(row['emage_id'])},
          {'$push' : {'publication' : {'publicationID' : int(row['accession']), 'title' : row['title'], 'author' : row['author']}}}, upsert=False)
-
 with open("Data/TextAnnotations.csv") as file3:
    reader3 = csv.DictReader(file3, delimiter=",")
    for row in reader3:
       emage.update_many({'_id': int(row['emage_id'])},
-         {'$push' : { 'textannotation' : {'strength' : row['strength'],
-         'anatomystructure' : {'structureID' : int(row['EMAPA']),'term' : row['term']},
-         'gene' : {'geneID' : row['accession'],'name' : row['name']}}}}, upsert=False)
+         {'$push' : { 'textannotation' : {'strength' : row['strength'], 'anatomystructure' : {'structureID' : int(row['EMAPA']),'term' : row['term']}, 'gene' : {'geneID' : row['accession'],'name' : row['name']}}}}, upsert=False)
 \end{lstlisting}
-\vspace*{\fill}
-\newpage
+
+\subsection*{Neo4j - data load}
+Creating nodes and relationships in Neo4j is a simple process. As discussed in section \ref{neomodel}, inserting a handful of nodes directly into a Neo4j database is relatively straightforward. All that is required is a few commands and you can have a fully functioning data model. For a detailed description on how to do this, see section \ref{neo}. However, this is on a small scale only. The process for implementing a full data model with a large dataset requires a little more work.
+
+The query language which Neo4j is based on, Cypher Query Language, allows for multiple ways of implementing a data model. The main way to do this is to use Cypher?s \textbf{LOAD CSV} command to transform the contents of the CSV file into a graph structure. Code snippet represents the \ref{code:cypher}
+
+
+
+
+
+
+
