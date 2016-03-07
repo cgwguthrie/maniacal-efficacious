@@ -51,7 +51,7 @@ tabsize=2,          % sets default tabsize to 2 spaces
 captionpos=b,           % sets the caption-position to bottom
 breaklines=true,        % sets automatic line breaking
 breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
-escapeinside={\%*}{*)}          % if you want to add a comment within your code
+escapeinside={\\*}{\\*}          % if you want to add a comment within your code
 }
 
 \renewcommand{\lstlistingname}{Code snippet}
