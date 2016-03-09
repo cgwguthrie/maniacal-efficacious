@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.2.6)  9 MAR 2016 00:59
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.2.6)  9 MAR 2016 20:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1303,9 +1303,6 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 12.
  [39]
 
-LaTeX Warning: Reference `fig:index' on page 40 undefined on input line 45.
-
-
 LaTeX Warning: Reference `fig:index' on page 40 undefined on input line 47.
 
 
@@ -1414,7 +1411,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 34.
 Here is how much of TeX's memory you used:
  33847 strings out of 495637
  643699 string characters out of 6187763
- 829067 words of memory out of 5000000
+ 829068 words of memory out of 5000000
  36547 multiletter control sequences out of 15000+600000
  7891 words of font info for 57 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
