@@ -54,6 +54,9 @@
 \contentsline {section}{\numberline {6.1}Put the data in databases}{47}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}MySQL - data load}{47}{subsection.6.1.1}
 \contentsline {subsection}{\numberline {6.1.2}MongoDB - data load}{49}{subsection.6.1.2}
-\contentsline {chapter}{\numberline {7}Evaluation Results}{53}{chapter.7}
-\contentsline {chapter}{\numberline {8}Comparison and Discussion}{54}{chapter.8}
-\contentsline {chapter}{\numberline {9}Conclusion}{55}{chapter.9}
+\contentsline {subsection}{\numberline {6.1.3}Neo4j - data load}{52}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}Apache Cassandra - data load}{54}{subsection.6.1.4}
+\contentsline {chapter}{\numberline {7}Evaluation Results}{56}{chapter.7}
+\contentsline {section}{\numberline {7.1}Results}{56}{section.7.1}
+\contentsline {chapter}{\numberline {8}Comparison and Discussion}{58}{chapter.8}
+\contentsline {chapter}{\numberline {9}Conclusion}{59}{chapter.9}

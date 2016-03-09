@@ -1,11 +1,11 @@
 \chapter{Importing Data}\label{dataload}
-As discussed in section \ref{etlprocess}, the load stage of an ETL procedure can often become the most time consuming phase of the pipeline. This chapter describes the implemented procedures and examines the functionality each solution provides to complete the load process.
+As discussed in section \ref{etlprocess}, the load stage of an ETL procedure can often become the most time consuming phase of the pipeline. This chapter describes the implemented procedures and examines the functionality each solution provides to complete the data load process.
 
 \section{Put the data in databases}\label{loadsection}
-The final stage in the data modelling process was to import the EMAGE dataset into the created data models. For each of the database systems, a different approach was required to be undertaken. To ensure a balanced and impartial evaluation, each of the datasets were converted into a CSV file format and manipulated by the functional tools the respective systems provide.
+The final stage in the data modelling process was to import the EMAGE dataset into the created data models. For each of the database systems, a different approach was required. To ensure a balanced and impartial evaluation, each of the datasets were converted into a CSV file format and manipulated by the functional tools the respective systems provide.
 
 \subsection{MySQL - data load}
-There are a couple of main ways in which data can be loaded into a MySQL database. You can manually insert the data, row by row in the MySQL shell command prompt, using an \textbf{INSERT INTO} statement. However, to implement a full database using this method would be extremely time consuming and laborious. While time may not be of the essence in certain circumstances, manually writing 200,000 rows of insert statements is in no way the optimal solution to complete this task. An alternative option available is to use the \textbf{mysqlimport} command. The mysqlimport client is simply a command-line interface to the \textbf{LOAD DATA INFILE} statement. For readers unfamiliar with this statement, code snippet \ref{code:ldi} represents an example LOAD DATA INFILE implementation.
+There are various ways in which data can be loaded into a MySQL database. You can manually insert the data, row by row in the MySQL shell command prompt, using an \textbf{INSERT INTO} statement. However, to implement a full database using this method would be extremely time consuming and laborious. While time may not be of the essence in certain circumstances, manually writing 200,000 rows of insert statements is in no way the optimal solution to complete this task. An alternative option available is the \textbf{mysqlimport} command. The mysqlimport client is simply a command-line interface to the \textbf{LOAD DATA INFILE} statement. For readers unfamiliar with this statement, code snippet \ref{code:ldi} represents an example LOAD DATA INFILE implementation.
 \newpage
 \begin{lstlisting}[language=SQL, caption=Example LOAD DATA INFILE statement., label=code:ldi]
 mysql > LOAD DATA INFILE '/home/callum/emageData/assay.csv'
@@ -15,7 +15,7 @@ mysql > LOAD DATA INFILE '/home/callum/emageData/assay.csv'
 		 -> (emageID, probeID, type);
 \end{lstlisting}
 
-The mysqlimport command can take a number of parameters some of which include, delete (empty the table before import), lock (lock all tables for writing before processing any text files) and force (continue even if an SQL error occurs). While these are noteworthy and useful functions, they are not required in this instance. The mysqlimport statement used to load the EMAGE dataset into MySQL can be found below in code snippet \ref{code:mysqlload}.
+The mysqlimport command can take a number of parameters some of which include, delete (empty the table before import), lock (lock all tables for writing before processing any text files) and force (continue even if an SQL error occurs). While these are useful functions, they are not required in this instance. The mysqlimport statement used to load the EMAGE dataset into MySQL can be found below in code snippet \ref{code:mysqlload}.
 \begin{lstlisting}[language=SQL, caption=Command used to load data into the MySQL database., label=code:mysqlload]
 ---
 ---Import data into all tables in one command
@@ -23,41 +23,40 @@ The mysqlimport command can take a number of parameters some of which include, d
 mysqlimport -u root -p --ignore-lines=1 --fields-terminated-by=, emage assays.csv publications.csv sources.csv specimens.csv stages.csv textannotations.csv genes.csv anatomystructures.csv
 \end{lstlisting}
 \parindent 0pt
-The command works by, firstly connecting to the MySQL database as the root user and accepting a password. All of the data files I imported included headings, the ``ignore-lines=1'' parameter simply imports the data starting on line 2 thus skipping the headings row. The ''fields-terminated-by=,'' parameter allows one to stipulate the delimiter of the file, whether it be a comma, semicolon or tab for example. The name of the database is then required to be stated in the command, hence the inclusion of ``emage''. Finally the name of the files being imported are required. When using the mysqlimport statement, multiple files can be loaded into multiple tables in one command. The name of the table is matched with the name of the file and the data is imported for each. It is therefore crucial that the ordering of the data in the file matches that of the table. If the two do not match, it is likely that 1. The load will fail due to an incompatible data type with the values found in the file 2. The wrong data will me mapped into the wrong columns. As each row in a CSV file is a record, there is a clear commonality between the file format and a MySQL database. Thus resulting in a relatively straightforward dataset load.
+The command works by firstly connecting to the MySQL database as the root user and accepting a password. All of the data files I imported included headings, the ``ignore-lines=1'' parameter simply imports the data starting on line 2 thus skipping the headings row. The ''fields-terminated-by=,'' parameter allows one to stipulate the delimiter of the file, whether it be a comma, semicolon or tab for example. The name of the database is then required to be stated in the command, hence the inclusion of ``emage''. Finally the name of the files being imported are required. When using the mysqlimport statement, multiple files can be loaded into multiple tables in one command. The name of the table is matched with the name of the file and the data is imported for each. It is therefore crucial that the ordering of the data in the file matches that of the table. If the two do not match, it is likely that \textbf{1.} The load will fail due to an incompatible data type with the values found in the file \textbf{2.} The wrong data will be mapped into the wrong columns. As each row in a CSV file is a record, there is a clear commonality between the file format and a MySQL database. Thus resulting in a relatively straightforward dataset load.
 \parindent 15pt
 
 \subsection{MongoDB - data load}\label{mongoload}
-As discussed in section \ref{mongocreate}, MongoDB documents can be created by using the \textit{db.collection.insert(\{\})} command. One simply writes a piece of valid JSON within the curly braces of this command and the document is created. A sleek and straightforward method however not the most efficient nor optimal process available for inserting datasets of large volume.
+As discussed in section \ref{mongocreate}, MongoDB documents can be created by using the \textit{db.collection.insert(\{\})} command. One simply writes a piece of valid JSON within the curly braces of this command and the document is created. This is a sleek and straightforward method however not the most efficient process available for inserting datasets of large volume.
 
-MongoDB provides an alternative to this procedure in the form of a mongoimport tool. The mongoimport tool imports content from a JSON, CSV, or TSV file into the database. When importing a dataset which maps from your flat file into the format of your data model exactly, this method is extremely resourceful. However, should your dataset be in any other format or require structure manipulation, the mongoimport tool would not be of any use as it is a literal import. As the data model I created for MongoDB includes embedded data and value arrays, and the EMAGE dataset is not in a JSON file format, using the mongoimport tool was not a feasible approach.
+MongoDB provides an alternative to this procedure in the form of a mongoimport tool. The mongoimport tool imports content from a JSON, CSV, or TSV file into the database. When importing a dataset which maps from your flat file into the format of your data model exactly, this method is extremely resourceful. However, should your dataset be in any other format or require structure manipulation, the mongoimport tool would not be of any use as it is a literal import. The data model I created for MongoDB includes embedded data and value arrays. As the EMAGE dataset is not in a JSON file format, using the mongoimport tool was not a feasible approach.
 
-To load the dataset into the data model, I used the Python MongoDB API, namely PyMongo. PyMongo is a Python distribution containing tools for working with MongoDB, and is the recommended way to work with MongoDB from Python \cite{mongo}. The PyMongo script I created can be simply broken down into three stages; connect, insert and update.
+To load the dataset into the data model, I used the Python MongoDB API, namely PyMongo. PyMongo is a Python distribution containing tools for working with MongoDB, and is the recommended way to work with MongoDB from Python \cite{mongo}. The PyMongo script I created can be simply broken down into three stages; connect, insert and update. Code snippet \ref{code:pymongo} represents the full PyMongo script I wrote to load the data into the database.\\[2em]
 
 \begin{enumerate}
 \item Connect
 \begin{itemize}
-\item The first step is to connect to the running MongoDB instance. This is an easy step an consists of simply calling ``MongoClient()'' which by default connects to the host and port which is running locally.
+\item The first step is to connect to the running MongoDB instance. This is an easy step a consists of calling ``MongoClient()'' which by default connects to the host and port which is running locally.
 \item We can then use the running instance to select the relevant database we want to load data into.
 \end{itemize}
 \item Insert
 \begin{itemize}
-\item 
+\item To map the data into the database we create a \textbf{for} loop which iterates through the CSV file.
+\item The loop uses the heading of each column as the field and the row as the value. \\[2em]
 \end{itemize}
 \item Update
 \begin{itemize}
-\item
+\item To embed the Publications and Text Annotations data within the MongoDB documents I used the ``update\_ many'' command. This looks for a given value, which in this case was the EMAGE ID and updates the document with the stipulated values.
+\item The ``upsert'' parameter is set to false in this instance. Upsert is the equivalent of saying ``If the value I am inserting is not currently in the database, what do I do with it?''. As I have set this to false the data will only be added if there is a match on the EMAGE ID.
 \end{itemize}
 \end{enumerate}
-
-
-Code snippet \ref{code:pymongo} represents the full PyMongo script I wrote to load the data into the database.
-
-
 \newpage
 \vspace*{\fill}
 \begin{lstlisting}[language=Python, caption=PyMongo script implemented to load data into MongoDB., label=code:pymongo]
 import csv
+
 from pymongo import MongoClient
+
 connection = MongoClient()
 db = connection["mongomodel3"]
 emage = db["emage"]
@@ -67,20 +66,71 @@ with open("Data/Assays.csv") as file1:
     for row in reader1:
       emage.insert({
          '_id': int(row['emage_id']), 'probeID': row['probe_id'], 'type': row['assay_type'], 'source': row['name'], 'specimen' : {'type':row['type'],'strain' : row['strain']}, 'stage' : {'theilerstage' : int(row['theilerstage']),'dpc' : row['dpc']}})
-
+         
 with open("Data/Publications.csv") as file2:
    reader2 = csv.DictReader(file2, delimiter=",")
    for row in reader2:
       emage.update_many({'_id': int(row['emage_id'])},
          {'$push' : {'publication' : {'publicationID' : int(row['accession']), 'title' : row['title'], 'author' : row['author']}}}, upsert=False)
-
+         
 with open("Data/TextAnnotations.csv") as file3:
    reader3 = csv.DictReader(file3, delimiter=",")
    for row in reader3:
       emage.update_many({'_id': int(row['emage_id'])},
-         {'$push' : { 'textannotation' : {'strength' : row['strength'],
-         'anatomystructure' : {'structureID' : int(row['EMAPA']),'term' : row['term']},
-         'gene' : {'geneID' : row['accession'],'name' : row['name']}}}}, upsert=False)
+         {'$push' : { 'textannotation' : {'strength' : row['strength'], 'anatomystructure' : {'structureID' : int(row['EMAPA']),'term' : row['term']}, 'gene' : {'geneID' : row['accession'],'name' : row['name']}}}}, upsert=False)
 \end{lstlisting}
 \vspace*{\fill}
 \newpage
+\subsection{Neo4j - data load}
+As discussed in section \ref{neomodel}, inserting a handful of nodes directly into a Neo4j database is relatively straightforward. All that is required are a few commands and you can have a fully functioning data model. For a detailed description on how to do this see section \ref{neomodel}. However, this is on a small scale only. The process for implementing a full data model with a large dataset requires more resource.
+
+The query language which Neo4j is based on, Cypher Query Language, allows for multiple ways of implementing a data model. The main way to do this is to use Cypher's \textbf{LOAD CSV} command to transform the contents of a CSV file into a graph structure. Code snippet \ref{code:cypher} represents the Cypher file created to load the Assay nodes into the Neo4j database. The full Cypher file can be found in appendix \ref{app:cypher}.
+
+The main structure of the query and the commands used are similar for the two approaches. However, to load data in via a CSV one requires two additional lines, these are represented in lines 5 and 6 of code snippet \ref{code:cypher}. Line 5, ``\textbf{USING PERIODIC COMMIT}'' is used when loading large amounts of data in a single cypher query. This is because loading large volumes of data within a single query runs the risk of failing due to running out of memory. Thus including this function prevents the query failing for this reason. However, it will also break transactional isolation and should only be used where needed \ref{neo}. Line 6 of code snippet \ref{code:cypher} simply loads the file found at the stipulated location and assigns it to a variable name, ``row'' in this case.
+
+One additional noteworthy aspect of code snippet \ref{code:cypher} is the use of the ``MERGE'' keyword. MERGE either matches existing nodes and binds them, or it creates new data and binds that. MERGE is like a combination of MATCH and CREATE that additionally allows you to specify what happens if the data was matched or created \cite{neo}. Using this keyword aids the normalisation process.
+\newpage
+\vspace*{\fill}
+\begin{lstlisting}[language=SQL, caption=Cypher file created to load assay data into the Neo4j data model., label=code:cypher]
+CREATE CONSTRAINT ON (e:Assay) ASSERT e.id IS UNIQUE;
+CREATE INDEX ON :Assay(emageID);
+
+// Create Assays
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/Data/Assays.csv" AS row
+
+// Query the already created nodes and match them based on the following clauses.
+MATCH (source:Source {sourceID : TOINT(row.source_id)})
+MATCH (specimen:Specimen {specimenID : TOINT(row.specimen_id)})
+MATCH (stage:Stage {stageID : TOINT(row.stage_id)})
+
+// Create Assay nodes.
+MERGE (assay:Assay {emageID: TOINT(row.emage_id)})
+SET assay.probeID = row.probe_id, assay.type = row.type
+
+// Create Assay relationships.
+CREATE (assay)-[:COMES_FROM]->(source)
+CREATE (assay)-[:CLASSIFIED_AS]->(specimen)
+CREATE (assay)-[:GROUPED_BY]->(stage);
+\end{lstlisting}
+\vspace*{\fill}
+\newpage
+
+\subsection{Apache Cassandra - data load}
+There are a number of ways in which one can load a preformed dataset into a Cassandra cluster. In the early days of Cassandra, a low level interface, \textbf{BinaryMemtable} was used to ingest data. However, this tool was deemed rather difficult to use and is now defunct functionality \cite{cass}.
+
+Other tools which are available are \textbf{json2sstable} and \textbf{sstableloader}. While these alternatives are thought to be extremely efficient and powerful for importing millions of rows of data, they require careful network and configuration considerations \cite{cass}. Thus, making the process unnecessarily complicated for the programmer. For situations such as this, where either the volume of data does not merit the use of sstableloader, nor learning the use of json2sstable is deemed a valuable use of resource, another alternative is available; \textbf{COPY FROM}.
+
+The COPY FROM command is used on the Cassandra cqlsh interface. Cqlsh is a python-based command prompt for executing Cassandra Query Language (CQL) queries \cite{ds}. The usefulness of this command is that it accepts CSV data. COPY FROM accepts a number of parameters which allows the programmer to specify exactly what format the CSV file is in. While a CSV file type is recognised as a common format, there is no one way of structuring the file. By this I mean, a file can have headers, varying escape characters, different delimiters and multiple character encodings. All of which can be specified using the COPY FROM command parameters.
+
+\begin{lstlisting}[language=SQL, caption=Loading data into Apache Cassandra using the cqlsh interface., label=code:cass]
+---
+--- Copy the EMAGE submissions data into the assays table.
+---
+COPY assays (emageID,assayType,dpc,probeid,source,specimenstrain,specimentype,theilerstage)
+FROM '~/Desktop/emage_submissions.csv'
+WITH DELIMITER = ','
+AND HEADER = TRUE;
+\end{lstlisting}
+
+Code snippet \ref{code:cass} represents the loading of the Assay data into the assays table using the COPY FROM command. The command requires you to state the name of the table you are loading data into; ``assays'' in this example. Then specify the column names you will be importing data into in brackets.  The important thing to remember when using the COPY FROM command on a CSV file is that the ordering of the file headings must match the ordering of the columns in the table. Cassandra does not offer any way of mapping file headings to table column names. Therefore if there is a misalignment of data columns the values will be loaded incorrectly, and more often than not the load will fail due to incompatible data types. The FROM keyword denotes the location of the CSV file you will be loading. The WITH clause allows you to impose any rules on the COPY FROM command. In this instance, I have stipulated the delimiter of the file as a comma, and that there are headings in the top row of the file. After you run this command, the data will have been imported into your Cassandra tables.
