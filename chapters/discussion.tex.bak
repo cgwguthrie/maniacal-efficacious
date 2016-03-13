@@ -1,1 +1,3 @@
 \chapter{Comparison and Discussion}\label{discussion}
+The overriding feeling one gets towards the difficulty of implementing data models in both a relational and NoSQL system is, that while semantically each solution is dissimilar, they all share a core functional commonality. With the exception of MongoDB, to the untrained eye, each system syntactically is the same. 
+

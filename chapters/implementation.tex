@@ -59,10 +59,12 @@ Documents can be created by either manually inserting on the command line, or by
 
 Creating documents in MongoDB is an extremely simple process. One command and you can insert an entire database of information. While it is unlikely that one would manually insert a large volume of data using the \textit{db.collection.insert(\{\})} method, it is an available option. It is more likely that one would use this insertion process for adding additional data to an already implemented database, as opposed to creating from scratch. For example the EMAGE dataset contains around 200,000 entries. Inserting the full dataset using this methodology, while valid, would certainly not be the optimal solution. An explanation defining the full procedure into how I created the MongoDB documents can be found in section \ref{mongoload}.
 
-An important design decision which has to be taken prior to model implementation is, whether to create multiple collections or embed data within a document. A comprehensive evaluation of the advantages and disadvantages is discussed in section \ref{mongodesign}. The key difference between the two approaches is, that within a multiple collection database, querying is required to be undertaken at application level and is done by referencing data entities. Whereas in an embedded document, all of the data is available in a single schema and can be accessed by a single query. Thus improving query performance and application response time.
+An important design decision which has to be taken prior to model implementation is, whether to create multiple collections or embed data within a document. A comprehensive evaluation of the advantages and disadvantages is discussed in section \ref{mongodesign}. The key difference between the two approaches is, that within a multiple collection database, querying is required to be undertaken at application level and is done by referencing data entities. Whereas in an embedded document, all of the data is available in a single schema and can be accessed by a single query. The decision to choose between the two modelling designs is based purely on a case by case basis. Separate collections are recommended if you need to select individual documents and would like more control over querying \cite{mongo}. Whereas embedded documents are recommended when you want the entire document all at once \cite{mongo}.
 
-As discussed in section \ref{mongodesign} and illustrated in code snippet \ref{code:mongoinsert}, the MongoDB data model I have designed uses the embedded document approach. What do I mean when I say embedded? A good way of thinking of the embedded data concept is, a document in a document. For example, while values in MongoDB can be absolute, such as a string with value ``mouse'' they can also be an embedded document which in turn has values such as ``mouse''. Lines 6-34 of code snippet \ref{code:mongoinsert} represents an example of data, embedded in a document. Looking specifically at lines 14-20, we have a value namely ``publication'' which has embedded values of ``publicationID'', ``author'' and ``title''. Thus allowing direct querying of additional data, as opposed to messy collection joins.
-
+As discussed in section \ref{mongodesign} and illustrated in code snippet \ref{code:mongoinsert}, the MongoDB data model I have designed uses the embedded document approach. What do I mean when I say embedded? A good way of thinking of the embedded data concept is, a document in a document. For example, if we look at this concept in hierarchical terms, a document can have many fields, some with child fields as opposed to absolute values. Figure \ref{fig:embedded} illustrates an example of a document which has 3 fields and 3 values, one of which with an embedded document. The field named ''publication`` has 2 embedded (child) values which provide more information in the same collection about the same document.\begin{figure}[H]\begin{center}\includegraphics[width=1\linewidth]{images/embeddedex}\caption{Example of a MongoDB embedded document in a hierarchial structure.}\label{fig:embedded}\end{center}\end{figure}
+\parindent 0pt
+Lines 6-34 of code snippet \ref{code:mongoinsert} represents an example of data, embedded in a document. Looking specifically at lines 14-20, we have a value namely ``publication'' which has embedded values of ``publicationID'', ``author'' and ``title''. Thus allowing direct querying of additional data, as opposed to messy collection joins.
+\parindent 15pt
 \newpage
 \begin{lstlisting}[language=json,caption=Example insertion of data into a MongoDB document., label=code:mongoinsert]
 db.emage.insert({
@@ -149,14 +151,10 @@ As illustrated in code snippet \ref{code:neocreate}, there are 3 main stages whe
 
 \subsection{Apache Cassandra - schema implementation}
 
+\section{Implementation Discussion}\label{schemadiscussion}
 
 
-
-
-
-
-
-
+One of the major \textit{pros} of \textbf{MySQL} is the plethora of add ons and third party tools available for modelling and general database management. Open source software such as MySQL workbench and phpMyAdmin, provide the ability to create and maintain a MySQL database, with the former providing data modelling, SQL development, and comprehensive administration tools for server configuration and user administration \cite{mysqlworkbench}. MySQL workbench also allows one to reverse engineer an ER diagram. This tool eliminates the process of manually writing the code to create tables, instantiate entities and establish table joins. All one has to do is design an ER diagram of their data model and the code is automatically generated. However, if one would prefer to manually write the script to create the data model, while potentially tedious, is not an overly time consuming process. This is the method I adopted for creating the MySQL data model. The decision to choose this procedure was based mainly on two reasons. Firstly, I wanted to fully understand and appreciate the data modelling complexities of each database system. Secondly, I felt that using a third party tool for implementation would not result in a comprehensive evaluation of each database system. Therefore to provide an insightful perspective of the data modelling process, I implemented each system using their respective command-line interfaces.
 
 
 

@@ -43,20 +43,22 @@
 \contentsline {subsection}{\numberline {4.2.1}MySQL - data model design}{28}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}MongoDB - data model design}{31}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Neo4j - data model design}{34}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Apache Cassandra - data model design}{37}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.4}Apache Cassandra - data model design}{36}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}Discussion - data model design}{37}{section.4.3}
 \contentsline {chapter}{\numberline {5}Schema Implementation}{38}{chapter.5}
 \contentsline {section}{\numberline {5.1}Creating database systems}{38}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}MySQL - schema implementation}{38}{subsection.5.1.1}
 \contentsline {subsection}{\numberline {5.1.2}MongoDB - schema implementation}{41}{subsection.5.1.2}
 \contentsline {subsection}{\numberline {5.1.3}Neo4j - schema implementation}{44}{subsection.5.1.3}
 \contentsline {subsection}{\numberline {5.1.4}Apache Cassandra - schema implementation}{46}{subsection.5.1.4}
-\contentsline {chapter}{\numberline {6}Importing Data}{47}{chapter.6}
-\contentsline {section}{\numberline {6.1}Put the data in databases}{47}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}MySQL - data load}{47}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}MongoDB - data load}{49}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Neo4j - data load}{52}{subsection.6.1.3}
-\contentsline {subsection}{\numberline {6.1.4}Apache Cassandra - data load}{54}{subsection.6.1.4}
-\contentsline {chapter}{\numberline {7}Evaluation Results}{56}{chapter.7}
-\contentsline {section}{\numberline {7.1}Results}{56}{section.7.1}
-\contentsline {chapter}{\numberline {8}Comparison and Discussion}{58}{chapter.8}
-\contentsline {chapter}{\numberline {9}Conclusion}{59}{chapter.9}
+\contentsline {section}{\numberline {5.2}Implementation Discussion}{46}{section.5.2}
+\contentsline {chapter}{\numberline {6}Importing Data}{48}{chapter.6}
+\contentsline {section}{\numberline {6.1}Put the data in databases}{48}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}MySQL - data load}{48}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}MongoDB - data load}{50}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Neo4j - data load}{53}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}Apache Cassandra - data load}{55}{subsection.6.1.4}
+\contentsline {chapter}{\numberline {7}Evaluation Results}{57}{chapter.7}
+\contentsline {section}{\numberline {7.1}Results}{57}{section.7.1}
+\contentsline {chapter}{\numberline {8}Comparison and Discussion}{59}{chapter.8}
+\contentsline {chapter}{\numberline {9}Conclusion}{60}{chapter.9}
