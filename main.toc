@@ -58,7 +58,6 @@
 \contentsline {subsection}{\numberline {6.1.2}MongoDB - data load}{55}{subsection.6.1.2}
 \contentsline {subsection}{\numberline {6.1.3}Neo4j - data load}{58}{subsection.6.1.3}
 \contentsline {subsection}{\numberline {6.1.4}Apache Cassandra - data load}{60}{subsection.6.1.4}
-\contentsline {chapter}{\numberline {7}Evaluation Results}{62}{chapter.7}
+\contentsline {chapter}{\numberline {7}Comparison and Discussion}{62}{chapter.7}
 \contentsline {section}{\numberline {7.1}Results}{62}{section.7.1}
-\contentsline {chapter}{\numberline {8}Comparison and Discussion}{64}{chapter.8}
-\contentsline {chapter}{\numberline {9}Conclusion}{65}{chapter.9}
+\contentsline {chapter}{\numberline {8}Conclusion}{64}{chapter.8}
