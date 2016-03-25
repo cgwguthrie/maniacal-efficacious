@@ -1,3 +1,58 @@
 \chapter{Comparison and Discussion}\label{discussion}
 The overriding feeling one gets towards the difficulty of implementing data models in both a relational and NoSQL system is, that while semantically each solution is dissimilar, they all share a core functional commonality. With the exception of MongoDB, to the untrained eye, each system syntactically is the same. 
 
+The strategies which were devised to evaluate and assess the functional competencies of each database solution can be found in section \ref{requirements}. The main method for evaluating the database systems was, by using the relevant querying language, to assess the strengths and weaknesses of the functionality each solution provides. This chapter focuses on the outcome of executing the described methods and provides a high level overview of the results. While this chapter focuses purely on the results of running the queries, chapters \ref{discussion} and \ref{conclusion} provide discussion and comparative analytical insight into the solutions as a whole.
+
+\section{Results}\label{results}
+The tables, graphs and charts illustrated in this chapter are based on the results of running several competency based queries on each database system. Table \ref{tab:competency} details each of the devised queries in English, provides a short description of the data expected to be returned and a rating characterisation. Each query has a rating with a range of 1 to 5, and is to be used as a guide to aid the reader into understanding \textbf{1.} General complexity of the query. \textbf{2.} Fruitfulness of the data returned. \textbf{3.} Level of expectancy that the system will be able to accomplish the query (on a scale of 1 expected, to 5 unexpected).
+
+\newpage
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|c|l|l|c|}
+\hline
+\textbf{Query Number} & \multicolumn{1}{c|}{\textbf{English}} & \multicolumn{1}{c|}{\textbf{Expected return}} & \textbf{Rating} \\ \hline
+1 & All structures at Theiler Stage X. & Theiler Stage. Structure ID. & 1 \\ \hline
+2 & \begin{tabular}[c]{@{}l@{}}All structures between Theiler\\ Stage X and Y.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Structure ID. Theiler Stage X. Theiler Stage\\ Y.\end{tabular} & 1 \\ \hline
+3 & Where is Gene X expressed? & \begin{tabular}[c]{@{}l@{}}Name of the gene. The structure where the\\ gene was found. The EMAGE ID where the\\ gene was found.\end{tabular} & 2 \\ \hline
+4 & What is expressed in structure X? & \begin{tabular}[c]{@{}l@{}}Name of the gene(s) found in the structure.\\ The structure ID. The name of the structure.\\ The Theiler Stage(s) of the structure. The\\ EMAGE ID of the structure.\end{tabular} & 3 \\ \hline
+5 & \begin{tabular}[c]{@{}l@{}}Which genes are stored in\\ structures X and Y?\end{tabular} & \begin{tabular}[c]{@{}l@{}}Name of the gene(s). ID of the gene(s). ID\\ of structure X. ID of structure Y.\end{tabular} & 4 \\ \hline
+6 & \begin{tabular}[c]{@{}l@{}}Which Genes are most\\ commonly co-expressed?\end{tabular} & \begin{tabular}[c]{@{}l@{}}Name of the gene(s). Count of unique\\ structures the gene is expressed in.\end{tabular} & 5 \\ \hline
+7 & Calculate transitive closure. & The name of each structure and its parent. & 5 \\ \hline
+\end{tabular}
+}
+\caption{Competency questions to query each database system.}
+\label{tab:competency}
+\end{table}
+
+\subsection*{Query 1 - All structures at Theiler Stage X}\label{query1}
+
+The following code snippets represent the queries written for competency question 1.
+\begin{itemize}
+\item \textbf{MySQL}
+\begin{lstlisting}[language=SQL, caption=, label=code:mysqlload]
+SELECT t1.accession AS StructureID, t1.term AS StructureName, t2.theilerstage AS TheilerStage, t2.dpc AS DPC
+FROM AnatomyStructures AS t1
+INNER JOIN Stages AS t2
+ON t1.stage_id = t2.id
+WHERE t2.theilerstage = 4
+ORDER BY 1
+\end{lstlisting}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{StructureID}} & \multicolumn{1}{c|}{\textbf{StructureName}} & \multicolumn{1}{c|}{\textbf{TheilerStage}} & \multicolumn{1}{c|}{\textbf{DPC}} \\ \hline
+16041 & inner cell mass & 4 & 3.5 dpc \\ \hline
+16048 & polar trophectoderm & 4 & 3.5 dpc \\ \hline
+\end{tabular}
+\caption{Output of running query 1}
+\label{tab:q1}
+\end{table}
+
+\end{itemize}
+\parindent 15pt
+
+Intuitively, one would expect quicker load times and a slower querying performance with no implemented indexes. Figure \ref{fig:index} clearly illustrates that the time taken to load the data without index keys and constraints had little, to no true affect on load performance. While there is slight variance in load time, this can be expected and attributed to a number of reasons, such as other processes running simultaneously on the CPU for example. For in-depth discussion and comparison of use cases, see chapter \ref{discussion}.

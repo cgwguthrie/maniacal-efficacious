@@ -134,3 +134,13 @@ AND HEADER = TRUE;
 \end{lstlisting}
 
 Code snippet \ref{code:cass} represents the loading of the Assay data into the assays table using the COPY FROM command. The command requires you to state the name of the table you are loading data into; ``assays'' in this example. Then specify the column names you will be importing data into in brackets.  The important thing to remember when using the COPY FROM command on a CSV file is that the ordering of the file headings must match the ordering of the columns in the table. Cassandra does not offer any way of mapping file headings to table column names. Therefore if there is a misalignment of data columns the values will be loaded incorrectly, and more often than not the load will fail due to incompatible data types. The FROM keyword denotes the location of the CSV file you will be loading. The WITH clause allows you to impose any rules on the COPY FROM command. In this instance, I have stipulated the delimiter of the file as a comma, and that there are headings in the top row of the file. After you run this command, the data will have been imported into your Cassandra tables.
+
+\section{Discussion - data load}\label{loaddiscussion}
+This section evaluates the overall difficulty of physically importing (loading) the d
+
+
+
+
+
+
+
