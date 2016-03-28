@@ -1,8 +1,8 @@
 \chapter{Query Evaluation Results and Discussion}\label{results}
-To analyse the functionality of the database systems, I devised a number of queries with ranging difficulties. The aim of the queries was to identify any limitations of the systems, and to discover the efficacy of the systems. Chapter \ref{evaluationstrategy} provides a detailed explanation of how the queries and this chapter discusses the output and results of running the queries in the various query languages. This chapter gives insight into the difficulty of writing the query, the usefulness of the output, the time taken for the query to run and any challenges I faced when actioning the evaluation strategy. Section \ref{discussion} is a general discussion which summarises the capabilities of the systems and aims to provide one with an understanding of the limitations of each of the systems.
+To analyse the functionality of the database systems, I devised a number of queries with ranging difficulties. The aim of the queries was to identify any limitations of the systems, and to discover the efficacy of the systems. Chapter \ref{evaluationstrategy} provides a detailed explanation of the reasoning behind the queries and this chapter discusses the output and results of running the queries in the various query languages. This chapter gives insight into the difficulty of writing the query, the usefulness of the output, the time taken for the query to run and any challenges I faced when actioning the evaluation strategy. Also included in this chapter is a general discussion which summarises the capabilities of the systems and aims to provide one with an understanding of the limitations of each of the systems, section  \ref{discussion}.
 
 \section{Query Output}\label{output}
-The tables, graphs and charts illustrated in this chapter are based on the results of running several competency based queries on each database system. Table \ref{tab:competency} details each of the devised queries in English, provides a short description of the data expected to be returned and a rating characterisation. Each query has a rating with a range of 1 to 5, and is to be used as a guide to aid the reader into understanding \textbf{1.} General complexity of the query. \textbf{2.} Fruitfulness of the data returned. \textbf{3.} Level of expectancy that the system will be able to accomplish the query (on a scale of 1 expected, to 5 unexpected).
+The screenshots, tables, graphs and charts illustrated in this chapter are based on the results of running the competency based queries on each database system. Table \ref{tab:competency} details each of the devised queries in English, provides a short description of the data expected to be returned and a rating characterisation. Each query has a rating with a range of 1 to 5, and is to be used as a guide to aid the reader into understanding \textbf{1.} General complexity of the query. \textbf{2.} Fruitfulness of the data returned. \textbf{3.} Level of expectancy that the system will be able to accomplish the query (on a scale of 1 expected, to 5 unexpected).
 
 \newpage
 \begin{table}[H]
@@ -37,7 +37,7 @@ ON t1.stage_id = t2.id
 WHERE t2.theilerstage = 4
 ORDER BY 1
 \end{lstlisting}
-
+\end{itemize}
 \parindent 15pt
 \section{Discussion}\label{discussion}
 Intuitively, one would expect quicker load times and a slower querying performance with no implemented indexes. Figure \ref{fig:index} clearly illustrates that the time taken to load the data without index keys and constraints had little, to no true affect on load performance. While there is slight variance in load time, this can be expected and attributed to a number of reasons, such as other processes running simultaneously on the CPU for example.
