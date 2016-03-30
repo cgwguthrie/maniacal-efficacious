@@ -20,10 +20,10 @@ The mysqlimport command can take a number of parameters some of which include, d
 ---
 ---Import data into all tables in one command
 ---
-mysqlimport -u root -p --ignore-lines=1 --fields-terminated-by=, emage assays.csv publications.csv sources.csv specimens.csv stages.csv textannotations.csv genes.csv anatomystructures.csv
+mysqlimport -u root -p --ignore-lines=1 --fields-optionally-enclosed-by='"' --fields-terminated-by=',' emage assays.csv publications.csv sources.csv specimens.csv stages.csv textannotations.csv genes.csv anatomystructures.csv
 \end{lstlisting}
 \parindent 0pt
-The command works by firstly connecting to the MySQL database as the root user and accepting a password. All of the data files I imported included headings, the ``ignore-lines=1'' parameter simply imports the data starting on line 2 thus skipping the headings row. The ''fields-terminated-by=,'' parameter allows one to stipulate the delimiter of the file, whether it be a comma, semicolon or tab for example. The name of the database is then required to be stated in the command, hence the inclusion of ``emage''. Finally the name of the files being imported are required. When using the mysqlimport statement, multiple files can be loaded into multiple tables in one command. The name of the table is matched with the name of the file and the data is imported for each. It is therefore crucial that the ordering of the data in the file matches that of the table. If the two do not match, it is likely that \textbf{1.} The load will fail due to an incompatible data type with the values found in the file \textbf{2.} The wrong data will be mapped into the wrong columns. As each row in a CSV file is a record, there is a clear commonality between the file format and a MySQL database. Thus resulting in a relatively straightforward dataset load.
+The command works by firstly connecting to the MySQL database as the root user and accepting a password. All of the data files I imported included headings, the ``ignore-lines=1'' parameter simply imports the data starting on line 2 thus skipping the headings row. The ''fields-terminated-by=',''' parameter allows one to stipulate the delimiter of the file, whether it be a comma, semicolon or tab for example. To signify the delimiter which encloses the values we use the parameter ''--fields-optionally-enclosed-by='"'''. The name of the database is then required to be stated in the command, hence the inclusion of ``emage''. Finally the name of the files being imported are required. When using the mysqlimport statement, multiple files can be loaded into multiple tables in one command. The name of the table is matched with the name of the file and the data is imported for each. It is therefore crucial that the ordering of the data in the file matches that of the table. If the two do not match, it is likely that \textbf{1.} The load will fail due to an incompatible data type with the values found in the file \textbf{2.} The wrong data will be mapped into the wrong columns. As each row in a CSV file is a record, there is a clear commonality between the file format and a MySQL database. Thus resulting in a relatively straightforward dataset load.
 \parindent 15pt
 
 \subsection{MongoDB - data load}\label{mongoload}
@@ -142,18 +142,57 @@ One of the key aspects of a NoSQL system is the flexibility it offers. The main 
 
 One of the main objectives of this project was to analyse the performance of the database solutions. The term performance covers a wide range of components and can be measured in many ways. For this stage of the project the \textit{load} performance of the systems was something which I was interested in analysing. It is rarely the case where an entire database of information will be inserted at any one time. However, if one is looking to migrate from one database management system to another or a database is being restored from a backup for example, the time it takes to physically load the data is something which should be taken into consideration. Therefore I created an experiment to evaluate the total time it takes to load the data into the respective solutions.
 
-The purpose of the experiment was simple, to identify the system which loads the EMAGE dataset into the data model in the quickest time. For each of the solutions, the test was considered complete once each of the insert statements was finished and the database's were fully populated. Once a query is run on for each of the systems, the execution time is printed on the command-line. This time was used to measure the outcome of the test. To enhance the fairness of the experiment, each query was ran 5 times, with the average time across the runs recorded. After each run, the contents of each of the databases was removed, resulting in empty systems.
+The purpose of the experiment was simple, to identify the system which loads the EMAGE dataset into the data model in the quickest time. More precisely, I was looking to identify the affect imposing indexes and unique/distinct constraints had on the time taken to load data. For each of the solutions, the test was considered complete once each of the insert statements was finished and the database's were fully populated. Once a query was run on each of the systems, the execution time was printed on the command-line. This time was used to measure the outcome of the test. To enhance the fairness of the experiment, each query was ran 5 times, with the average time across the tests recorded. After each run, the contents of each of the databases was removed, resulting in empty systems.
 
-The first step in creating the experiment was to implement the data models so I could load in data. This step was only possible for the MySQL and Cassandra systems. 
+The first step in creating the experiment was to implement the data models so I could load in data. As the MongoDB and Neo4j schemas are dynamically created, this step was only possible for the MySQL and Cassandra systems. A full discussion on the schema implementation stage can be found in chapter \ref{implementation}. As one of the main aims of this experiment was to identify the affect of implementing indexes pre-load had on import time, I only created the tables. Indexes and unique constraints were not applied until after the data was loaded. Primary and foreign keys were applied for the MySQL model. For the Cassandra system, partition and clustering keys were implemented where necessary. To create the test for the MongoDB and Neo4j systems, I initially loaded the data into the database's and did not apply any indexing or unique constraints.
 
+We use indexing in a database to find data rows with specific column values quickly; much like the indexing of a book. The intention of this is to improve the performance of commonly run queries. Intuitively, one would expect quicker load times and a slower querying performance with no indexes implemented. A number of behaviours should be taken into consideration when deliberating system performance. Factors such as the impact on write operations and the amount of space each index requires can have a profound affect on the execution of queries. Another consideration is the size of files being loaded. With the exception of the Cassandra data model, the volume being loaded into the solutions was around 12mb. For the Cassandra system, the size of the files being loaded cumulatively came to around 35mb. This was as a result of each of the systems using a normalised model compared to the Cassandra database. If we were comparing the database solutions directly, this is a component which would need to be taken into consideration. However, this experiment was to analyse the affect of implementing indexes and unique constraint as opposed to solely focusing on which system loads the data in quickest time.
 
+Once the tables were created, the next step was to load the data into the systems, using the various import commands. The results of the initial experiment can be found in table \ref{tab:l1}. These values represent the load times for non-indexed database systems. The load times 
 
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Database System} & \textbf{Version} & \textbf{\begin{tabular}[c]{@{}c@{}}Load 1\\ time (s)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Load 2\\ time (s)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Load 3\\ time (s)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Load 4 \\ time (s)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Load 5\\ time (s)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Average load\\ time (s)\end{tabular}} \\ \hline
+\textbf{MySQL} & 5.7.11 & 5.20 & 5.14 & 5.16 & 5.25 & 5.33 & \textbf{5.21} \\ \hline
+\textbf{MongoDB} & 3.2.4 & 127.5 & 186.9 & 152.4 & 159.7 & 133.8 &  \textbf{152.06} \\ \hline
+\textbf{Neo4j} & 2.3.3 & 20594.09 & 20234.41 & 20911.35 & 20198.70 & 20121.86 & \textbf{20412.08} \\ \hline
+\textbf{Apache Cassandra} & 3.0.4 & 189.47 & 165.11 & 168.69 & 182.33 & 161.85 & \textbf{173.49} \\ \hline
+\end{tabular}}
+\caption{Load times for non-indexed database systems}
+\label{tab:l1}
+\end{table}
 
+\parindent 0pt
+remained consistent throughout each of the tests. This gives rise to eliminate any concerns regarding simultaneous processes running on the computer, affecting the performance of the experiment.
+\parindent 15pt
+If we look at the systems individually, the MySQL load times were extremely fast at just 5 seconds. While not quite as impressive but still a reasonable time, the MongoDB model managed to load the data in around 2.5 minutes. Comparatively the Cassandra database loaded all of the data in just under 3 minutes. This time is all the more impressive when you consider the fact that the Cassandra model was loading almost 3 times the data as that of the MySQL and MongoDB systems. The most striking result of the experiment was the Neo4j system taking on average around 5.5 hours to complete. That is 117 times slower than the next longest running load time of the Cassandra system and a staggering 3917 times slower than the fastest MySQL database. Before moving on to the next stage of the experiment it is worthwhile making some assumptions about the results of test 1.
+\begin{itemize}
+\item As the MySQL tables have been normalised and structured adequately, the system can write a high number of rows at very high speed.
+\item By default the MongoDB model uses the \_id field as a sort of indexed primary key. Therefore after every insert or update operation, MongoDB must update every index associated with the collection in addition to the data itself. Thus increasing the amount of overhead for the performance of write operations.
+\item Neo4j model is struggling to process the high number of reads compound with the writes when matching the relationships simultaneously.
+\item The Cassandra system is processing a reasonable level of operations for a larger volume of data.
+\end{itemize}
 
+The next stage of the experiment was to implement the indexes and unique constraints on the data models. The processes for imposing these operations are discussed in chapter \ref{implementation}, section \ref{dbcreate}. The structure of the solutions was the same as that of the first experiment. All of the conditions were repeated in the same manner as before. It was important that I recreated the setup for the second test as close as possible to that of the first test. As a result, I was able to analyse and examine the results closely allowing me to draw interesting and accurate conclusions.
 
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Database System} & \textbf{Version} & \textbf{\begin{tabular}[c]{@{}c@{}}Load 1\\ time (s)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Load 2\\ time (s)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Load 3\\ time (s)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Load 4 \\ time (s)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Load 5\\ time (s)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Average load\\ time (s)\end{tabular}} \\ \hline
+\textbf{MySQL} & 5.7.11 & 8.10 & 9.45 & 8.32 & 8.15 & 8.37 & \textbf{8.47} \\ \hline
+\textbf{MongoDB} & 3.2.4 & 370.80 & 342.11 & 347.50 & 393.82 & 366.25 & \textbf{364.09} \\ \hline
+\textbf{Neo4j} & 2.3.3 & 175.03 & 121.54 & 128.0 & 145.62 & 120.41 & \textbf{138.12} \\ \hline
+\textbf{Apache Cassandra} & 3.0.4 & 203.16 & 241.01 & 285.97 & 279.40 & 281.36 & \textbf{258.18} \\ \hline
+\end{tabular}}
+\caption{Load times for indexed database systems}
+\label{tab:l2}
+\end{table}
 
+The aim of the second experiment was to identify any changes in load performance when imposing indexes on the solutions. The result of running the second experiment can be found in table \ref{tab:l2}.
 
-
-
-
-
+\begin{figure}[H]\begin{center}\includegraphics[width=1\linewidth]{images/nonvsin}\caption{MySQL ER table diagram}\label{fig:nonvsin}\end{center}\end{figure}

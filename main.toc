@@ -6,59 +6,60 @@
 \contentsline {section}{\numberline {1.4}Project Plan}{3}{section.1.4}
 \contentsline {chapter}{\numberline {2}Literature Review}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Big Data Defined}{5}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}5vs Model}{5}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.1}5vs Model}{6}{subsection.2.1.1}
 \contentsline {section}{\numberline {2.2}Extract Transform Load}{8}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Extract}{8}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.1}Extract}{9}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Transform}{9}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Load}{9}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}Software Tools}{9}{section.2.3}
-\contentsline {section}{\numberline {2.4}Knowledge Representation Languages}{9}{section.2.4}
+\contentsline {section}{\numberline {2.4}Knowledge Representation Languages}{10}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Semantic Web}{10}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Web Ontology Language OWL}{10}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}OBO}{10}{subsection.2.4.3}
-\contentsline {section}{\numberline {2.5}NoSQL}{11}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Brewer's CAP Theorem}{12}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Database Classification}{12}{subsection.2.5.2}
-\contentsline {subsubsection}{Distributed Database}{12}{subsubsection*.3}
-\contentsline {subsubsection}{Document-Oriented Database}{12}{subsubsection*.4}
-\contentsline {subsubsection}{Graph-Orientated Database}{12}{subsubsection*.5}
-\contentsline {subsubsection}{Column-Orientated Database}{14}{subsubsection*.6}
-\contentsline {section}{\numberline {2.6}Relational Database}{14}{section.2.6}
-\contentsline {section}{\numberline {2.7}Technology Evaluation}{15}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}MySQL}{15}{subsection.2.7.1}
-\contentsline {subsection}{\numberline {2.7.2}MongoDB}{15}{subsection.2.7.2}
-\contentsline {subsection}{\numberline {2.7.3}Neo4j}{16}{subsection.2.7.3}
-\contentsline {subsection}{\numberline {2.7.4}Apache Cassandra}{16}{subsection.2.7.4}
-\contentsline {section}{\numberline {2.8}Data Source and Representation}{18}{section.2.8}
-\contentsline {subsection}{\numberline {2.8.1}EMAP}{18}{subsection.2.8.1}
-\contentsline {subsection}{\numberline {2.8.2}EMAP anatomy}{19}{subsection.2.8.2}
-\contentsline {subsection}{\numberline {2.8.3}EMAPA anatomy}{20}{subsection.2.8.3}
-\contentsline {subsection}{\numberline {2.8.4}EMAGE anatomy}{21}{subsection.2.8.4}
-\contentsline {chapter}{\numberline {3}Evaluation Strategy}{22}{chapter.3}
-\contentsline {section}{\numberline {3.1}Requirements}{22}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Data Source Competency Questions}{24}{subsection.3.1.1}
-\contentsline {chapter}{\numberline {4}Database Modelling}{25}{chapter.4}
-\contentsline {section}{\numberline {4.1}Cleansing the data}{25}{section.4.1}
-\contentsline {section}{\numberline {4.2}Designing the data models}{27}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}MySQL - data model design}{28}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}MongoDB - data model design}{31}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Neo4j - data model design}{34}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Apache Cassandra - data model design}{36}{subsection.4.2.4}
-\contentsline {section}{\numberline {4.3}Discussion - data model design}{37}{section.4.3}
-\contentsline {chapter}{\numberline {5}Schema Implementation}{41}{chapter.5}
-\contentsline {section}{\numberline {5.1}Creating database systems}{41}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}MySQL - schema implementation}{41}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}MongoDB - schema implementation}{43}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Neo4j - schema implementation}{47}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Apache Cassandra - schema implementation}{49}{subsection.5.1.4}
-\contentsline {section}{\numberline {5.2}Implementation Discussion}{51}{section.5.2}
-\contentsline {chapter}{\numberline {6}Importing Data}{53}{chapter.6}
-\contentsline {section}{\numberline {6.1}Put the data in databases}{53}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}MySQL - data load}{53}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}MongoDB - data load}{55}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Neo4j - data load}{58}{subsection.6.1.3}
-\contentsline {subsection}{\numberline {6.1.4}Apache Cassandra - data load}{60}{subsection.6.1.4}
-\contentsline {section}{\numberline {6.2}Discussion - data load}{61}{section.6.2}
-\contentsline {chapter}{\numberline {7}Comparison and Discussion}{62}{chapter.7}
-\contentsline {section}{\numberline {7.1}Results}{62}{section.7.1}
-\contentsline {chapter}{\numberline {8}Conclusion}{65}{chapter.8}
+\contentsline {section}{\numberline {2.5}NoSQL}{12}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Distributed Systems and Data Transactions}{13}{subsection.2.5.1}
+\contentsline {subsubsection}{Brewer's CAP Theroem}{13}{subsubsection*.3}
+\contentsline {subsubsection}{ACID Transactions}{13}{subsubsection*.4}
+\contentsline {subsubsection}{Distributed Database}{13}{subsubsection*.5}
+\contentsline {subsection}{\numberline {2.5.2}Database Classification}{13}{subsection.2.5.2}
+\contentsline {subsubsection}{Document-Oriented Database}{14}{subsubsection*.6}
+\contentsline {subsubsection}{Graph-Orientated Database}{14}{subsubsection*.7}
+\contentsline {subsubsection}{Column-Orientated Database}{15}{subsubsection*.8}
+\contentsline {section}{\numberline {2.6}Relational Database}{15}{section.2.6}
+\contentsline {section}{\numberline {2.7}Technology Evaluation}{16}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}MySQL}{16}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}MongoDB}{17}{subsection.2.7.2}
+\contentsline {subsection}{\numberline {2.7.3}Neo4j}{17}{subsection.2.7.3}
+\contentsline {subsection}{\numberline {2.7.4}Apache Cassandra}{18}{subsection.2.7.4}
+\contentsline {section}{\numberline {2.8}Data Source and Representation}{19}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}EMAP}{20}{subsection.2.8.1}
+\contentsline {subsection}{\numberline {2.8.2}EMAP anatomy}{20}{subsection.2.8.2}
+\contentsline {subsection}{\numberline {2.8.3}EMAPA anatomy}{22}{subsection.2.8.3}
+\contentsline {subsection}{\numberline {2.8.4}EMAGE anatomy}{23}{subsection.2.8.4}
+\contentsline {chapter}{\numberline {3}Evaluation Strategy}{24}{chapter.3}
+\contentsline {section}{\numberline {3.1}Requirements}{24}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Data Source Competency Questions}{26}{subsection.3.1.1}
+\contentsline {chapter}{\numberline {4}Database Modelling}{27}{chapter.4}
+\contentsline {section}{\numberline {4.1}Cleansing the data}{27}{section.4.1}
+\contentsline {section}{\numberline {4.2}Designing the data models}{29}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}MySQL - data model design}{30}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}MongoDB - data model design}{33}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Neo4j - data model design}{36}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Apache Cassandra - data model design}{38}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}Discussion - data model design}{39}{section.4.3}
+\contentsline {chapter}{\numberline {5}Schema Implementation}{43}{chapter.5}
+\contentsline {section}{\numberline {5.1}Creating database systems}{43}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}MySQL - schema implementation}{43}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}MongoDB - schema implementation}{45}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Neo4j - schema implementation}{49}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Apache Cassandra - schema implementation}{51}{subsection.5.1.4}
+\contentsline {section}{\numberline {5.2}Implementation Discussion}{53}{section.5.2}
+\contentsline {chapter}{\numberline {6}Importing Data}{55}{chapter.6}
+\contentsline {section}{\numberline {6.1}Put the data in databases}{55}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}MySQL - data load}{55}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}MongoDB - data load}{57}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Neo4j - data load}{60}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}Apache Cassandra - data load}{62}{subsection.6.1.4}
+\contentsline {section}{\numberline {6.2}Discussion - data load}{63}{section.6.2}
+\contentsline {chapter}{\numberline {7}Query Evaluation Results and Discussion}{68}{chapter.7}
+\contentsline {section}{\numberline {7.1}Query Output}{68}{section.7.1}
+\contentsline {section}{\numberline {7.2}Discussion}{69}{section.7.2}
+\contentsline {chapter}{\numberline {8}Conclusion}{70}{chapter.8}
