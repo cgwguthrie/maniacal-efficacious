@@ -176,7 +176,7 @@ If we look at the systems individually, the MySQL load times were extremely fast
 \item The Cassandra system is processing a reasonable level of operations for a larger volume of data.
 \end{itemize}
 
-The next stage of the experiment was to implement the indexes and unique constraints on the data models. The processes for imposing these operations are discussed in chapter \ref{implementation}, section \ref{dbcreate}. The structure of the solutions was the same as that of the first experiment. All of the conditions were repeated in the same manner as before. It was important that I recreated the setup for the second test as close as possible to that of the first test. As a result, I was able to analyse and examine the results closely allowing me to draw interesting and accurate conclusions.
+The next stage of the experiment was to implement the indexes and unique constraints on the data models. The processes for imposing these operations are discussed in chapter \ref{implementation}, section \ref{dbcreate}. The structure of the solutions was the same as that of the first experiment. All of the conditions were repeated in the same manner as before. It was important that I recreated the setup for the second test as close as possible to that of the first test. As a result, I was able to analyse and examine the results closely allowing me to draw interesting and accurate conclusions. The overall aim of the second experiment was to identify any changes in load performance when imposing indexes on the solutions. The result of running the second experiment can be found in table \ref{tab:l2}.
 
 \begin{table}[H]
 \centering
@@ -192,7 +192,27 @@ The next stage of the experiment was to implement the indexes and unique constra
 \caption{Load times for indexed database systems}
 \label{tab:l2}
 \end{table}
+Table \ref{tab:l2} shows the variance in load time after implementing indexes on the database solutions. Again there is a consistency in each of the execution times. With the exception of Neo4j, each of the solutions saw an increase in load time. The MySQL system took around 3 seconds longer. The time taken for the MongoDB model to load the data more than doubled and the Cassandra system took around a minute longer. Figure \ref{fig:nonvsin} illustrates the increase in load time of non-indexed vs indexed database solution. This bar chart clearly shows the affect implementing indexes on data models. The question which now has to be answered is why is this alteration causing such a drastic affect. \textbf{TO BE COMPLETE} \begin{figure}[H]\begin{center}\includegraphics[width=1\linewidth]{images/nonvsin}\caption{Chart illustrating the variance in load times of non-indexed vs indexed systems}\label{fig:nonvsin}\end{center}\end{figure}
 
-The aim of the second experiment was to identify any changes in load performance when imposing indexes on the solutions. The result of running the second experiment can be found in table \ref{tab:l2}.
+One other discovery from this experiment was the extent in which imposing indexes had on the Neo4j data model. The time taken to load the data decreased from 5.5 hours down to just over 2 minutes. The exact same procedure and query was ran for both experiments, the only difference was the inclusion of indexes. This is not expected behaviour as implementing indexes generally comes at a cost of additional storage space and slower writes.
 
-\begin{figure}[H]\begin{center}\includegraphics[width=1\linewidth]{images/nonvsin}\caption{MySQL ER table diagram}\label{fig:nonvsin}\end{center}\end{figure}
+To identify which part of the query was taking the longest, I split the process into individual data loads. Instead of one large data import I loaded each of the CSV files as a separate entities on the command-line. After doing this I saw that loading each of the files took a matter of seconds which was in-line with the other NoSQL imports. However, the final import of the Text Annotations data was the process which was taking over 5 hours to complete. The query which was run for experiment 1 (no indexes) can be found in code snippet \ref{code:cypher1} below. This is all one query which was run on the cqlsh command-line. It is useful to think of this statement to have 4 separate parts. Lines 2 and 3 is where the data is pointed to on the machine.
+\begin{lstlisting}[language=SQL, caption=Cypher file to load text annotations data into the Neo4j data model., label=code:cypher1]
+-- Create TextAnnotation
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:/home/callum/Documents/Uni/F20PA/Project/Neo4j/Data/TextAnnotations.csv" AS row
+
+MATCH (assay:Assay {emageID : TOINT(row.emage_id)})
+MATCH (structureID:AnatomyStructure {structureID: TOINT(row.structure_id)})
+MATCH (gene:Gene {geneID: TOINT(row.gene_id)})
+
+CREATE (annotation:TextAnnotation {strength: row.strength})
+
+CREATE (annotation)-[:HAS]->(structureID)
+CREATE (annotation)-[:RECORDS]->(gene)
+CREATE (annotation)-[r:REPORTS]->(assay);
+\end{lstlisting}
+
+\parindent 0pt
+The \textbf{MATCH} statements in lines 5, 6 and 7 allows one to specify the patterns in which Neo4j will search for in the database. This is where the majority of the load time was being spent. Without the indexes, for each of the queries the system was having to look through the entire database to find/match on one specific value. This was run for Assays, Anatomy Structure and Genes. There are over 30,000 Assay nodes, over 5,000 Anatomy Structure nodes and around 10,000 Gene nodes. Coupled with the fact there were over 140,000 Text Annotation nodes, these expensive read-write operations were the root cause of the length load time.
+\parindent 15pt
