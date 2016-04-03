@@ -205,7 +205,18 @@ LIMIT 5;
 \end{lstlisting}
 \end{itemize}
 \subsection*{Query 7 - Calculate transitive closure}\label{query7}
-The following code snippets represent the queries written for competency question 6.
+The following code snippets represent the queries written for competency question 7.
 \begin{itemize}
 \item \textbf{MySQL}
+\begin{lstlisting}[language=SQL, caption=, label=code:mysqlquery7]
+SELECT DISTINCT tmp.term, t1.parent_term AS lev1, t2.parent_term AS lev2, t3.parent_term AS lev3, t4.parent_term AS lev4
+FROM Closure AS t1
+INNER JOIN AnatomyStructures AS tmp
+ON t1.child_id = tmp.accession
+LEFT JOIN Closure AS t2 ON t2.child_id = t1.parent_id
+LEFT JOIN Closure AS t3 ON t3.child_id = t2.parent_id
+LEFT JOIN Closure AS t4 ON t4.child_id = t3.parent_id
+WHERE tmp.accession = 16201
+\end{lstlisting}
+\end{itemize}
 \section{Discussion}\label{discussion}

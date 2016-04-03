@@ -96,7 +96,7 @@ The MongoDB implementation was the second prototype data model I created for thi
 
 My initial design was based around using multiple collections to store the various aspects of the data. The design followed the MySQL model, with 4 collections; Assays, Text Annotations, Anatomy Structures and Genes. To connect the data and bind the values, required an additional manually developed ID field for every document. While this was not a complex task, it was one which I felt was unnecessary and added extra unwanted noise to the data. Using this option would have also incurred more overhead when writing the queries for the database. One would firstly have to connect the data (similar to a RDBMS join) and then include a further query. This can only be done at the application level as opposed to querying directly with the database. Depending on the query and number of collection joins, this may not be overly time consuming. Nevertheless, additional resource is still required. 
 
-After some deliberation I concluded that the best way to implement the data model would be to have all of the data in the one collection. Figure \ref{fig:mongo} illustrates an example document in the developed MongoDB data model. The diagram should be read as follows:
+After some deliberation I concluded that the best way to implement the data model would be to have all of the data in the one collection. Code snippet \ref{code:mongoload} illustrates an example document in the developed MongoDB data model. The diagram should be read as follows:
 
 \begin{itemize}
 \item \textbf{id} : This is the EMAGE id of each assay and is the value which binds all of the data together. The id value has been manually configured to correspond with the EMAGE value.
@@ -110,8 +110,42 @@ After some deliberation I concluded that the best way to implement the data mode
 \end{itemize}
 
 \newpage
-\begin{figure}[H]\begin{center}\includegraphics[width=1\linewidth]{images/mongo_modeldesign}\caption{Example MongoDB document diagram}\label{fig:mongo}\end{center}\end{figure}
-
+\begin{lstlisting}[language=json,caption=Example MongoDB document., label=code:mongoload]
+{
+    "_id" : 6,
+    "probeID" : "MGI:1334951",
+    "source" : "emage",
+    "type" : "in situ",
+    "specimen" : {
+        "strain" : "Swiss Webster",
+        "type" : "wholemount"
+    },
+    "stage" : {
+        "dpc" : "7.5 dpc",
+        "theilerstage" : 11
+    },
+    "publication" : [ 
+        {
+            "publicationID" : 1409588,
+            "author" : "Tanaka A, Miyamoto K, Minamino N, Takeda M, Sato B, Matsuo H, Matsumoto K",
+            "title" : "Cloning and characterization of an androgen-induced growth factor essential for the androgen-dependent growth of mouse mammary carcinoma cells."
+        }
+    ],
+    "textannotation" : [ 
+        {
+            "anatomystructure" : {
+                "term" : "allantois",
+                "structureID" : 16107
+            },
+            "strength" : "strong",
+            "gene" : {
+                "name" : "Fgf8",
+                "geneID" : "MGI:99604"
+            }
+        }
+    ]
+}
+\end{lstlisting}
 \newpage
 \subsection{Neo4j - data model design}\label{neomodel}
 Neo4j is a graph orientated, NoSQL database solution. It uses the Property Graph Model methodology of connecting data by nodes and weighted edges. Nodes are the equivalent of a row in a MySQL table and edges are the equivalent of a relation. A full description of Neo4j can be found in section \ref{neo}.
