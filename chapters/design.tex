@@ -34,26 +34,26 @@ In order for me to develop multiple and reliable data models which accurately re
 
 \subsection{MySQL - data model design}\label{mysqldesign}
 
-As discussed in section \ref{mysql} MySQL is a relational database management system which stores and represents structured data through entity tables and relationships. There are a number of variations in which the design of the MySQL database could be modelled for the EMAGE data. Figure \ref{fig:mysql} is an entity-relationship (ER) diagram which illustrates the implementation of my MySQL normalised database design. Normalisation in database design is a process by which an existing schema is modified to bring its component tables into compliance through a series of progressive normal forms. It aids in better, faster, stronger searches as it entails fewer entities to scan in comparison with the earlier searches based on mixed entities. Data integrity is improved through database normalisation as it splits all the data into individual entities yet building strong linkages with the related data. The below description provides and overview into each table and its entities.
+As discussed in section \ref{mysql} MySQL is a relational database management system which stores and represents structured data through entity tables and relationships. There are a number of variations in which the design of the MySQL database could be modelled for the EMAGE data. Figure \ref{fig:mysql} is an entity-relationship (ER) diagram which illustrates the implementation of my MySQL normalised database design. Normalisation in database design is a process by which an existing schema is modified to bring its component tables into compliance through a series of progressive normal forms. Resulting in better, faster, stronger searches. It uses fewer entities to scan in comparison with the earlier searches. Data integrity is improved through database normalisation as it splits all the data into individual entities yet builds strong linkages with the related data. The below description provides an overview into each table and its entities.
 
 \begin{itemize}
-\item \textbf{AnatomyStructures} : This table contains the EMAPA ID, and the term which refers to the part of the anatomy.
+\item \textbf{AnatomyStructures} : This table contains the EMAPA ID, and the term which refers to the part of the anatomy. It has a:
 \begin{itemize}
-\item Many to One relationship with the Stages table as one anatomy structure can have the same stage.
-\item Many to One relationship with itself on the ID as one structure can have many parts.
+\item Many to One relationship with the Stages table, as one anatomy structure can have the same stage.
+\item Many to One relationship with itself on the ID, as one structure can have many parts.
 \end{itemize} 
 
-\item \textbf{Assays} : This table contains the EMAGE ID number, the ID of the probe and the type of assay.
+\item \textbf{Assays} : This table contains the EMAGE ID number, the ID of the probe and the type of assay. It has a:
 \begin{itemize}
 \item Many to One relationship with the Sources table. While one assay can only have one source, many assays can have the same source.
 \end{itemize} 
 
-\item \textbf{Genes} : This table contains the accession number and symbol of each gene.
+\item \textbf{Genes} : This table contains the accession number and symbol of each gene. It has a:
 \begin{itemize}
 \item The Genes table does not reference any other table.
 \end{itemize} 
 
-\item \textbf{Publications} : This table contains the accession, title and every author of each assay publication.
+\item \textbf{Publications} : This table contains the accession, title and every author of each assay publication. It has a:
 \begin{itemize}
 \item Many to One relationship with the Assays table as there can be many publications for one assay.
 \end{itemize} 
@@ -63,22 +63,22 @@ As discussed in section \ref{mysql} MySQL is a relational database management sy
 \item The Sources table does not reference any other table.
 \end{itemize} 
 
-\item \textbf{Specimens} :  This table contains the ID, strain and type of each specimen. The type field refers to whether the assay is a section, wholemount, sectioned wholemount or unknown.
+\item \textbf{Specimens} :  This table contains the ID, strain and type of each specimen. The type field refers to whether the assay is a section, wholemount, sectioned wholemount or unknown. It has a:
 \begin{itemize}
 \item One to One relationship with the Assays table as one assay has one specimen.
 \item Many to One relationship with the Stages table as many specimens can have the same Stage.
 \end{itemize} 
 
-\item \textbf{Stages} : This table contains the theiler stage and number of days post conception (dpc) of each assay, specimen and anatomy.
+\item \textbf{Stages} : This table contains the theiler stage and number of days post conception (dpc) of each assay, specimen and anatomy. It has a:
 \begin{itemize}
 \item Many to One relationship with the Assays table as one assay has can have multiple stages.
 \end{itemize} 
 
-\item \textbf{TextAnnotations} : This table contains the structure and strength of each assay.
+\item \textbf{TextAnnotations} : This table contains the structure and strength of each assay. It has a:
 \begin{itemize}
 \item Many to One relationship with the Assays table as one assay can have multiple text annotations.
 \item One to Many relationship with the Genes table as multiple text annotations can the same gene.
-\item Many to one relationship with the AnatomyStructures table as many text annotations has one structure.
+\item Many to one relationship with the AnatomyStructures table as many text annotations have one structure.
 \end{itemize} 
 
 \end{itemize}
@@ -88,15 +88,15 @@ As discussed in section \ref{mysql} MySQL is a relational database management sy
 
 \subsection{MongoDB  - data model design}\label{mongodesign}
 
-As discussed in section \ref{mongo}, MongoDB is a homogeneous, schema-less, NoSQL document store database. There are no formal relations between the data which makes modelling the database a little more challenging; especially with data which is so closely bound as the EMAGE dataset.
+As discussed in section \ref{mongo}, MongoDB is a homogeneous, schema-less, NoSQL document store database. There are no formal relations between the data, this makes modelling the database more challenging; especially with data which is as closely bound as the EMAGE dataset.
 
-Data in MongoDB sits in \textit{collections}, a grouping of documents which are stored on a database. A collection exists within a single database and is the equivalent of an RDBMS table. Documents within a collection can have different fields and typically all documents in a collection have a similar or related purpose. 
+Data in MongoDB sits in \textit{collections}; a grouping of documents which are stored on a database. A collection exists within a single database and is the equivalent of an RDBMS table. Documents within a collection can have different fields and typically all documents in a collection have a similar or related purpose. 
 
-The MongoDB implementation was the second prototype data model I created for this project. I followed the same structural process that I had undertaken for the previous MySQL data model. When creating a MongoDB data model there are a number of factors and considerations which need to be identified before starting the formal implementation. Firstly the biggest decision I deliberated over was how should the data be connected. As there were a few options I decided to explore all of them to fully comprehend the pros/cons of each.
+The MongoDB implementation was the second prototype data model I created for this project. I followed the same structural process that I had undertaken for the previous MySQL data model. When creating a MongoDB data model there are a number of factors and considerations which need to be identified before starting the formal implementation. Firstly the biggest decision I deliberated over was how the data should be connected. As there were a few options I decided to explore all of them to fully comprehend the positive and negative aspects of each.
 
-My initial design was based around using multiple collections to store the various aspects of the data. The design followed the MySQL model, with 4 collections; Assays, Text Annotations, Anatomy Structures and Genes. To connect the data and bind the values, required an additional manually developed ID field for every document. While this was not a complex task, it was one which I felt was unnecessary and added extra unwanted noise to the data. Using this option would have also incurred more overhead when writing the queries for the database. One would firstly have to connect the data (similar to a RDBMS join) and then include a further query. This can only be done at the application level as opposed to querying directly with the database. Depending on the query and number of collection joins, this may not be overly time consuming. Nevertheless, additional resource is still required. 
+My initial design was based around using multiple collections to store the various aspects of the data. The design followed the MySQL model, with 4 collections; Assays, Text Annotations, Anatomy Structures and Genes. To connect the data and bind the values required an additional manually developed ID field for every document. While this was not a complex task, it was one which I felt was unnecessary and added extra unwanted noise to the data. Using this option would have also incurred more overhead when writing the queries for the database. One would firstly have to connect the data (similar to a RDBMS join) and then include a further query. This can only be done at the application level as opposed to querying directly with the database. Depending on the query and number of collection joins, this may not be overly time consuming. Nevertheless, additional resource is still required. 
 
-After some deliberation I concluded that the best way to implement the data model would be to have all of the data in the one collection. Code snippet \ref{code:mongoload} illustrates an example document in the developed MongoDB data model. The diagram should be read as follows:
+After some deliberation, I concluded that the best way to implement the data model was to have all of the data in the one collection. Code snippet \ref{code:mongoload} illustrates an example document in the developed MongoDB data model. The diagram should be read as follows:
 
 \begin{itemize}
 \item \textbf{id} : This is the EMAGE id of each assay and is the value which binds all of the data together. The id value has been manually configured to correspond with the EMAGE value.
@@ -150,49 +150,49 @@ After some deliberation I concluded that the best way to implement the data mode
 \subsection{Neo4j - data model design}\label{neomodel}
 Neo4j is a graph orientated, NoSQL database solution. It uses the Property Graph Model methodology of connecting data by nodes and weighted edges. Nodes are the equivalent of a row in a MySQL table and edges are the equivalent of a relation. A full description of Neo4j can be found in section \ref{neo}.
 
-The data model I have constructed for Neo4j, is semantically similar to that of the MySQL implementation. There are 8 classes of nodes, which contain relatively the same data as that of each MySQL table. The main difference between the two systems is how the data is joined. Where MySQL has a foreign key join, Neo4j has an edge, which connects the nodes.
+The data model I have constructed for Neo4j, is semantically similar to that of the MySQL implementation. There are 8 classes of nodes, which contain relatively the same data as that of each MySQL table. The main difference between the two systems is how the data is joined. Where MySQL has a foreign key join which connects the nodes; Neo4j has an edge.
 
-As with MongoDB and indeed many NoSQL system, there is no formal way to diagrammatically convey the database ``schema''. To illustrate the Neo4j data model, I have created an entity relationship (ER) diagram - figure \ref{fig:neo1} - aiming to convey the look and feel of the graph model. The ER diagram, should be translated as, an entity is a node and a join is a relationship. The data within each node is:
+As with MongoDB and indeed many NoSQL system, there is no formal way to diagrammatically convey the database ``schema''. To illustrate the Neo4j data model I have created an entity relationship (ER) diagram - figure \ref{fig:neo1} - aiming to convey the look and feel of the graph model. The ER diagram should be translated as: an entity is a node and a join is a relationship. The data within each node is:
 
 \begin{itemize}
-\item \textbf{Assay}: This node contains data such as EMAGE ID, probe ID and type e.g. in situ. The Assay node has 4 self-defining relationships.
+\item \textbf{Assay}: These nodes contain data such as EMAGE ID, probe ID and type e.g. ``in situ''. The Assay nodes have 4 self-defining relationships:
 \begin{itemize}
 \item Assay COMES FROM Source
 \item Assay HAS Specimen
 \item Assay HAS Stage
 \end{itemize}
-\item \textbf{Publication}: This node contains all publication data, which includes; title, author and id of each assay publication. The Publication node has one relationship.
+\item \textbf{Publication}: These nodes contain all publication data which includes title, author and id of each assay publication. The Publication nodes have one relationship:
 \begin{itemize}
 \item Publication DESCRIBES Assay
 \end{itemize}
-\item \textbf{Source}: The source node has just one field, source name. It defines the source of each assay.
-\item \textbf{Specimen}: Each assay has a specimen node. This node stores the specimen strain and specimen type. It has one relationship, which is the link between the stage node.
+\item \textbf{Source}: The source nodes have just one field, source name. They define the source of each assay.
+\item \textbf{Specimen}: Each assay has a specimen node. These nodes store the specimen strain and specimen type. They have one relationship which is the link between the stage nodes:
 \begin{itemize}
 \item Specimen HAS Stage
 \end{itemize}
-\item \textbf{Stage}: The stage node contains each Theiler Stage and DPC value.
-\item \textbf{Annotation}: This node contains information regarding the strength of each annotation. It is the join between the Gene and Anatomy Structure nodes. The annotation node has two relationships.
+\item \textbf{Stage}: The stage nodes contain each Theiler Stage and DPC value.
+\item \textbf{Annotation}: These nodes contains information regarding the strength of each annotation. It is the join between the Gene and Anatomy Structure nodes. The annotation nodes have two relationships:
 \begin{itemize}
 \item Annotation REPORTS Assay
 \item Annotation HAS AnatomyStructure
 \end{itemize}
-\item \textbf{Gene}: This node contains all data regarding each gene found. Data such as; gene name and gene accession. The Gene node has one relationship.
+\item \textbf{Gene}: These nodes contain all data regarding each gene found. Data such as gene name and gene accession. A Gene node has one relationship:
 \begin{itemize}
 \item Gene HAS Annotation
 \end{itemize}
-\item \textbf{AnatomyStructure}: This node contains all of the data regarding the respective anatomy structures, such as; structure ID and structure term name
+\item \textbf{AnatomyStructure}: These nodes contain all of the data regarding the respective anatomy structures, such as structure ID and structure term name
 \end{itemize}
 
 \begin{figure}[H]\begin{center}\includegraphics[width=1\linewidth]{images/neo4j_model_er}\caption{Neo4j graph model ER diagram}\label{fig:neo1}\end{center}\end{figure}
 \newpage
 \subsection{Apache Cassandra  - data model design}
-Apache Cassandra is a column based data management system. A key characteristic of a column based data store is that they are extremely powerful and can be reliably used to keep important data of very large sizes. Despite not being flexible in terms of what constitutes as data, they are recognised as being highly functional and performant \cite{cassandra}. With this is mind, normalisation of a dataset is in fact not the optimal way of developing a Cassandra data model. It is proposed that \textit{denormalisation} and data duplication within the data model returns the best performing output. This is as a result of Cassandra being optimised to perform a high frequency of writes which in turn reduces the more costly reads. This is a trade-off which must be taken into consideration when developing the data model \cite{cassandra}.
+Apache Cassandra is a column based, data management system. A key characteristic of a column based data store is that it is extremely powerful and can be reliably used to keep important data of very large sizes. Despite not being flexible in terms of what constitutes data, it is recognised as being highly functional and performant \cite{cassandra}. With this is mind, normalisation of a dataset is in fact not the optimal way of developing a Cassandra data model. It is proposed that \textit{denormalisation} and data duplication within the data model return the best performing output. This is as a result of Cassandra being optimised to perform a high frequency of writes; this reduces the more costly reads. This is a trade-off which must be taken into consideration when developing the data model \cite{cassandra}.
 
-The Apache Cassandra data model was perhaps the most difficult of all the database system designs to create. This was due to a number of reasons. One of which was, that I had no previous experience of using a Cassandra database, and therefore had to learn a completely new style of working. Secondly, as discussed in section \ref{cassandra}, one of the main aspects of Cassandra family columns and tables is that they do not accept joins. Resulting in tables being created, aiming to satisfy any potential queries which may be imposed on the database. The repercussions of this concept is discussed in section \ref{designdiscussion}.
+The Apache Cassandra data model was perhaps the most difficult of all the database system designs to create. This was due to a number of reasons. Firstly, I had no previous experience of using a Cassandra database, and had to learn a completely new style of working. Secondly, as discussed in section \ref{cassandra}, one of the main aspects of Cassandra family columns and tables is that they do not accept joins. This results in tables being created and this aims to satisfy any potential queries which may be imposed on the database. The repercussions of this concept are discussed in section \ref{designdiscussion}.
 
-As with many database systems the optimal way to model a structure is to identify the queries which may be imposed; Apache Cassandra is no different. This can result in multiple tables containing duplicated data with either additional or less columns of information. The queries outlined in the evaluation strategy of this document, chapter \ref{evaluation}, provides the queries in which I have modelled the Cassandra data model around.
+As with many database systems the optimal way to model a structure is to identify the queries which may be imposed; Apache Cassandra is no different. This can result in multiple tables, containing duplicated data, with either additional or less columns of information. I have modelled the Cassandra data model around the queries outlined in the evaluation strategy of this document (chapter \ref{evaluation}).
 
-There are 7 tables; Assays, AssayByStage, AssayBySpecimen, Publications, StructureByGene, StructureByStage and TextAnnotations. The naming convention I adopted for the Cassandra data model is based on describing each table by their partition key grouping (for a full description of partition keys and Cassandra concepts, see section \ref{cassandra}). For example, AssayByStage is a table consisting of each Assay partitioned on the Stage value. Figure \ref{fig:cassmodel} illustrates each Cassandra table.
+There are 7 tables: Assays, AssayByStage, AssayBySpecimen, Publications, StructureByGene, StructureByStage and TextAnnotations. The naming convention I adopted for the Cassandra data model is based on describing each table by its partition key grouping (for a full description of partition keys and Cassandra concepts, see section \ref{cassandra}). For example, AssayByStage is a table consisting of each Assay partitioned on the Stage value. Figure \ref{fig:cassmodel} illustrates each Cassandra table.
 \newpage
 \section{Discussion - data model design}\label{designdiscussion}
 This section provides a general summation of the design process as a whole for each solution. The overall intention of this section, is to provide the reader with an in-depth understanding of the challenges faced and the overall advantages and disadvantages of the data modelling procedures, for each database management system.
