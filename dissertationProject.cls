@@ -8,6 +8,7 @@
 \setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{2}
 \geometry{margin=1in}
+\usepackage{enumitem}
 \usepackage{fontspec}
 \usepackage[hidelinks]{hyperref}
 \usepackage{tabularx}
