@@ -35,8 +35,8 @@ For example the first query in the EMAPA competency question table asks : ``For 
     \textbf{EMAPA} & \textbf{EMAGE} \\ \hline
     For structure X, find all the ancestors. &  Where is gene X expressed? \\ \hline
     For structure X, find all the decedents. &  What is expressed in structure X? \\ \hline
-    For structure X, find all structures in the same group (this only makes sense in limited situations, e.g., find all ``hair"). & Which genes are expressed in both structures X and Y?  (This is so-called co-expression). \\ \hline
-    Find all the structures in Theiler Stage X. & Which genes are most commonly co-expressed? (This is getting towards BI and is possibly out with the scope of your thesis, but it does no harm to discuss it. \\ \hline
+    For structure X, find all structures in the same group (this only makes sense in limited situations, e.g., find all ``hair"). & Which genes are expressed in both structures X and Y?. \\ \hline
+    Find all the structures in Theiler Stage X. & Which genes are most commonly co-expressed? \\ \hline
     Find all the structures in Theiler Stages X to Y (e.g., 17-19). &  \\ \hline
     What stages does structure X appear in? & \\ \hline
     Given search term X return the ``best match" structure (e.g., if Isearch on ``heart" I would expect the output to be heart, heart atrium, heart septum  heart mesentery) & \\ \hline

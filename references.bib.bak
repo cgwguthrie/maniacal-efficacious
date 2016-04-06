@@ -1,15 +1,23 @@
-@ONLINE {statref,
-    title = "Statistic Brain | Market Research, Rankings, Financials, Percentages",
-    month = "nov",
-    year  = "2015",
-    url   = "http://www.statisticbrain.com/"
+@misc{statref,
+  author = "Statistic Brain",
+  title = "Statistic Brain | Market Research, Rankings, Financials, Percentages",
+  howpublished = {\url{http://www.statisticbrain.com/}},
+  year = "2015", 
+  note = "[Online; accessed 01-November-2015]"
 }
-
-@ONLINE {etlref1,
-    title = "ETL (Extract-Transform-Load) | Data Integration Info",
-    month = "nov",
-    year  = "2015",
-    url   = "http://www.dataintegration.info/etl"
+@misc{w3c1,
+  author = "W3C.org",
+  title = "W3C SEMANTIC WEB ACTIVITY HOMEPAGE",
+  howpublished = {\url{https://www.w3.org/2001/sw/}},
+  year = "2016", 
+  note = "[Online; accessed 20-March-2016]"
+}
+@misc{etlref1,
+  author = "Dataintegration.info",
+  title = "ETL (Extract-Transform-Load) | Data Integration Info",
+  howpublished = {\url{http://www.dataintegration.info/etl}},
+  year = "2015", 
+  note = "[Online; accessed 01-November-2015]"
 }
 @ARTICLE {biomed,
     author  = "HAYAMIZU, T. F., WICKS, M. N., DAVIDSON, D. R., BURGER, A., RINGWALD, M. AND BALDOCK, R. A.",
@@ -21,35 +29,26 @@
     pages   = "15",
     month   = "mar"
 }
-@ONLINE {etlref2,
-    title = "ETL - Extract Transform Load",
-    month = "nov",
-    year  = "2015",
-    url   = "http://www.etltools.org/"
+@misc{etlref2,
+  author = "Etltools.org",
+  title = "ETL - Extract Transform Load",
+  howpublished = {\url{http://www.etltools.org/}},
+  year = "2015", 
+  note = "[Online; accessed 01-November-2015]"
 }
-@ONLINE {jena,
-    title = "Apache Jena -",
-    month = "nov",
-    year  = "2015",
-    url   = "https://jena.apache.org/"
+@misc{rdf,
+  author = "W3.org",
+  title = "RDF - Semantic Web Standards",
+  howpublished = {\url{http://www.w3.org/RDF/}},
+  year = "2015", 
+  note = "[Online; accessed 01-November-2015]"
 }
-@ONLINE {rdf,
-    title = "RDF - Semantic Web Standards",
-    month = "nov",
-    year  = "2015",
-    url   = "http://www.w3.org/RDF/"
-}
-@ONLINE {semantic,
-    title = "Introduction to the Semantic Web",
-    month = "nov",
-    year  = "2014",
-    url   = "https://www.cambridgesemantics.com/semantic-university/introduction-semantic-web"
-}
-@ONLINE {owl,
-    title = "OWL 2 Web Ontology Language Document Overview (Second Edition)",
-    month = "nov",
-    year  = "2015",
-    url   = "http://www.w3.org/TR/owl2-overview/"
+@misc{semantic,
+  author = "",
+  title = "Introduction to the Semantic Web",
+  howpublished = {\url{https://www.cambridgesemantics.com/semantic-university/introduction-semantic-web}},
+  year = "2014", 
+  note = "[Online; accessed 01-November-2015]"
 }
 @ARTICLE {obo,
     author  = "TIRMIZI, S., AITKEN, S., MOREIRA, D. A., MUNGALL, C., SEQUEDA, J., SHAH, N. H. AND MIRANKER, D. P.",
@@ -66,12 +65,12 @@
     year      = "2013",
     edition   = "first"
 }
-@ONLINE {nosql2,
-    author = "BRUST, A.",
-    title  = "RDBMS vs. NoSQL: How do you pick? | ZDNet",
-    month  = "nov",
-    year   = "2013",
-    url    = "http://www.zdnet.com/article/rdbms-vs-nosql-how-do-you-pick/"
+@misc{nosql2,
+  author = "BRUST, A.",
+  title = "RDBMS vs. NoSQL: How do you pick? | ZDNet",
+  howpublished = {\url{http://www.zdnet.com/article/rdbms-vs-nosql-how-do-you-pick/}},
+  year = "2013", 
+  note = "[Online; accessed 01-November-2015]"
 }
 @BOOK {dd,
     author    = "ÖZSU, M. T. AND VALDURIEZ, P.",
@@ -107,11 +106,12 @@
     publisher = "Manning, 2014",
     year      = "2014"
 }
-@ONLINE {ndweb,
-    title = "Neo4j, the World's Leading Graph Database",
-    month = "nov",
-    year  = "2015",
-    url   = "http://neo4j.com/"
+@misc{ndweb,
+  author = "Neo4j Graph Database",
+  title = "Neo4j, the World's Leading Graph Database",
+  howpublished = {\url{http://neo4j.com/}},
+  year = "2015", 
+  note = "[Online; accessed 01-November-2015]"
 }
 @BOOK {cass,
     author    = "HEWITT, E.",
@@ -120,8 +120,6 @@
     year      = "2011",
     edition   = "first"
 }
-
-
 
 @BOOK {mckinskey,
     author    = "MANYIKA, J., CHUI, M., BROWN, B., BUGHIN, J., DOBBS, R., ROXBURGH, C. AND HUNG BYERS, A.",
@@ -145,34 +143,33 @@
     publisher = "Springer, 2014",
     year      = "2014"
 }
-
-@ONLINE {schmidt,
-    title = "Google's Schmidt: We know what you're thinking",
-    month = "nov",
-    year  = "2015",
-    url   = "http://www.theregister.co.uk/2010/10/04/google_ericisms/"
+@misc{schmidt,
+  author = "Theregister.co.uk",
+  title = "Google's Schmidt: We know what you're thinking",
+  howpublished = {\url{http://www.theregister.co.uk/2010/10/04/google_ericisms/}},
+  year = "2015", 
+  note = "[Online; accessed 01-November-2015]"
 }
-
-@ONLINE {moore,
-    title = "Best 10 Big Data Quotes of All Time | SmartData Collective",
-    month = "nov",
-    year  = "2015",
-    url   = "http://www.smartdatacollective.com/bernardmarr/232941/top-10-big-data-quotes-all-time"
+@misc{moore,
+  author = "Smartdatacollective.com",
+  title = "Best 10 Big Data Quotes of All Time | SmartData Collective",
+  howpublished = {\url{http://www.smartdatacollective.com/bernardmarr/232941/top-10-big-data-quotes-all-time}},
+  year = "2015", 
+  note = "[Online; accessed 01-November-2015]"
 }
-
-@ONLINE {ibm,
-    title = "Why only one of the 5 Vs of big data really matters | The Big Data Hub",
-    month = "nov",
-    year  = "2015",
-    url   = "http://www.ibmbigdatahub.com/blog/why-only-one-5-vs-big-data-really-matters"
+@misc{ibm,
+  author = "IBM Big Data and Analytics Hub",
+  title = "Why only one of the 5 Vs of big data really matters | The Big Data Hub",
+  howpublished = {\url{http://www.ibmbigdatahub.com/blog/why-only-one-5-vs-big-data-really-matters}},
+  year = "2015", 
+  note = "[Online; accessed 01-November-2015]"
 }
-
-
-@ONLINE {cassandra,
-    title = "What is Apache Cassandra?",
-    month = "nov",
-    year  = "2015",
-    url   = "http://www.planetcassandra.org/what-is-apache-cassandra/"
+@misc{cassandra,
+  author = "Planet Cassandra",
+  title = "What is Apache Cassandra?",
+  howpublished = {\url{http://www.planetcassandra.org/what-is-apache-cassandra/}},
+  year = "2015", 
+  note = "[Online; accessed 01-November-2015]"
 }
 
 @BOOK {rdb,
@@ -200,7 +197,151 @@
     number  = "1",
     pages   = "15"
 }
-
-
-
-
+@ARTICLE {sm3,
+    author   = "Napoleon-Alexandru Sireteanu",
+    title    = "Web Ontology Languages and Semantic Web Services",
+    journal  = "SSRN Electronic Journal",
+    year     = "2013",
+    note     = "Social Science Electronic Publishing"
+}
+@misc{sm1,
+  author = "Cambridge Semantics",
+  title = "Introduction to the Semantic Web",
+  howpublished = {\url{http://www.cambridgesemantics.com/semantic-university/introduction-semantic-web}},
+  year = "2016", 
+  note = "[Online; accessed 22-March-2016]"
+}
+@misc{spa1,
+  author = "Juan Sequeda",
+  title = "Introduction to: SPARQL - DATAVERSITY",
+  howpublished = {\url{http://www.dataversity.net/introduction-to-sparql/}},
+  year = "2011", 
+  note = "[Online; accessed 22-March-2016]"
+}
+@misc{sm5,
+  author = "W3.org",
+  title = "Use Case: Ontology-Driven Information Integration and Delivery",
+  howpublished = {\url{https://www.w3.org/2001/sw/sweo/public/UseCases/Chevron/}},
+  year = "2007", 
+  note = "[Online; accessed 22-March-2016]"
+}
+@misc{fb1,
+  author = "Statista",
+  title = "Number of Facebook users worldwide 2008-2015 | Statistic",
+  howpublished = {\url{http://www.statista.com/statistics/264810/number-of-monthly-active-facebook-users-worldwide/}},
+  year = "2016", 
+  note = "[Online; accessed 22-March-2016]"
+}
+@misc{sm4,
+  author = "W3.org",
+  title = "OWL 2 Web Ontology Language Document Overview",
+  howpublished = {\url{https://www.w3.org/TR/owl2-overview/}},
+  year = "2016", 
+  note = "[Online; accessed 22-March-2016]"
+}
+@misc{fb2,
+  author = "Research at Facebook",
+  title = "Facebook's Top Open Data Problems",
+  howpublished = {\url{http://www.statista.com/statistics/264810/number-of-monthly-active-facebook-users-worldwide/}},
+  year = "2016", 
+  note = "[Online; accessed 22-March-2016]"
+}
+@misc{googref,
+  author = "Google Refine FAQ",
+  title = "Google-refine.googlecode.com",
+  howpublished = {\url{https://google-refine.googlecode.com/svn-history/r1407/wiki/FAQ.wiki}},
+  year = "2016", 
+  note = "[Online; accessed 22-March-2016]"
+}
+@ARTICLE {aksio,
+    author  = "Roar Fjellheim and David Norheim",
+    title   = "AKSIO?An application of Semantic Web technology for knowledge management in the petroleum industry",
+    journal = "ISWC 2005",
+    year    = "2005",
+    month   = "nov",
+    note    = "Galway, Ireland"
+}
+@misc{fb3,
+  author = "Facebook.com",
+  title = "Scaling Apache Giraph to a trillion edges",
+  howpublished = {\url{https://www.facebook.com/notes/facebook-engineering/scaling-apache-giraph-to-a-trillion-edges/10151617006153920}},
+  year = "2016", 
+  note = "[Online; accessed 22-March-2016]"
+}
+@misc{w3c1,
+  author = "W3C.org",
+  title = "W3C SEMANTIC WEB ACTIVITY HOMEPAGE",
+  howpublished = {\url{https://www.w3.org/2001/sw/}},
+  year = "2016", 
+  note = "[Online; accessed 20-March-2016]"
+}
+@misc{fb4,
+  author = "Nytimes.com",
+  title = "Facebook Tinkers With Users? Emotions in News Feed Experiment, Stirring Outcry",
+  howpublished = {\url{http://www.nytimes.com/2014/06/30/technology/facebook-tinkers-with-users-emotions-in-news-feed-experiment-stirring-outcry.html}},
+  year = "2014", 
+  note = "[Online; accessed 22-March-2016]"
+}
+@misc{uc1,
+  author = "Jennifer Zaino",
+  title = "Big Data and the Semantic Web: Their Paths Will Cross - DATAVERSITY",
+  howpublished = {\url{http://www.smartdatacollective.com/bigdatastartups/128176/could-big-data-spur-semantic-web-development}},
+  year = "2012", 
+  note = "[Online; accessed 22-March-2016]"
+}
+@misc{uc3,
+  author = "SiliconANGLE",
+  title = "Big Data and the Semantic Web: A Synergy of Infrastructure and Language",
+  howpublished = {\url{http://siliconangle.com/blog/2011/06/15/big-data-and-the-semantic-web-a-synergy-of-infrastructure-and-language/}},
+  year = "2016", 
+  note = "[Online; accessed 22-March-2016]"
+}
+@misc{sm2,
+  author = "Swag.webns.net",
+  title = "What is the Semantic Web?",
+  howpublished = {\url{http://swag.webns.net/whatIsSW}},
+  year = "2016", 
+  note = "[Online; accessed 21-March-2016]"
+}
+@misc{uc2,
+  author = "CMSWire.com",
+  title = "How Semantic Web Tech Can Make Big Data Smarter",
+  howpublished = {\url{http://www.cmswire.com/cms/featured-articles/how-semantic-web-tech-can-make-big-data-smarter-026726.php}},
+  year = "2016", 
+  note = "[Online; accessed 21-March-2016]"
+}
+@misc{uc4,
+  author = "Information Week",
+  title = "Big Data and Semantic Web: Love At First Terabyte?",
+  howpublished = {\url{http://www.informationweek.com/big-data/big-data-analytics/big-data-+-semantic-web-love-at-first-terabyte/d/d-id/1107520?}},
+  year = "2016", 
+  note = "[Online; accessed 21-March-2016]"
+}
+@misc{cake,
+  author = "W3C.org",
+  title = "Semantic Web - XML2000",
+  howpublished = {\url{https://www.w3.org/2000/Talks/1206-xml2k-tbl/slide10-0.html}},
+  year = "2016", 
+  note = "[Online; accessed 20-March-2016]"
+}
+@misc{mysqlworkbench,
+  author = "Dev.mysql.com",
+  title = "MySQL :: MySQL 5.7 Reference Manual :: 13.2.9 SELECT Syntax",
+  howpublished = {\url{http://dev.mysql.com/doc/refman/5.7/en/select.html}},
+  year = "2016", 
+  note = "[Online; accessed 20-March-2016]"
+}
+@misc{ds,
+  author = "Planet Cassandra",
+  title = "MySQL to Apache Cassandra Migrations",
+  howpublished = {\url{http://www.planetcassandra.org/mysql-to-cassandra-migration/#How_is_Data_Handled}},
+  year = "2013", 
+  note = "[Online; accessed 20-March-2016]"
+}
+@misc{mongdoc,
+  author = "Docs.mongodb.org",
+  title = "Operational Factors and Data Models ? MongoDB Manual 3.2",
+  howpublished = {\url{https://docs.mongodb.org/manual/core/data-model-operations/#data-model-indexes}},
+  year = "2016", 
+  note = "[Online; accessed 20-March-2016]"
+}

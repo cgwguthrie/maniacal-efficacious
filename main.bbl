@@ -1,41 +1,11 @@
 \begin{thebibliography}{10}
 
 \bibitem{semantic}
-Introduction to the semantic web, nov 2014.
-
-\bibitem{jena}
-Apache jena -, nov 2015.
-
-\bibitem{moore}
-Best 10 big data quotes of all time | smartdata collective, nov 2015.
-
-\bibitem{etlref2}
-Etl - extract transform load, nov 2015.
-
-\bibitem{etlref1}
-Etl (extract-transform-load) | data integration info, nov 2015.
-
-\bibitem{schmidt}
-Google's schmidt: We know what you're thinking, nov 2015.
-
-\bibitem{ndweb}
-Neo4j, the world's leading graph database, nov 2015.
-
-\bibitem{owl}
-Owl 2 web ontology language document overview (second edition), nov 2015.
-
-\bibitem{rdf}
-Rdf - semantic web standards, nov 2015.
-
-\bibitem{statref}
-Statistic brain | market research, rankings, financials, percentages, nov 2015.
-
-\bibitem{cassandra}
-What is apache cassandra?, nov 2015.
-
-\bibitem{ibm}
-Why only one of the 5 vs of big data really matters | the big data hub, nov
-  2015.
+Introduction to the semantic web.
+\newblock
+  \url{https://www.cambridgesemantics.com/semantic-university/introduction-semantic-web},
+  2014.
+\newblock [Online; accessed 01-November-2015].
 
 \bibitem{emap}
 KAUFMAN M. H. DUBREUIL C. BRUNE R. M. BURGER A. BALDOCK R.~A. BARD, J.~B. and
@@ -44,14 +14,97 @@ KAUFMAN M. H. DUBREUIL C. BRUNE R. M. BURGER A. BALDOCK R.~A. BARD, J.~B. and
   on a systematic nomenclature.
 \newblock {\em Mechanisms of Development}, 74(1-2):111--120, 1998.
 
+\bibitem{statref}
+Statistic Brain.
+\newblock Statistic brain | market research, rankings, financials, percentages.
+\newblock \url{http://www.statisticbrain.com/}, 2015.
+\newblock [Online; accessed 01-November-2015].
+
 \bibitem{nosql2}
 A.~BRUST.
-\newblock Rdbms vs. nosql: How do you pick? | zdnet, nov 2013.
+\newblock Rdbms vs. nosql: How do you pick? | zdnet.
+\newblock \url{http://www.zdnet.com/article/rdbms-vs-nosql-how-do-you-pick/},
+  2013.
+\newblock [Online; accessed 01-November-2015].
+
+\bibitem{ds}
+Planet Cassandra.
+\newblock Mysql to apache cassandra migrations.
+\newblock
+  \url{http://www.planetcassandra.org/mysql-to-cassandra-migration/#How_is_Data_Handled},
+  2013.
+\newblock [Online; accessed 20-March-2016].
+
+\bibitem{cassandra}
+Planet Cassandra.
+\newblock What is apache cassandra?
+\newblock \url{http://www.planetcassandra.org/what-is-apache-cassandra/}, 2015.
+\newblock [Online; accessed 01-November-2015].
+
+\bibitem{ibm}
+IBM~Big Data and Analytics Hub.
+\newblock Why only one of the 5 vs of big data really matters | the big data
+  hub.
+\newblock
+  \url{http://www.ibmbigdatahub.com/blog/why-only-one-5-vs-big-data-really-matters},
+  2015.
+\newblock [Online; accessed 01-November-2015].
+
+\bibitem{ndweb}
+Neo4j~Graph Database.
+\newblock Neo4j, the world's leading graph database.
+\newblock \url{http://neo4j.com/}, 2015.
+\newblock [Online; accessed 01-November-2015].
+
+\bibitem{etlref1}
+Dataintegration.info.
+\newblock Etl (extract-transform-load) | data integration info.
+\newblock \url{http://www.dataintegration.info/etl}, 2015.
+\newblock [Online; accessed 01-November-2015].
+
+\bibitem{mysqlworkbench}
+Dev.mysql.com.
+\newblock Mysql :: Mysql 5.7 reference manual :: 13.2.9 select syntax.
+\newblock \url{http://dev.mysql.com/doc/refman/5.7/en/select.html}, 2016.
+\newblock [Online; accessed 20-March-2016].
+
+\bibitem{mongdoc}
+Docs.mongodb.org.
+\newblock Operational factors and data models ? mongodb manual 3.2.
+\newblock
+  \url{https://docs.mongodb.org/manual/core/data-model-operations/#data-model-indexes},
+  2016.
+\newblock [Online; accessed 20-March-2016].
+
+\bibitem{etlref2}
+Etltools.org.
+\newblock Etl - extract transform load.
+\newblock \url{http://www.etltools.org/}, 2015.
+\newblock [Online; accessed 01-November-2015].
+
+\bibitem{googref}
+Google~Refine FAQ.
+\newblock Google-refine.googlecode.com.
+\newblock
+  \url{https://google-refine.googlecode.com/svn-history/r1407/wiki/FAQ.wiki},
+  2016.
+\newblock [Online; accessed 22-March-2016].
 
 \bibitem{rdb}
 J.~L. HARRINGTON.
 \newblock {\em Relational database design clearly explained}.
 \newblock Morgan Kaufmann Publishers, first edition, 2002.
+
+\bibitem{biomed}
+WICKS M. N. DAVIDSON D. R. BURGER A. RINGWALD~M. HAYAMIZU, T.~F. and R.~A.
+  BALDOCK.
+\newblock Emap/emapa ontology of mouse developmental anatomy: 2013 update.
+\newblock {\em J Biomed Sem}, 4(1):15, mar 2013.
+
+\bibitem{cass}
+E.~HEWITT.
+\newblock {\em Cassandra}.
+\newblock O'Reilly, first edition, 2011.
 
 \bibitem{md}
 MEMBREY~P. HOWS, D. and E.~PLUGGE.
@@ -86,11 +139,55 @@ P.~J. SADALAGE and M.~FOWLER.
 \newblock {\em NoSQL distilled}.
 \newblock Addison-Wesley, first edition, 2013.
 
-\bibitem{obo}
-AITKEN S. MOREIRA D. A. MUNGALL C. SEQUEDA J. SHAH N.~H. TIRMIZI, S. and D.~P.
-  MIRANKER.
-\newblock Mapping between the obo and owl ontology languages.
-\newblock {\em J Biomed Sem}, 2:S3, 2011.
+\bibitem{spa1}
+Juan Sequeda.
+\newblock Introduction to: Sparql - dataversity.
+\newblock \url{http://www.dataversity.net/introduction-to-sparql/}, 2011.
+\newblock [Online; accessed 22-March-2016].
+
+\bibitem{moore}
+Smartdatacollective.com.
+\newblock Best 10 big data quotes of all time | smartdata collective.
+\newblock
+  \url{http://www.smartdatacollective.com/bernardmarr/232941/top-10-big-data-quotes-all-time},
+  2015.
+\newblock [Online; accessed 01-November-2015].
+
+\bibitem{sm2}
+Swag.webns.net.
+\newblock What is the semantic web?
+\newblock \url{http://swag.webns.net/whatIsSW}, 2016.
+\newblock [Online; accessed 21-March-2016].
+
+\bibitem{schmidt}
+Theregister.co.uk.
+\newblock Google's schmidt: We know what you're thinking.
+\newblock \url{http://www.theregister.co.uk/2010/10/04/google_ericisms/}, 2015.
+\newblock [Online; accessed 01-November-2015].
+
+\bibitem{nd}
+WATT N. ABEDRABBO T. FOX~D. VUKOTIC, A. and J.~PARTNER.
+\newblock {\em Neo4j in action}.
+\newblock Manning, 2014, 2014.
+
+\bibitem{cake}
+W3C.org.
+\newblock Semantic web - xml2000.
+\newblock \url{https://www.w3.org/2000/Talks/1206-xml2k-tbl/slide10-0.html},
+  2016.
+\newblock [Online; accessed 20-March-2016].
+
+\bibitem{w3c1}
+W3C.org.
+\newblock W3c semantic web activity homepage.
+\newblock \url{https://www.w3.org/2001/sw/}, 2016.
+\newblock [Online; accessed 20-March-2016].
+
+\bibitem{sm4}
+W3.org.
+\newblock Owl 2 web ontology language document overview.
+\newblock \url{https://www.w3.org/TR/owl2-overview/}, 2016.
+\newblock [Online; accessed 22-March-2016].
 
 \bibitem{dd}
 M.~T. ÖZSU and P.~VALDURIEZ.

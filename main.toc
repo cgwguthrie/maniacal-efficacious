@@ -31,7 +31,7 @@
 \contentsline {subsection}{\numberline {2.7.1}EMAP}{19}{subsection.2.7.1}
 \contentsline {subsection}{\numberline {2.7.2}EMAP anatomy}{19}{subsection.2.7.2}
 \contentsline {subsection}{\numberline {2.7.3}EMAPA anatomy}{21}{subsection.2.7.3}
-\contentsline {subsection}{\numberline {2.7.4}EMAGE anatomy}{22}{subsection.2.7.4}
+\contentsline {subsection}{\numberline {2.7.4}EMAGE anatomy}{21}{subsection.2.7.4}
 \contentsline {chapter}{\numberline {3}Evaluation Strategy}{23}{chapter.3}
 \contentsline {section}{\numberline {3.1}Requirements}{23}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Data Source Competency Questions}{25}{subsection.3.1.1}
@@ -63,5 +63,5 @@
 \contentsline {chapter}{\numberline {7}Query Overview, Results and Evaluation}{71}{chapter.7}
 \contentsline {section}{\numberline {7.1}Query Overview}{71}{section.7.1}
 \contentsline {section}{\numberline {7.2}Query Results}{73}{section.7.2}
-\contentsline {section}{\numberline {7.3}System Evaluation}{88}{section.7.3}
-\contentsline {chapter}{\numberline {8}Conclusion}{89}{chapter.8}
+\contentsline {section}{\numberline {7.3}System Evaluation}{89}{section.7.3}
+\contentsline {chapter}{\numberline {8}Conclusion}{90}{chapter.8}
