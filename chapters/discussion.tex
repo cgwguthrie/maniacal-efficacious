@@ -27,9 +27,7 @@ The order in which I wrote, run and evaluated the queries reflects the complexit
 There are a number of queries one could write which would output potentially interesting results and provide an alternative view of the data. However, the purpose of this examination was to evaluate the functionality of the solutions, assess the limitations of each of the systems and identify any interesting additional features. Thus there was no requirement to include these additional queries which would fail to affect the outcome of the examination.
 
 \section{Query Results}\label{queryresults}
-The following subsections provide the results of running the queries outlined in table \ref{tab:competency}. Included in the subsections is the statement written for every system for each of the queries, where I was able to achieve the intended outcome. I have also included the physical output for the first 3 queries. This is to provide the reader with an insight into what is returned from each database solution when running a query. I have only included the output for the first 3 queries as I felt that doing the same process for each query did not add any value to the examination.
-
-At the end of each subsection is a short review of each query, intended to summarise the findings. Section \ref{queryevaluation} provides an in-depth evaluation of the query examination stage of the project as a whole, and compares and contrasts each solution.
+The following subsections provide the results of running the queries outlined in table \ref{tab:competency}. Included in the subsections is the statement written for every system for each of the queries, where I was able to achieve the intended outcome. I have also included the physical output for the first query for each database. This is to provide the reader with an insight into what is returned from each database solution when running a query. I have only included the output for the first query as I felt that doing the same process for each query did not add any value to the examination.
 
 \subsection*{Query 1 - All structures at Theiler Stage X}\label{query1}
 The first query which I wrote for each of the databases aimed to retrieve the anatomy structure information at a given Theiler Stage. For the basis of these tests I hard coded the Theiler stage; Theiler Stage 4 in this instance.  The minimum amount of data expected to be returned from this query is the structure ID, structure name and Theiler Stage. This query is not complex and one would expect that each database will possess the required functionality to handle this query and return the expected output.
@@ -50,7 +48,9 @@ ORDER BY 1
 Figure \ref{fig:mysqlquery1} is a screen capture of the resulting output from running the MySQL query in the command-line interface. As you can see it returns the data in a table format separated by dashed lines. The number of rows returned and time taken for the query to process is also included below the table.
 
 The output for this query is clear and coherent. However, for this query there is only 4 columns of data being returned. The MySQL command-line tool is run in a machine terminal. The size of the terminal window is at maximum the size of the machines monitor. Thus it is often the case that when returning a large number of columns, the data can become scrambled and illegible.
+
 \begin{figure}[H]\begin{center}\includegraphics[height=4cm,width=0.9\linewidth]{images/mysqlquery1}\caption{Screen capture MySQL command-line tool output - Query 1}\label{fig:mysqlquery1}\end{center}\end{figure}
+
 One way to avoid this is to change the zoom level of the terminal. Depending on the volume of data returned, this can have little to no affect as the further out one zooms, the smaller the font becomes. This can often be a hindrance of using the MySQL command-line tool for advanced queering of large, multicolumn datasets.
 
 \subsubsection*{MongoDB - Query 1 statement}\label{mongoquery1statement}
@@ -58,16 +58,13 @@ The MongoDB query shown in code snippet \ref{code:mongoquery1} successfully retu
 
 The second part of this query is known as the projection. Within the projection, one can specify fields to exclude from the result. Lines 5-9 in code snippet \ref{code:mongoquery1} represent the projection of this query. A field can be included or excluded from a result by specifying the relevant field and then stating either 1 (included) or 0 (excluded) value. Doing so, allows one to filter the result and only return the fields required.
 \begin{lstlisting}[language=json, caption=MongoDB Query 1 statement. All structures at Theiler Stage 4., label=code:mongoquery1]
-db.emage.find({
-    "stage.theilerstage":4
-    },
-    {
-    "_id" : 0,
+db.emage.find(
+	{	"stage.theilerstage":4	},
+    {	"_id" : 0,
     "stage.theilerstage" : 1,
     "stage.dpc" : 1,
     "textannotation.anatomystructure.structureID" : 1,
-    "textannotation.anatomystructure.term" : 1
-     }).pretty();
+    "textannotation.anatomystructure.term" : 1	}	).pretty();
 \end{lstlisting}
 
 One additional command which concludes this query is the ``pretty()'' method. This command displays the results in an easy-to-read format. A standard \textit{db.collection.find()} query outputs data in a dense and incomprehensible format. Using the ``pretty()'' method returns the data in a format which is easier for humans to understand.
@@ -92,12 +89,26 @@ For example, in this query, the relationship between the nodes is ``GROUPED\_BY'
 Line 2 of code snippet \ref{code:neoquery1} is a standard ``WHERE'' clause. It has the same semantic value as an SQL ``WHERE'' clause. Finally the query is finished with a ``RETURN statement'', found on line 3. This is equivalent to a SQL ``SELECT'' command. One specifies the field and value pairings as required. As with MySQL it is good practice to use alias names, and can be done so by expressing the ``AS'' keyword.
 
 \subsubsection*{Neo4j - Query 1 output}\label{neoquery1output}
+By default Neo4j provides two tools for querying the database and outputting the result. The first is on the Neo4j command-line tool; a basic command-line interface for querying a database. The way it works is similar to that of MySQL, MongoDB and Cassandra; start the tool, connect to a database, then run a query.
 
 \begin{figure}[H]\begin{center}\includegraphics[height=4cm,width=0.9\linewidth]{images/neo4jquery1terminal}\caption{Neo4j query 1 - All structures at Theiler Stage X}\label{fig:neo4jquery1terminal}\end{center}\end{figure}
 
+The output from running the query in code snippet \ref{code:neoquery1} using the command-line tool is illustrated in figure \ref{fig:neo4jquery1terminal}. The output is almost identical with that of MySQL. This does not come as a surprise as Neo4j is based on SQL constructs. It is a basic format however it meets the needs for most.
+
+A reason why the creators of Neo4j did not differ from the norm regarding the command-line interface, may be down to the fact they have developed a web interface for querying Neo4j models. The web browser application comes as standard with the community edition (the most basic version) of Neo4j. It is the primary user interface for Neo4j. Using this application one can run queries in the same manner as running queries on the command-line tool. The application also displays the nodes, relationships and constraints of the data mode. It is designed to provide one with a intuitive, user-friendly experience of Neo4j.
+
 \begin{figure}[H]\begin{center}\includegraphics[width=1\linewidth]{images/neo4jquery1graph}\caption{Neo4j query 1 - All structures at Theiler Stage X}\label{fig:neo4jquery1graph}\end{center}\end{figure}
 
+One feature of the application is its graph visualisation tool. Illustrated in figure \ref{fig:neo4jquery1graph}, the web interface allows one to view the result of their query as a graph. The nodes and relationships displayed, represents the of the query in code snippet \ref{code:neoquery1}. The colours, sizes and labels of the nodes are fully customisable and one can move (by dragging) the nodes around the screen at ones convenience.
+
+The visualisation tool is basic, but easy to use. Its inclusion in the application enhances the usability of Neo4j, for those who are looking for an alternative way of viewing their data. However, it is not very robust. While running a query which returns a large volume of data may not take a long time to run, representing the data in the interface can take some time to load. Furthermore, the web interface is also prone to crashing when returning a lot of data.
+
+It is often the case when querying a database using an API or otherwise, that one intends on loading the data into a visualisation tool or implementing a solution to model the data. Therefore rendering the addition of this application obsolete. That said, it is a useful tool for basic data visualisation and database querying.
+
 \subsubsection*{Apache Cassandra - Query 1 statement}\label{cassquery1statement}
+Code snippet \ref{code:cassquery1} represents the query written to find all of the structures found at a given Theiler Stage in the Cassandra data model. The Cassandra query language uses similar syntax to that of MySQL. They both share many of the same keywords and the structure of a query is the same. Start with selecting the columns you need for the query, state which table the data is stored in and then include any clauses to match the data on.
+
+The query is much shorter and simpler compared with the MySQL statement for the same query. This is as a result of the inability for Cassandra to join tables. Therefore all of the data required to output the result of this query is stored in the one table.
 
 \begin{lstlisting}[language=SQL, caption=, label=code:cassquery1]
 SELECT *
@@ -107,18 +118,19 @@ AND detected = true;
 \end{lstlisting}
 
 \subsubsection*{Apache Cassandra - Query 1 output}\label{cassquery1output}
+The output of running the query in code snippet \ref{code:cassquery1} can be found in figure \ref{fig:cassandraquery1}. As with Neo4j, to the naked eye, the output of running queries on the command-line looks very similar to that of MySQL. Despite how Cassandra is semantically structured, visually, there is not much dissimilarity.
+
+One difference with Cassandra is the colouring of the column headings. The colours themselves have no significance on how the table is structured, and are dependent on the configuration of ones terminal window. However, the positioning and distinctness of the colours, do have a bearing on the table structure. In the instance of figure \ref{fig:cassandraquery1}, the initial two columns coloured red represent the partitioning keys, defined in section \ref{cassandraimplementation}. The cyan coloured column represents the clustering key, and the pink coloured headings define the remaining columns. In terms of the data, the green coloured values depict either an Integer or a Boolean value and the purple coloured data represents a String.
 
 \begin{figure}[H]\begin{center}\includegraphics[height=4cm,width=0.9\linewidth]{images/cassandraquery1}\caption{Cassandra query 1 - All structures at Theiler Stage X}\label{fig:cassandraquery1}\end{center}\end{figure}
 
-\subsection*{Query 1 - Review}\label{query1review}
+In terms of the effectiveness of this feature, it certainly makes the output easier on the eye and more attractive from a aesthetic standpoint. However, I feel it adds little to the overall impact of the data returned. Depending on the role of the user querying the database, having a colour coordinated keys and data types may have little impact. For example, if one is designing the data model in a Database Administrator type role, colours representing the partitioning and clustering keys can be useful. It allows one to see exactly how the table is structured without having to run a further query to describe the table. Having coloured data values also shows whether a number is indeed an Integer or a String for example. Comparatively, if one is in a business type role and does not understand the underlying architecture of the database, then the various colours may confuse or complicate their analysis. While having many colours does give the output an interesting look and feel, it does not improve the querying experience. It does seem that this feature is to primarily enhance the practicality of the database when querying, which it only achieves to an extent.
 
-\newpage
 \subsection*{Query 2 - All structures between Theiler Stage X and Y}\label{query2}
-The following code snippets represent the queries written for competency question 2.
+The second query aimed to identify all of the structures found between two given Theiler Stages. For each of the queries I used the same minimum and maximum Theiler Stages values (4 and 7). This is a query which one would anticipate each of the systems would complete with relative ease. The data expected to be returned from the query is, as a minimum, the structure ID and the corresponding Theiler Stage. 
 
-\begin{itemize}[leftmargin=*]
-\item \textbf{MySQL}
-\end{itemize}
+\subsubsection*{MySQL - Query 2 statement}\label{mysqlquery2statement}
+The MySQL query shown in code snippet \ref{code:mysqlquery2} successfully returned the expected output. To construct the query I had to write two inner joins. The first linking the AnatomyStructures table to the Stages table, and the second joining the AnatomyStructures table to the TextAnnotation table.
 
 \begin{lstlisting}[language=SQL, caption=, label=code:mysqlquery2]
 SELECT t1.accession, t2.theilerstage
@@ -132,19 +144,35 @@ AND t3.detected = 1
 GROUP BY 1;
 \end{lstlisting}
 
-\begin{figure}[H]\begin{center}\includegraphics[height=7cm,width=0.4\linewidth]{images/mysqlquery2}\caption{MySQL query 2 - All structures between Theiler Stage X and Y}\label{fig:mysqlquery2}\end{center}\end{figure}
+I have imposed two clauses on the query, found in lines 7 and 8 of code snippet \ref{code:mysqlquery2}. The first, on lune 7 stipulates the Theiler Stage must have a value between 4 and 7. On line 8 I specify that the gene must have a boolean value of 1; detected. The GROUP BY clause on line 9, is used to group the result-set by column 1 (structure ID). This will return a distinct set of structure ID values.
 
-\begin{itemize}[leftmargin=*]
-\item \textbf{MongoDB}
-\end{itemize}
+The query was straightforward to create. Compared to Neo4j and Cassandra however, it was a long query in terms of syntax. This can often be the case when writing relational database queries. The more tables in the data model, the longer and more complex the query becomes.
 
+\subsubsection*{MongoDB - Query 2 statement}\label{mongoquery2statement}
+The MongoDB query shown in code snippet \ref{code:mongoquery2} successfully returned the expected output.
+
+\parindent 0pt
 \begin{lstlisting}[language=json, caption=, label=code:mongoquery2]
-db.emage.find({$and: [ {"textannotation.detected" : "True"},{ "stage.theilerstage": {$gte : 4 }},{ "stage.theilerstage": {$lte : 7 }}, {"textannotation.strength" : "detected"}]},{"textannotation.anatomystructure.structureID" : 1, "stage.theilerstage" : 1, "_id" : 0}).pretty();
+db.emage.find(
+	{ $and:
+		[
+			{	"textannotation.detected" : "True"	},
+			{	"stage.theilerstage": {$gte : 4 }	},
+			{	 "stage.theilerstage": {$lte : 7 }	},
+			{	"textannotation.strength" : "detected"	}
+		]
+	},
+	{	"textannotation.anatomystructure.structureID" : 1, "stage.theilerstage" : 1, "_id" : 0	}	).pretty();
 \end{lstlisting}
 
-\begin{itemize}[leftmargin=*]
-\item \textbf{Neo4j}
-\end{itemize}
+MongoDB supports a number of logical and comparison query operators. These include \$and (logical and), \$gte (>=) and \$lte (<=), each of which are used in the query below.
+
+\parindent 15pt
+
+The \$and logical operator denotes field and value pairs must all satisfy the arguments provided, for a query to return true, within an array of two or more expressions. It is semantically the same as a logical AND. If one of the arguments returns false, MongoDB will not evaluate the remainder of the expression. The \$gte and \$lte operators select the documents where the value of the field is either greater/less than or equal to a specified value.
+
+\subsubsection*{Neo4j - Query 2 statement}\label{neoquery2statement}
+The Neo4j query shown in code snippet \ref{code:neoquery2} successfully returned the expected output. This was a basic query and I found it easy to construct as it was extremely similar to that of the MySQL query created previously.
 
 \begin{lstlisting}[language=SQL, caption=, label=code:neoquery2]
 MATCH (textannotation:TextAnnotation)-[]->(struct:AnatomyStructure)-[]->(stage:Stage)
@@ -152,11 +180,8 @@ WHERE stage.theilerStage >= 4 AND stage.theilerStage <=7 AND textannotation.dete
 RETURN struct.accession AS Accession, stage.theilerStage AS TheilerStage;
 \end{lstlisting}
 
-\begin{figure}[H]\begin{center}\includegraphics[height=7cm,width=0.4\linewidth]{images/neo4jquery2terminal}\caption{Neo4j query 2 - All structures between Theiler Stage X and Y}\label{fig:neo4jquery2terminal}\end{center}\end{figure}
-
-\begin{itemize}[leftmargin=*]
-\item \textbf{Cassandra}
-\end{itemize}
+\subsubsection*{Apache Cassandra - Query 2 statement}\label{cassquery2statement}
+The Cassandra query shown in code snippet \ref{code:cassquery2} successfully returned the expected output. This was a simple query and quick to write. This was mainly due to the fact I had modelled the table around such an query.
 
 \begin{lstlisting}[language=SQL, caption=, label=code:cassquery2]
 SELECT *
@@ -165,15 +190,13 @@ WHERE theilerstage IN (4,5,6,7)
 AND detected = true;
 \end{lstlisting}
 
-\begin{figure}[H]\begin{center}\includegraphics[height=6cm,width=1\linewidth]{images/cassandraquery2}\caption{Cassandra query 2 - All structures between Theiler Stage X and Y}\label{fig:cassandraquery2}\end{center}\end{figure}
+One noteworthy point from this query is the use of the IN operator. Cassandra Query Language only supports the use of = and IN operators when restricting a partition key within a query. Therefore as opposed to using either >= or the BETWEEN operators in MySQL, MongoDB and Neo4j, for Cassandra I had to hard-code the physical values I was restricting the column on. This is illustrated in line 3 of code snippet \ref{code:cassquery2}.
 
-\newpage
-\subsection*{Query 3 - Where is Gene X expressed?}\label{query3}
-The following code snippets represent the queries written for competency question 3.
+\subsection*{Query 3 - Where is gene X expressed?}\label{query3}
+The third query I created was to test if the systems could successfully return information regarding a given gene. This query is slightly more complex as it requires more clauses within the queries. However, one would again expect that each of the solutions should be able to return the expected data with ease. I chose the gene ``Hoxb13'' as the gene to test the queries. For the solution to be deemed successful in running this query I would expect the gene name, structure name and structure ID to be returned, as a minimum.
 
-\begin{itemize}[leftmargin=*]
-\item \textbf{MySQL}
-\end{itemize}
+\subsubsection*{MySQL - Query 3 statement}\label{mysqlquery3statement}
+The MySQL query shown in code snippet \ref{code:mysqlquery3} successfully returned the expected output. 
 
 \begin{lstlisting}[language=SQL, caption=, label=code:mysqlquery3]
 SELECT t1.name AS GeneName, t3.term AS StructureTerm, t3.accession AS StructureID
@@ -188,31 +211,32 @@ GROUP BY 3
 ORDER BY 2,3;
 \end{lstlisting}
 
-\begin{figure}[H]\begin{center}\includegraphics[height=5cm,width=0.7\linewidth]{images/mysqlquery3}\caption{MySQL query 3 - Where is Gene X expressed?}\label{fig:mysqlquery3}\end{center}\end{figure}
-
-\begin{itemize}[leftmargin=*]
-\item \textbf{MongoDB}
-\end{itemize}
+\subsubsection*{MongoDB - Query 3 statement}\label{mongoquery3statement}
 
 \begin{lstlisting}[language=json, caption=, label=code:mongoquery3]
-db.emage.find({ $and: [ { "textannotation.gene.name": "Hoxb13" }, { $or: [ { "textannotation.strength": "detected" }, { "textannotation.strength": "strong" } ] } ] }).pretty();
+db.emage.find(
+	{	$and:
+		[
+			{	"textannotation.gene.name": "Hoxb13"	},
+				{	$or:
+					[
+						{	"textannotation.strength": "detected"	},
+						{	"textannotation.strength": "strong"	}
+					]
+				}
+	}	).pretty();
 \end{lstlisting}
 
-\begin{itemize}[leftmargin=*]
-\item \textbf{Neo4j}
+\subsubsection*{Neo4j - Query 3 statement}\label{neoquery3statement}
 
-\end{itemize}\begin{lstlisting}[language=SQL, caption=, label=code:neoquery3]
+\begin{lstlisting}[language=SQL, caption=, label=code:neoquery3]
 MATCH (g:Gene)<-[]-(textannotation:TextAnnotation)-[]->(a:AnatomyStructure)
 WHERE g.name = 'Hoxb13' AND textannotation.detected = 1
 RETURN g.name AS Name, a.accession AS  StructureID, a.term AS Term
 ORDER BY a.accession ASC
 \end{lstlisting}
 
-\begin{figure}[H]\begin{center}\includegraphics[height=5cm,width=0.6\linewidth]{images/neo4jquery3terminal}\caption{Neo4j query 3 - Where is Gene X expressed?}\label{fig:neo4jquery3terminal}\end{center}\end{figure}
-
-\begin{itemize}[leftmargin=*]
-\item \textbf{Cassandra}
-\end{itemize}
+\subsubsection*{Apache Cassandra - Query 3 statement}\label{cassquery3statement}
 
 \begin{lstlisting}[language=SQL, caption=, label=code:cassquery3]
 SELECT *
@@ -222,15 +246,10 @@ AND detected = true
 ALLOW FILTERING;
 \end{lstlisting}
 
-\begin{figure}[H]\begin{center}\includegraphics[height=5cm,width=1\linewidth]{images/cassandraquery3}\caption{Cassandra query 3 - Where is Gene X expressed?}\label{fig:cassandraquery3}\end{center}\end{figure}
-
-\newpage
 \subsection*{Query 4 - What is expressed in structure X?}\label{query4}
-The following code snippets represent the queries written for competency question 4.
+This query was designed to identify the data which is expressed in a given structure. With the inclusion of this query, the complexity has again increased however, one would expect each of the solutions to successfully achieve this query. The data returned from this query is what makes it interesting. The ability to view what information is contained within a given structure, provides an essential analytical insight into the data. The minimum data expected to be returned from this query is the gene name, structure ID, structure term, Theiler Stage and EMAGE ID.
 
-\begin{itemize}[leftmargin=*]
-\item \textbf{MySQL}
-\end{itemize}
+\subsubsection*{MySQL - Query 4 statement}\label{mysqlquery4statement}
 
 \begin{lstlisting}[language=SQL, caption=, label=code:mysqlquery4]
 SELECT t1.name AS GeneName, t2.accession AS StructureID, t2.term AS TermName, t4.theilerstage AS TheilerStage, t3.emage_id AS EMAGE_ID
@@ -248,17 +267,16 @@ AND t2.accession = 17451
 ORDER BY 5;
 \end{lstlisting}
 
-\begin{itemize}[leftmargin=*]
-\item \textbf{MongoDB}
-\end{itemize}
+\subsubsection*{MongoDB - Query 4 statement}\label{mongoquery4statement}
 
 \begin{lstlisting}[language=json, caption=, label=code:mongoquery4]
-db.emage.find({ "textannotation.anatomystructure.structureID": 17451 },{},{"_id":1})
+db.emage.find(
+	{	"textannotation.anatomystructure.structureID": 17451	},
+	{	},
+	{	"_id":1}	).pretty();
 \end{lstlisting}
 
-\begin{itemize}[leftmargin=*]
-\item \textbf{Neo4j}
-\end{itemize}
+\subsubsection*{Neo4j - Query 4 statement}\label{neoquery4statement}
 
 \begin{lstlisting}[language=SQL, caption=, label=code:neoquery4]
 MATCH (stage:Stage)<-[]-(struct:AnatomyStructure)<-[]-(text1:TextAnnotation)-[]->(assay:Assay)
@@ -267,9 +285,7 @@ RETURN struct.accession AS StructureID, struct.term AS Term,stage.theilerStage A
 ORDER BY assay.emageID ASC
 \end{lstlisting}
 
-\begin{itemize}[leftmargin=*]
-\item \textbf{Cassandra}
-\end{itemize}
+\subsubsection*{Apache Cassandra - Query 4 statement}\label{cassquery4statement}
 
 \begin{lstlisting}[language=SQL, caption=, label=code:cassquery4]
 SELECT *
@@ -279,33 +295,10 @@ AND detected = true
 ALLOW FILTERING;
 \end{lstlisting}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{graphicx}
-\begin{table}[H]
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\textbf{Gene Name} & \textbf{Structure ID} & \textbf{Structure Name} & \textbf{Theiler Stage} & \textbf{EMAGE ID} \\ \hline
-Adrbk1 & 17451 & \begin{tabular}[c]{@{}c@{}}interdigital region between\\ forelimb digits 3 and 4\end{tabular} & 20 & 3347 \\ \hline
-Lpl & 17451 & \begin{tabular}[c]{@{}c@{}}interdigital region between\\ forelimb digits 3 and 4\end{tabular} & 23 & 7331 \\ \hline
-Dll1 & 17451 & \begin{tabular}[c]{@{}c@{}}interdigital region between\\ forelimb digits 3 and 4\end{tabular} & 23 & 7642 \\ \hline
-Tshz1 & 17451 & \begin{tabular}[c]{@{}c@{}}interdigital region between\\ forelimb digits 3 and 4\end{tabular} & 23 & 8846 \\ \hline
-Trem2 & 17451 & \begin{tabular}[c]{@{}c@{}}interdigital region between\\ forelimb digits 3 and 4\end{tabular} & 23 & 11375 \\ \hline
-Klhl5 & 17451 & \begin{tabular}[c]{@{}c@{}}interdigital region between\\ forelimb digits 3 and 4\end{tabular} & 23 & 18331 \\ \hline
-\end{tabular}%
-}
-\caption{My caption}
-\label{my-label}
-\end{table}
-
-\newpage
 \subsection*{Query 5 - Which Genes are stored in structures X and Y?}\label{query5}
 The following code snippets represent the queries written for competency question 5.
 
-\begin{itemize}[leftmargin=*]
-\item \textbf{MySQL}
-\end{itemize}
+\subsubsection*{MySQL - Query 5 statement}\label{mysqlquery5statement}
 
 \begin{lstlisting}[language=SQL, caption=, label=code:mysqlquery5]
 SELECT t1.name AS GeneName
@@ -320,9 +313,7 @@ GROUP BY 1
 HAVING COUNT(DISTINCT t2.accession) > 1;
 \end{lstlisting}
 
-\begin{itemize}[leftmargin=*]
-\item \textbf{Neo4j}
-\end{itemize}
+\subsubsection*{Neo4j - Query 5 statement}\label{neoquery5statement}
 
 \begin{lstlisting}[language=SQL, caption=, label=code:neoquery5]
 MATCH (n:Gene)<-[]-(t:TextAnnotation)-[]->(a:AnatomyStructure)
@@ -332,13 +323,11 @@ return distinct ge.name
 order by ge.name
 \end{lstlisting}
 
-\newpage
 \subsection*{Query 6 - Which Genes are most commonly co-expressed?}\label{query6}
 The following code snippets represent the queries written for competency question 6.
 
-\begin{itemize}[leftmargin=*]
-\item \textbf{MySQL}
-\end{itemize}
+\subsubsection*{MySQL - Query 6 statement}\label{mysqlquery6statement}
+
 
 \begin{lstlisting}[language=SQL, caption=, label=code:mysqlquery6]
 SELECT t1.name AS GeneName, COUNT(DISTINCT t2.accession) AS Co_Expressed_Count
@@ -354,15 +343,10 @@ ORDER BY 2 DESC
 LIMIT 5;
 \end{lstlisting}
 
-\begin{figure}[H]\begin{center}\includegraphics[height=5cm,width=0.7\linewidth]{images/mysqlquery6}\caption{MySQL query 6 - Which Genes are most commonly co-expressed?}\label{fig:mysqlquery6}\end{center}\end{figure}
-
-\newpage
 \subsection*{Query 7 - Calculate transitive closure}\label{query7}
 The following code snippets represent the queries written for competency question 7.
 
-\begin{itemize}[leftmargin=*]
-\item \textbf{MySQL}
-\end{itemize}
+\subsubsection*{MySQL - Query 7 statement}\label{mysqlquery7statement}
 
 \begin{lstlisting}[language=SQL, caption=, label=code:mysqlquery71]
 SELECT DISTINCT tmp.term, t1.parent_term AS lev1, t2.parent_term AS lev2, t3.parent_term AS lev3, t4.parent_term AS lev4
@@ -374,7 +358,6 @@ LEFT JOIN Closure AS t3 ON t3.child_id = t2.parent_id
 LEFT JOIN Closure AS t4 ON t4.child_id = t3.parent_id
 WHERE tmp.accession = 16201
 \end{lstlisting}
-\begin{figure}[H]\begin{center}\includegraphics[height=4cm,width=1\linewidth]{images/mysqlquery71}\caption{MySQL query 7 - Calculate transitive closure}\label{fig:mysqlquery7}\end{center}\end{figure}
 
 \begin{lstlisting}[language=SQL, caption=, label=code:mysqlquery72]
 SELECT distinct tmp.term, t1.parent_term AS lev1, t2.parent_term as lev2, t3.parent_term as lev3, t4.parent_term as lev4, t5.parent_term as lev5, t6.parent_term as lev6
@@ -388,7 +371,3 @@ LEFT JOIN Closure AS t5 ON t5.child_id = t4.parent_id
 LEFT JOIN Closure AS t6 ON t6.child_id = t5.parent_id
 WHERE tmp.accession = 16205;
 \end{lstlisting}
-\begin{figure}[H]\begin{center}\includegraphics[height=4cm,width=1\linewidth]{images/mysqlquery72}\caption{MySQL query 7 - Calculate transitive closure}\label{fig:mysqlquery7}\end{center}\end{figure}
-
-
-\section{System Evaluation}\label{queryevaluation}

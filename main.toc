@@ -63,5 +63,4 @@
 \contentsline {chapter}{\numberline {7}Query Overview, Results and Evaluation}{71}{chapter.7}
 \contentsline {section}{\numberline {7.1}Query Overview}{71}{section.7.1}
 \contentsline {section}{\numberline {7.2}Query Results}{73}{section.7.2}
-\contentsline {section}{\numberline {7.3}System Evaluation}{89}{section.7.3}
-\contentsline {chapter}{\numberline {8}Conclusion}{90}{chapter.8}
+\contentsline {chapter}{\numberline {8}Conclusion}{88}{chapter.8}
