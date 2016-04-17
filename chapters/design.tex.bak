@@ -32,7 +32,7 @@ As discussed in section \ref{5vs} a major challenge in data collection and manip
 
 In order for me to develop multiple and reliable data models which accurately represent the dataset, I created a database diagram for each indexing solution. Each diagram effectively illustrates the relationship between the data entities. The order in which I decided to create the database model designs was based upon two main reasons; which hinge upon aiding the reader's comprehension of this thesis. The first reason was based upon my previous experience of using each of the database systems. My previous experience ranged from a competent level to the complete unknown. Secondly, as MySQL is a well known database management system, and is widely used for a number of applications, it is expected that the reader will already have a functioning knowledge of the system. As a result I decided the first data model I would develop would be for the relational database management system, MySQL. The next system I developed was MongoDB, followed by Neo4j and finally Apache Cassandra. Each implementation presented a different challenge all of which will be discussed below.
 
-\subsection{MySQL - data model design}\label{mysqldesign}
+\subsection{MySQL}\label{mysqldesign}
 
 As discussed in section \ref{mysql} MySQL is a relational database management system which stores and represents structured data through entity tables and relationships. There are a number of variations in which the design of the MySQL database could be modelled for the EMAGE data. Figure \ref{fig:mysql} is an entity-relationship (ER) diagram which illustrates the implementation of my MySQL normalised database design. Normalisation in database design is a process by which an existing schema is modified to bring its component tables into compliance through a series of progressive normal forms. Resulting in better, faster, stronger searches. It uses fewer entities to scan in comparison with the earlier searches. Data integrity is improved through database normalisation as it splits all the data into individual entities yet builds strong linkages with the related data. The below description provides an overview into each table and its entities.
 
@@ -86,7 +86,7 @@ As discussed in section \ref{mysql} MySQL is a relational database management sy
 \newpage
 \begin{figure}[H]\begin{center}\includegraphics[width=1\linewidth]{images/emage_erd}\caption{MySQL ER table diagram}\label{fig:mysql}\end{center}\end{figure}
 
-\subsection{MongoDB  - data model design}\label{mongodesign}
+\subsection{MongoDB}\label{mongodesign}
 
 As discussed in section \ref{mongo}, MongoDB is a homogeneous, schema-less, NoSQL document store database. There are no formal relations between the data, this makes modelling the database more challenging; especially with data which is as closely bound as the EMAGE dataset.
 
@@ -147,7 +147,7 @@ After some deliberation, I concluded that the best way to implement the data mod
 }
 \end{lstlisting}
 \newpage
-\subsection{Neo4j - data model design}\label{neomodel}
+\subsection{Neo4j}\label{neomodel}
 Neo4j is a graph orientated, NoSQL database solution. It uses the Property Graph Model methodology of connecting data by nodes and weighted edges. Nodes are the equivalent of a row in a MySQL table and edges are the equivalent of a relation. A full description of Neo4j can be found in section \ref{neo}.
 
 The data model I have constructed for Neo4j, is semantically similar to that of the MySQL implementation. There are 8 classes of nodes, which contain relatively the same data as that of each MySQL table. The main difference between the two systems is how the data is joined. Where MySQL has a foreign key join which connects the nodes; Neo4j has an edge.
@@ -185,16 +185,19 @@ As with MongoDB and indeed many NoSQL system, there is no formal way to diagramm
 
 \begin{figure}[H]\begin{center}\includegraphics[width=1\linewidth]{images/neo4j_model_er}\caption{Neo4j graph model ER diagram}\label{fig:neo1}\end{center}\end{figure}
 \newpage
-\subsection{Apache Cassandra  - data model design}
+\subsection{Apache Cassandra}
 Apache Cassandra is a column based, data management system. A key characteristic of a column based data store is that it is extremely powerful and can be reliably used to keep important data of very large sizes. Despite not being flexible in terms of what constitutes data, it is recognised as being highly functional and performant \cite{cassandra}. With this is mind, normalisation of a dataset is in fact not the optimal way of developing a Cassandra data model. It is proposed that \textit{denormalisation} and data duplication within the data model return the best performing output. This is as a result of Cassandra being optimised to perform a high frequency of writes; this reduces the more costly reads. This is a trade-off which must be taken into consideration when developing the data model \cite{cassandra}.
 
 The Apache Cassandra data model was perhaps the most difficult of all the database system designs to create. This was due to a number of reasons. Firstly, I had no previous experience of using a Cassandra database, and had to learn a completely new style of working. Secondly, as discussed in section \ref{cassandra}, one of the main aspects of Cassandra family columns and tables is that they do not accept joins. This results in tables being created and this aims to satisfy any potential queries which may be imposed on the database. The repercussions of this concept are discussed in section \ref{designdiscussion}.
 
 As with many database systems the optimal way to model a structure is to identify the queries which may be imposed; Apache Cassandra is no different. This can result in multiple tables, containing duplicated data, with either additional or less columns of information. I have modelled the Cassandra data model around the queries outlined in the evaluation strategy of this document (chapter \ref{evaluationstrategy}).
 
-There are 7 tables: Assays, AssayByStage, AssayBySpecimen, Publications, StructureByGene, StructureByStage and TextAnnotations. The naming convention I adopted for the Cassandra data model is based on describing each table by its partition key grouping (for a full description of partition keys and Cassandra concepts, see section \ref{cassandra}). For example, AssayByStage is a table consisting of each Assay partitioned on the Stage value.
+There are 7 tables: assays, assayByStage, publications, structureByGene3, structureByStage and textAnnotations1. The naming convention I adopted for the Cassandra data model is based on describing each table by its partition key grouping (for a full description of partition keys and Cassandra concepts, see section \ref{cassandra}). For example, AssayByStage is a table consisting of each Assay partitioned on the Stage value.
+
+\begin{figure}[H]\begin{center}\includegraphics[width=1\linewidth]{images/cass_model_er}\caption{Cassandra graph model ER diagram}\label{fig:cass1}\end{center}\end{figure}
+
 \newpage
-\section{Discussion - data model design}\label{designdiscussion}
+\section{Discussion}\label{designdiscussion}
 This section provides a general summation of the design process as a whole for each solution. The overall intention of this section, is to provide the reader with an in-depth understanding of the challenges faced and the overall advantages and disadvantages of the data modelling procedures, for each database management system.
 
 The first hurdle one must overcome is to fully comprehend what data they are modelling. Getting to know your dataset, will allow you to develop the optimum system architecture. Having a clear and coherent understanding of how the data is joined and the relationships are formed in your dataset is imperative to a successful outcome. Once an application developer knows what they are developing they can accomplish the how. The design process of a data model can sometimes be overlooked. The two main reasons for this are 1. It is often a challenging process and can be difficult to complete correctly. 2. It can take a long time. Designing the best data model solution for an application can often make or break a project. It is important that the appropriate amount of time is devoted to this process, to ensure that your application sits upon a high performing, durable database system.

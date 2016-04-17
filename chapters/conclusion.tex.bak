@@ -42,7 +42,7 @@ Although this project has been successful in achieving each of its intended rese
 \end{itemize}
 
 \section{Critique}\label{critique}
-The project mainly focused on the capabilities of the data systems in terms of functional ability for a supplied big dataset. Initially it was my intention to scrutinise the data and analyse its availability in more depth. One of the major challenges faced in storing big data is the usefulness of the data itself. The EMAPA and EMAGE datasets are available in a number of file formats, and a closer look into how the extraction and manipulation process is undertaken would have enhanced the understanding of the dataset as a whole.
+The EMAPA and EMAGE datasets 
 
 \section{Thesis Summary}\label{summary}
 I developed four prototype data models using both a relational structured database system and leading NoSQL solutions. The data models were examined to identify their positive and negative aspects, using a real-world dataset from the biological field.

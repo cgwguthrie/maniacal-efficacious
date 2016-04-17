@@ -4,28 +4,38 @@ The purpose of this chapter is to discuss the methods used to carry out the prim
 The requirement section below is a high level view of what and how the data solutions will be analysed throughout the project. In order to get a detailed and finalised set of requirements an initial prototype model will be developed which will give an insight in to what will be expected to be achieved from the project. It is likely that the requirements below while they may form the basis of the project objectives will change drastically once the prototype model has been developed.
 
 \section{Requirements}\label{requirements}
+\parindent 0pt
+\subsubsection*{Objective 1}
+\textbf{Evaluate the strengths, weaknesses and limitations of each query language.}
 
-The first objective of the project is to investigate the strengths and weaknesses of the functionality each technology provides. In order to evaluate the functional limitations of each technology, prototype data models will be developed for each solution. The solutions will then be loaded with the EMAPA dataset. Competency questions will be devised which will return a simple yes or no answer. Example competency questions can be found at section \ref{competency}. These questions will be translated in to the relevant query language for each of the datasets. The competency questions will range from a beginner level where it will be expected that all database solutions will be able to return the intended value to an advanced level. The difficulty of writing these queries will also be recorded and used to analyse the performance of the database solution. The time taken for the query to run will also be recorded and used for analysis
+Investigate the strengths and weaknesses of the functionality each technology provides. In order to evaluate the functional limitations of each technology, prototype data models will be developed for each solution. The solutions will then be loaded with the EMAPA dataset. Competency questions will be devised which will return a simple yes or no answer. Example competency questions can be found at section \ref{competency}. These questions will be translated in to the relevant query language for each of the datasets. The competency questions will range from a beginner level where it will be expected that all database solutions will be able to return the intended value to an advanced level. The difficulty of writing these queries will also be recorded and used to analyse the performance of the database solution. For example:
 
-\begin{enumerate}
+\begin{itemize}
 \item Is this query possible in database X?
 
-For example the first query in the EMAPA competency question table asks : ``For structure X, find all the ancestors." If this query is possible in a given database, move on to the next query in the list and continue until failure. Once this step has been complete for all database solutions, by way of comparison evaluate the strength of each database.
-\end{enumerate}
+The first query in the EMAPA competency question table asks : ``For structure X, find all the ancestors." If this query is possible in a given database, move on to the next query in the list and continue until failure. Once this step has been complete for all database solutions, by way of comparison evaluate the strength of each database.
+\end{itemize}
 
-\parindent 0pt Objective two of the project is to compare and contrast the analytical capabilities of each technology. This will follow on from the tasks undertaken in the first objective. This objective will also identify and analyse the difficulties which may or may not have arisen in the first objective on the ease of writing the query.
+\subsubsection*{Objective 2}
+\textbf{Compare and contrast the analytical capabilities of each technology.}
 
-\begin{enumerate}
+Compare and contrast the analytical capabilities of each technology. This will follow on from the tasks undertaken in the first objective. This objective will also identify and analyse the difficulties which may or may not have arisen in the first objective on the ease of writing the query.
+
+\begin{itemize}
 \item If the query is possible in a given database how rich a return of the dataset can it provide.
 \item Does any database offer any querying capabilities/functionality which compared with another which aids the query in any way.
-\end{enumerate}
+\end{itemize}
 
-\parindent 0pt The final key objective to be evaluated in this project is to conduct a comparative analysis of the scalability of each technology. This will be achieved by loading the data sources in to each prototype data model. The specific requirements which will measure the performance of each database are :
+\subsubsection*{Objective 3}
+\textbf{Assess the scalability of each of the database solutions.}
 
-\begin{enumerate}
+The final key objective to be evaluated in this project is to conduct a comparative analysis of the scalability of each technology. This will be achieved by loading the data sources in to each prototype data model. The specific requirements which will measure the performance of each database are :
+
+\begin{itemize}
 \item Ease of ETL implementation - The focus of this requirement will be to evaluate any challenges which were faced during the ETL process.
 \item Did the data model handle the volume of data and were there any issues as a result.
-\end{enumerate}
+\end{itemize}
+
 \newpage
 \subsection{Data Source Competency Questions}\label{competency}
 
@@ -45,9 +55,3 @@ For example the first query in the EMAPA competency question table asks : ``For 
     \end{tabular}
 \end{center}
 \parindent 15pt
-
-
-
-
-
-

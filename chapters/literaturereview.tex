@@ -31,22 +31,6 @@ Transform is where the extracted data is manipulated from its previous state and
 \subsection{Load}
 Load completes the three step procedure and is where data is written into the target system. There are multiple ways in which data is loaded into a system using the ELT methodology. One of which and the most obvious is to physically insert the data. For example if the target repository is a SQL database insert the data as a new row using the relevant \textit{Insert} statement. An alternative to loading the process manually is that some ETL tool implementations have the capability to ``...link the extraction, transformation, and loading processes for each record from the source." \cite{etlref2}. Depending on the technique applied the load step of the process can become the most time consuming.
 
-\section{Knowledge Representation Languages}
-A Knowledge Representation (KR) language can be defined as: for any given interpretation of a sentence or string of text the KR must have the ability to effectively and unambiguously express knowledge in a both a human and computer manageable form. 
-
-There are a number of options and possibilities for communicating data and information which range from binary representation to meta markup languages such as Extensible Markup Language (XML) for example. Markup languages which are easily read by humans such as XML which as a result of its rigid set of rules lends its self to both humans and machines. Comparatively binary notation which uses 1's and 0's to represent data, while relatively cheap in terms of computing power the ability to comprehend this notation requires a unique and specific skill set.
-
-\subsection{Semantic Web}\label{semanticweb}
-The Semantic Web has two main intended outcomes. The first is about the standardised formats of data pulled from variety of sources, whereas the original Web concentrated on the interchange of documents \cite{semantic}. The second outcome of the Semantic Web is the language for recording the relation between data and objects in the real world. ``That allows a person, or a machine, to start off in one database, and then move through an unending set of databases which are connected not by wires but by being about the same thing."  \cite{semantic}.  The Semantic Web is about taking information which is already on the Web and making it meaningful to computers. It is the next major step in connecting information on a global scale. Web pages are documents designed to be humanly readable. The aim of the Semantic Web is to take these documents and by extending the principles of the Web,transform them into data, readable by machines.The term was originally coined by Tim Berners-Lee, the inventor of the World Wide Web.Berners-Lee became frustrated with current state of the Web. He believed that the Web as a whole should be more intelligent about the way it serves user's needs. W3C, the organisation who define web standards and founded by Berners-Lee, describe the Semantic Web as ``...a common framework that allows data to be shared and reused across application, enterprise,and community boundaries'' \cite{w3c1} While search engines index the majority of the Web's content to find what a user thinks they are looking for, their ability to select pages which a user truly wants or needs is lacking. This is because we do not have a web of data \cite{cake}. Figure \ref{fig:sw} represents the so called Semantic Web layer cake,created by Berners-Lee. It illustrates the architectural hierarchy of languages used for the SemanticWeb. \begin{wrapfigure}{r}{0.6\textwidth}\includegraphics[width=1\linewidth]{images/semanticwebcake}\caption{Semantic Web Layer Cake \cite{cake}}\label{fig:sw}\end{wrapfigure} Each layer, from top to bottom,uses the capabilities of the layers below. The top 3 layers Trust,Proof and Logic are technologies which are not yet standardised and are just ideas that should be implemented in order to realise SemanticWeb. The middle layers Ontology Vocabulary and RDF + rdfschema are standardised technologies by W3C which enable the building of Semantic Web applications.The bottom layers contain technologies that are well known from hypertext web and that without change provide basis for the Semantic Web.There are a number of technologies for the Semantic Web. The main three are RDF, SPARQL and OWL. The Ontology Vocabulary layer of the Semantic Web stack is one of the most important. Renowned Computer Scientist, Tom Gruber's, simple definition of an ontology is often cited by authors ``An ontology is an explicit specification of a conceptualization''. The Web Ontology Language OWL is a language representation standard for designing and authoring Web ontologies produced by W3C. \cite{owl}. The OWL file format is designed to be used by applications required to process the content of the information and to be humanly readable. ``[OWL] is intended to provide a language that can be used to describe the classes and relations between them that are inherent in Web documents and applications."\cite{owl}. The OWL languages are characterised by formal semantics and are built upon the W3C standard RDF format. While there is no universally accepted definition of an ontology, they are considered as one of the main pillars of the Semantic Web. A Vocabulary is often described as a special form of ontology or simply as a collection of URIs \cite{sm2}. A UniformResource Identifier (URI) is is the way one identifies a point of content. For example a page of text, a video or sound clip, a still or animated image, or a program. The OWL language is characterised by formal semantics and is built upon a W3C XML standard for objects known as Resource Description Framework (RDF) \cite{sm4}. There are many fields which have shown significant interest into OWL and RDF specifically academic, medical and commercial circles. RDF is part of the W3C family originally designed as a metadata data model. It is a general framework allowing one to describe Internet resources, for example a website, and it's content. One of the main concepts of RDF is a RDF triple. A triple consists of:
-
-\begin{itemize}
-\item \textbf{Subject} - A RDF URI reference or a blank node.
-\item \textbf{Predicate} - A RDF URI reference.
-\item \textbf{Object} - A RDF URI reference, a literal or a blank node.
-\end{itemize}
-
-The aim of RDF is to enable people to share website and other descriptions with ease. Consequently giving software engineers the opportunity to develop more intelligent search engines and directories. Thus giving Web users more control of what they are browsing on the Web. A typical RDF description can include data such as resource author, date of creation/updated, subject categories and information summarising the content for audience. The way in which an RDF document is queried is predominately by using a query language called SPARQL. SPARQL is a query language designed to retrieve and manipulate data stored in a RDF structure. It became a standardised technology in 2008 by W3C and remains to be one of the key technologies of the Semantic Web. A standard SPARQL query consists of a set of triples where the subject, predicate and/or object can consist of variables \cite{spa1}. The way in which a SPARQL query works is by matching the triples in the SPARQL query with the existing RDF triples and find solutions to the variables.
-
 \section{NoSQL}\label{nosql}
 NoSQL is labeled as a next generation database known to most as ``Not only SQL'' \cite{nosql1}. This definition however insinuates its defiance against the industry standard SQL. It was originally developed in 1998 by Carlo Strozzi; a member of the Italian Linux society, with the intention of being a non-relational, widely distributable and highly scalable database. Strozzi named the database management system NoSQL to merely state it does not express queries in the traditional SQL format. Sadalage and Fowler believe the definition we commonly refer NoSQL as comes from a 2009 conference in San Fransisco held by Johan Oskarsson, a software developer. Sadalage and Fowler recall Oskarssons desire to generate publicity surrounding the event and in an attempt to do so devised the twitter hashtag ``NoSQL Meetup''. The main attendees at the conference debrief session were Cassandra, CouchDB, HBase and MongoDB and so the association stuck. \cite{nosql1}
 
@@ -54,8 +38,6 @@ NoSQL solutions are not bound by a definitive schema structure. This permits the
 
 \subsection{Distributed Systems and Data Transactions}\label{distrosystems}
 
-\subsubsection{Brewer's CAP Theroem}\label{captheroem}
-\subsubsection{ACID Transactions}\label{acid}
 \subsubsection{Distributed Database}\label{distributeddb}
 A distributed database comprises of two or more data files located at different sites and servers on a computer network \cite{dd}. The advantage of using a distributed database is that as the database is distributed, multiple users can access a portion of the database at different locations locally and remotely without obstructing one another's work. It is  pivotal for the distributed database database management system to periodically synchronise the scattered databases to make sure that they all have consistent data.  \cite{dd} For example if a user updates or deletes data in one location is is essential this change is mirrored on all databases. This ability to remotely access a database from all across the world lends itself to not only multinational companies for example but also start-up businesses which recruit the expertise of others from various locations.
 
@@ -106,35 +88,6 @@ The key features of Neo4j which lends itself to users, developers and database a
 
 \subsection{Apache Cassandra}\label{cassandra}
 Apache Cassandra is an open source column-orientated DDB that is designed for storing and managing vast amounts of data across multiple servers. ``Apache Cassandra is a highly scalable, high-performance distributed database designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure." \cite{cassandra}. Apache Cassandra define the key features of their database management system as ``continuous availability, linear scale performance, operational simplicity and easy data distribution across multiple data centres and cloud availability zones." \cite{cassandra}.  Figure \ref{fig:cass} illustrates an example record stored in a Cassandra database. \begin{figure}[h]\begin{center}\includegraphics[width=0.70\linewidth]{images/cassandramodel}\caption{Example Cassandra record}\label{fig:cass}\end{center}\end{figure}
-
-\begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|}
-\hline
-\multicolumn{1}{|c|}{\textbf{CQL Type}} & \multicolumn{1}{c|}{\textbf{Constants}} & \multicolumn{1}{c|}{\textbf{Description}} \\ \hline
-ascii & strings & US-ASCII character string \\ \hline
-bigint & integers & 64-bit signed long \\ \hline
-blob & blobs & Arbitrary bytes (no validation), expressed as hexadecimal \\ \hline
-boolean & booleans & true or false \\ \hline
-counter & integers & Distributed counter value (64-bit long) \\ \hline
-decimal & integers, floats & Variable-precision decimal \\ \hline
-double & integers & 64-bit IEEE-754 floating point \\ \hline
-float & integers, floats & 32-bit IEEE-754 floating point \\ \hline
-inet & strings & IP address string in IPv4 or IPv6 format* \\ \hline
-int & integers & 32-bit signed integer \\ \hline
-list & n/a & A collection of one or more ordered elements \\ \hline
-map & n/a & A JSON-style array of literals: \{ literal : literal, literal : literal ... \} \\ \hline
-set & n/a & A collection of one or more elements \\ \hline
-text & strings & UTF-8 encoded string \\ \hline
-timestamp & integers, strings & Date plus time, encoded as 8 bytes since epoch \\ \hline
-uuid & uuids & A UUID in standard UUID format \\ \hline
-timeuuid & uuids & Type 1 UUID only (CQL 3) \\ \hline
-varchar & strings & UTF-8 encoded string \\ \hline
-varint & integers & Arbitrary-precision integer \\ \hline
-\end{tabular}
-\caption{Cassandra data types}
-\label{tab:cassdt}
-\end{table}
 
 \section{Data Source and Representation}\label{datasource}
 The dataset used as a resource to populate the database solutions is called EMAP; a freely available anatomical ontology of the developmental stages of mouse embryos. The EMAP dataset was chosen for this project as my supervisor has much experience in the field and would be able to assist me with any queries I had regarding the data. The size and granularity of the EMAP dataset also meets the criteria which will be required to test the database solutions, explore the limitations of each database comparatively and pose insight into the overall performance of each database.

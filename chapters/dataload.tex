@@ -4,7 +4,7 @@ As discussed in section \ref{etlprocess}, the load stage of an ETL procedure can
 \section{Put the data in databases}\label{loadsection}
 The final stage in the data modelling process was to import the EMAGE and EMAPA dataset into the created data models. For each of the database systems, a different approach was required. To ensure a balanced and impartial evaluation, each of the datasets were converted into a CSV file format and manipulated by the functional tools the respective systems provide.
 
-\subsection{MySQL}
+\subsection{MySQL}\label{mysqlload}
 There are various ways in which data can be loaded into a MySQL database. You can manually insert the data, row by row in the MySQL shell command prompt, using an INSERT INTO statement. However, to implement a full database using this method would be extremely time consuming and laborious. While time may not be of the essence in certain circumstances, manually writing 200,000 rows of insert statements is in no way the optimal solution to complete this task. An alternative option available is the mysqlimport command. The mysqlimport client is simply a command-line interface to the LOAD DATA INFILE statement. For readers unfamiliar with this statement, code snippet \ref{code:ldi} represents an example LOAD DATA INFILE implementation.
 \newpage
 \begin{lstlisting}[language=SQL, caption=Example LOAD DATA INFILE statement., label=code:ldi]

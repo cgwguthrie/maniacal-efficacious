@@ -9,10 +9,11 @@
 \setcounter{secnumdepth}{2}
 \geometry{margin=1in}
 \usepackage{enumitem}
+\usepackage{framed}
 \usepackage{fontspec}
 \usepackage[hidelinks]{hyperref}
-\usepackage{tabularx}
 \usepackage{booktabs}
+\usepackage{scrextend}
 \hbadness=10000
 %\renewcommand{\familydefault}{\sfdefault}
 \setmainfont{Georgia}
