@@ -7,10 +7,10 @@ The purpose of the following research, by way of investigation, is to deliver an
 There are a number of different indexing solutions available. In order to encapsulate a comprehensive examination a focus will be on leading NoSQL solutions, modern search and analytics engines and for comparative reasons a conventional relational database management system. The following technologies which will be used for the project: 
 
 \begin{itemize}
-\item MongoDB (Section \ref{mongo})
-\item Neo4j (Section \ref{neo})
-\item Apache Cassandra (Section \ref{cassandra})
-\item MySQL (Section \ref{mysql})
+\item Relational database (Section \ref{mysql})
+\item Document-orientated database (Section \ref{mongo})
+\item Graph database (Section \ref{neo})
+\item Wide column database (Section \ref{cassandra})
 \end{itemize}
 
 \section{Objectives}\label{objectives}
@@ -21,12 +21,10 @@ The three key objectives and main intended outcomes for the project are:
 \item Conduct a comparative analysis to investigate the scalability of each technology.
 \end{enumerate}
 
-\section{Motivation}
+\section{Project Motivation}
 My interest in the field of data science stems from university modules I have undertaken as part of my BSc Computer Science degree. Modules such as `Database Management Systems', `Data Mining and Machine Learning' and a course I am currently studying `Big Data'. The material involved in these courses have given me an insight into the field of data science and provided me with the opportunity to get a hands on feel for the manipulation, cleansing and processing of a variety of real life data sets and database systems.
 
 Whilst studying for my degree, I have successfully completed modules which have required a working knowledge of MySQL as a prerequisite therefore my comprehension of MySQL is proficient. One of the main attractions to undertaking this project was to be given the opportunity to learn about a number of next generation database management systems. It was important for me to undertake a project in which I will be able to apply my learning and findings to progress in a career path within the data science field.
-
-Since the summer of 2015 I have been working as a Data Analyst for a software company in Edinburgh. In this role I have had the opportunity to use some of the indexing solutions and analytics engines discussed in this project such as MongoDB and Elastic Search. This background knowledge has contributed to my understanding of this project, as it has provided me with an already functioning knowledge of some of the concepts used.
 
 \section{Definitions}
 The data source being used in this document comes from the biological field and therefore relies on an understanding of basic concepts and terms. The below table of definitions provides an overview into the main terms used throughout the report with the aim of providing the reader of the document with a sufficient level of understanding. The table also includes the definitions of generally obscure terms and phrases which will be discussed throughout this project.
@@ -36,8 +34,8 @@ The data source being used in this document comes from the biological field and 
     \hline
     \textbf{Term} & \textbf{Definition} \\ \hline
     Edinburgh Mouse Atlas Project (EMAP) & The combined research projects of Dr Duncan Davidson and Prof Richard Baldock. \\ \hline
-    EMAP \textbf{anatomy} & A freely available, structured, \textbf{stage specific} list of 13,000+ terms that describe visible anatomical structures in the developing mouse embryo. \\ \hline
-    Edinburgh Mouse Atlas Project Abstract (EMAPA) & A refined and algorithmically developed \textbf{non-stage specific} anatomical ontology representation of the EMAP anatomy. \\ \hline
+    EMAP anatomy & A freely available, structured, stage specific list of 13,000+ terms that describe visible anatomical structures in the developing mouse embryo. \\ \hline
+    Edinburgh Mouse Atlas Project Abstract (EMAPA) & A refined and algorithmically developed non-stage specific anatomical ontology representation of the EMAP anatomy. \\ \hline
     Edinburgh Mouse Atlas of Gene Expression (EMAGE) & A database of in situ gene expression data in the developing mouse embryo  \\ \hline
     Theiler Stage (TS) & Each stages defines the development of a mouse embryo by a set of organism structure criteria. \\ \hline
     Assay & One or more \textit{assay} comprises an experiment. \\ \hline

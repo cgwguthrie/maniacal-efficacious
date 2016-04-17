@@ -8,22 +8,19 @@ The requirement section below is a high level view of what and how the data solu
 \subsubsection*{Objective 1}
 \textbf{Evaluate the strengths, weaknesses and limitations of each query language.}
 
-Investigate the strengths and weaknesses of the functionality each technology provides. In order to evaluate the functional limitations of each technology, prototype data models will be developed for each solution. The solutions will then be loaded with the EMAPA dataset. Competency questions will be devised which will return a simple yes or no answer. Example competency questions can be found at section \ref{competency}. These questions will be translated in to the relevant query language for each of the datasets. The competency questions will range from a beginner level where it will be expected that all database solutions will be able to return the intended value to an advanced level. The difficulty of writing these queries will also be recorded and used to analyse the performance of the database solution. For example:
+The first objective it to investigate the strengths and weaknesses of querying functionality each technology provides. In order to evaluate the functional limitations of each technology, prototype data models will be developed for each solution. The solutions will then be loaded with the EMAPA and EMAGE datasets.
 
-\begin{itemize}
-\item Is this query possible in database X?
-
-The first query in the EMAPA competency question table asks : ``For structure X, find all the ancestors." If this query is possible in a given database, move on to the next query in the list and continue until failure. Once this step has been complete for all database solutions, by way of comparison evaluate the strength of each database.
-\end{itemize}
+I have created a number of competency based questions. These questions will be translated in to the relevant query language for each of the datasets. The difficulty of the queries range from a basic level, where it is expected that all of the solutions will return the intended output, to an advanced complexity level. The difficulty of writing the queries will be evaluated to assess the overall performance of the database solution.
 
 \subsubsection*{Objective 2}
 \textbf{Compare and contrast the analytical capabilities of each technology.}
 
-Compare and contrast the analytical capabilities of each technology. This will follow on from the tasks undertaken in the first objective. This objective will also identify and analyse the difficulties which may or may not have arisen in the first objective on the ease of writing the query.
+This will follow on from the tasks undertaken in the first objective. This objective will also identify and analyse the difficulties which may or may not have arisen in the first objective on the ease of writing the query.
 
 \begin{itemize}
 \item If the query is possible in a given database how rich a return of the dataset can it provide.
 \item Does any database offer any querying capabilities/functionality which compared with another which aids the query in any way.
+\item Extra features which the system offers which are useful for analysis and visualisation.
 \end{itemize}
 
 \subsubsection*{Objective 3}
