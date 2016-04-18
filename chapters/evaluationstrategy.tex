@@ -26,7 +26,7 @@ This will follow on from the tasks undertaken in the first objective. This objec
 \subsubsection*{Objective 3}
 \textbf{Assess the scalability of each of the database solutions.}
 
-The final key objective to be evaluated in this project is to conduct a comparative analysis of the scalability of each technology. This will be achieved by loading the data sources in to each prototype data model. The specific requirements which will measure the performance of each database are :
+The final key objective to be evaluated in this project is to conduct a comparative analysis of the scalability of each technology. This will be achieved by loading the data sources in to each prototype data model. The specific requirements which will measure the performance of each database are:
 
 \begin{itemize}
 \item Ease of ETL implementation - The focus of this requirement will be to evaluate any challenges which were faced during the ETL process.
@@ -34,21 +34,22 @@ The final key objective to be evaluated in this project is to conduct a comparat
 \end{itemize}
 
 \newpage
-\subsection{Data Source Competency Questions}\label{competency}
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|c|l|l|c|}
+\hline
+\textbf{Query Number} & \multicolumn{1}{c|}{\textbf{English}} & \multicolumn{1}{c|}{\textbf{Expected return}} & \textbf{Rating} \\ \hline
+1 & All structures at Theiler Stage X. & Theiler Stage and Structure ID. & 1 \\ \hline
+2 & \begin{tabular}[c]{@{}l@{}}All structures between Theiler\\ Stage X and Y.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Structure ID, Theiler Stage X and Theiler Stage\\Y.\end{tabular} & 1 \\ \hline
+3 & Where is Gene X expressed? & \begin{tabular}[c]{@{}l@{}}Name of the gene, the structure where the\\ gene was found and the EMAGE ID where the\\ gene was found.\end{tabular} & 2 \\ \hline
+4 & What is expressed in structure X? & \begin{tabular}[c]{@{}l@{}}Name of the gene(s) found in the structure. The\\structure ID and the name of the structure.\\ The Theiler Stage(s) of the structure. The\\EMAGE ID of the structure.\end{tabular} & 3 \\ \hline
+5 & \begin{tabular}[c]{@{}l@{}}Which genes are stored in\\ structures X and Y?\end{tabular} & \begin{tabular}[c]{@{}l@{}}Name and ID of the gene(s). The ID of\\structure X and ID of structure Y.\end{tabular} & 4 \\ \hline
+6 & \begin{tabular}[c]{@{}l@{}}Which Genes are most\\ commonly co-expressed?\end{tabular} & \begin{tabular}[c]{@{}l@{}}Name of the gene(s) and the count of unique\\ structures the gene is expressed in.\end{tabular} & 5 \\ \hline
+7 & Calculate transitive closure. & The name of each structure and its parent. & 5 \\ \hline
+\end{tabular}}
+\caption{Competency queries for each database system. Rating scale: 1 (simple - complex) 5}
+\label{tab:competency}
+\end{table}
 
-\begin{center}
-    \begin{tabular}{ | p{0.5\linewidth} | p{0.5\linewidth}|}
-    \hline
-    \textbf{EMAPA} & \textbf{EMAGE} \\ \hline
-    For structure X, find all the ancestors. &  Where is gene X expressed? \\ \hline
-    For structure X, find all the decedents. &  What is expressed in structure X? \\ \hline
-    For structure X, find all structures in the same group (this only makes sense in limited situations, e.g., find all ``hair"). & Which genes are expressed in both structures X and Y?. \\ \hline
-    Find all the structures in Theiler Stage X. & Which genes are most commonly co-expressed? \\ \hline
-    Find all the structures in Theiler Stages X to Y (e.g., 17-19). &  \\ \hline
-    What stages does structure X appear in? & \\ \hline
-    Given search term X return the ``best match" structure (e.g., if Isearch on ``heart" I would expect the output to be heart, heart atrium, heart septum  heart mesentery) & \\ \hline
-    Given an EMAPA ID return the name of the structure. &  \\ \hline
-    Given a name return the EMAPA ID. &  \\ \hline
-    \end{tabular}
-\end{center}
 \parindent 15pt
