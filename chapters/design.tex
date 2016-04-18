@@ -1,5 +1,4 @@
 \chapter{Database Modelling}\label{design}
-
 In order for me to design a complete database model for each of the technologies, an initial investigation into the specific dataset values was required discussed in section \ref{datasetvalues}. Once this was complete I followed the same database design process for each indexing solution which is discussed in section \ref{dbdesign}. A discussion on the data modelling process as whole, for each database system, can be found in section \ref{designdiscussion}
 
 \section{Cleansing the data}\label{datasetvalues}
@@ -194,9 +193,19 @@ The Apache Cassandra data model was perhaps the most difficult of all the databa
 
 As with many database systems the optimal way to model a structure is to identify the queries which may be imposed; Apache Cassandra is no different. This can result in multiple tables, containing duplicated data, with either additional or less columns of information. I have modelled the Cassandra data model around the queries outlined in the evaluation strategy of this document (chapter \ref{evaluationstrategy}).
 
-There are 7 tables: assays, assayByStage, publications, structureByGene3, structureByStage and textAnnotations1. The naming convention I adopted for the Cassandra data model is based on describing each table by its partition key grouping (for a full description of partition keys and Cassandra concepts, see section \ref{cassandra}). For example, AssayByStage is a table consisting of each Assay partitioned on the Stage value.
+There are 7 tables: assays, assayByStage, publications, structureByGene3, structureByStage and textAnnotations1. The naming convention I adopted for the Cassandra data model is based on describing each table by its partition key grouping (for a full description of partition keys and Cassandra concepts, see section \ref{cassandra}). For example, AssayByStage is a table consisting of each Assay partitioned on the Stage value. Figure \ref{fig:cass1} is an ER diagram which illustrates the Cassandra tables. The diagram should be read as:
+
+\begin{itemize}
+\item \textbf{assays}: All of the assay data which includes EMAGE ID, probe ID, specimen strain, specimen type, Theiler Stage, DPC, source and assay type. The partitioning key of this table is the EMAGE ID.
+\item \textbf{assayByStage}: Table contains much of the same data as the assays table - EMAGE ID, Theiler Stage and DPC. The partioning key of this table is the EMAGE ID and the clustering key is the Theiler Stage.
 
 \begin{figure}[H]\begin{center}\includegraphics[width=1\linewidth]{images/cass_model_er}\caption{Cassandra graph model ER diagram}\label{fig:cass1}\end{center}\end{figure}
+
+\item \textbf{publications}: Table contains all of the data regarding a publication. Such as EMAGE ID, title, author and publication ID. The partioning key is the EMAGE ID.
+\item \textbf{structureByStage}: Table contains data regarding an anatomy structure, grouped by the stage information. The columns include Theiler Satge, detected (boolean), structure ID, structure term and DPC. The partitioning key of the table is composite between Theiler Stage and detected. The clustering key is the structure ID.
+\item \textbf{structureByGene3}: Table contains similar data ast the structureByStage table with the inclusion of gene information as opposed to the stage. The cpartioning key is the EMAGE ID and structure ID. The cluseting keys are the geneName and detected value.
+\item \textbf{textAnnotations1}: Table contains all of the text annotations information. Data such as EMAGE ID, structure ID, detected (boolean), strength, gene name, gene ID, Theiler Stage and DPC.
+\end{itemize}
 
 \newpage
 \section{Discussion}\label{designdiscussion}
