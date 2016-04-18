@@ -20,7 +20,7 @@ The order in which I wrote, run and evaluated the queries reflects the complexit
 6 & \begin{tabular}[c]{@{}l@{}}Which Genes are most\\ commonly co-expressed?\end{tabular} & \begin{tabular}[c]{@{}l@{}}Name of the gene(s) and the count of unique\\ structures the gene is expressed in.\end{tabular} & 5 \\ \hline
 7 & Calculate transitive closure. & The name of each structure and its parent. & 5 \\ \hline
 \end{tabular}}
-\caption{Competency queries for each database system.}
+\caption{Competency queries for each database system. Rating scale: 1 (simple - complex) 5}
 \label{tab:competency}
 \end{table}
 
@@ -39,7 +39,7 @@ The minimum amount of data expected to be returned from this query is the struct
 \subsubsection*{MySQL - Query 1 statement}\label{mysqlquery1statement}
 The MySQL query shown in code snippet \ref{code:mysqlquery1} successfully returned the expected output. The query was straightforward and only required a single join of the Stages and Anatomy Structures table.
 
-\begin{lstlisting}[language=SQL, caption=MySQL Query 1 statement. All structures at Theiler Stage 4, label=code:mysqlquery1]
+\begin{lstlisting}[language=SQL, caption=MySQL query 1 statement. All structures at Theiler Stage X., label=code:mysqlquery1]
 SELECT t1.accession AS StructureID, t1.term AS StructureName, t2.theilerstage AS TheilerStage, t2.dpc AS DPC
 FROM AnatomyStructures AS t1
 INNER JOIN Stages AS t2
@@ -63,7 +63,7 @@ The MongoDB query shown in code snippet \ref{code:mongoquery1} successfully retu
 
 The second part of this query is known as the projection. Within the projection, one can specify fields to exclude from the result. Lines 5-9 in code snippet \ref{code:mongoquery1} represent the projection of this query. A field can be included or excluded from a result by specifying the relevant field and then stating either 1 (included) or 0 (excluded) value. Doing so, allows one to filter the result and only return the fields required.
 
-\begin{lstlisting}[language=json, caption=MongoDB Query 1 statement. All structures at Theiler Stage 4., label=code:mongoquery1]
+\begin{lstlisting}[language=json, caption=MongoDB query 1 statement. All structures at Theiler Stage X., label=code:mongoquery1]
 db.emage.find(
 	{	"stage.theilerstage":4	},
     {	"_id" : 0,
@@ -84,7 +84,7 @@ Figure \ref{mongoquery1output} illustrates the results returned from running que
 The Neo4j query shown in code snippet \ref{code:neoquery1} successfully returned the expected output. Cypher, the Neo4j query language, while uniquely different, is similar to SQL. They both share many of the same functions and methods. One distinctive difference is that Cypher queries specify the data to be returned at the end of the query, as opposed to the start. Despite this dissimilarity, the structure and format of SQL and Cypher queries are very similar.
 
 Line 1 in code snippet \ref{code:neoquery1} is indicative of this. The ``MATCH'' command, firstly begins the query, and also specifies which nodes the data will be pulled from. This is the equivalent of a SQL ``FROM'' keyword. For example, ``(struct:AnatomyStructure)'' specifies the data will come from an ``AnatomyStructre'' node and for the basis of the query the alias will be ``struct''. This is the same for the ``Stage'' node. Also included in line 1 is the relationship which will join the ``AnatomyStructure'' and ``Stage'' nodes. One can either explicitly state the relationship between the nodes, in the square brackets. Alternatively, using an empty set of brackets or stating just an alias, will tell the system to find the relationship between the nodes regardless of its value.
-\begin{lstlisting}[language=SQL, caption=Neo4j Query 1 statement. All structures at Theiler Stage 4, label=code:neoquery1]
+\begin{lstlisting}[language=SQL, caption=Neo4j query 1 statement. All structures at Theiler Stage X., label=code:neoquery1]
 MATCH (struct:AnatomyStructure)-[Relationship]->(stage:Stage)
 WHERE stage.theilerStage = 4
 RETURN struct.structureID AS StructureID, Relationship, stage.theilerStage AS TheilerStage, stage.dpc AS DPC;
@@ -117,7 +117,7 @@ Code snippet \ref{code:cassquery1} represents the query written to find all of t
 
 The query is much shorter and simpler compared with the MySQL statement for the same query. This is as a result of the inability for Cassandra to join tables. Therefore all of the data required to output the result of this query is stored in the one table.
 
-\begin{lstlisting}[language=SQL, caption=, label=code:cassquery1]
+\begin{lstlisting}[language=SQL, caption=Cassandra query 1 statement. All structures at Theiler Stage X., label=code:cassquery1]
 SELECT *
 FROM structurebystage
 WHERE theilerstage = 4
@@ -139,7 +139,7 @@ The second query aimed to identify all of the structures found between two given
 \subsubsection*{MySQL - Query 2 statement}\label{mysqlquery2statement}
 The MySQL query shown in code snippet \ref{code:mysqlquery2} successfully returned the expected output. To construct the query I had to write two inner joins. The first linking the AnatomyStructures table to the Stages table, and the second joining the AnatomyStructures table to the TextAnnotation table.
 
-\begin{lstlisting}[language=SQL, caption=, label=code:mysqlquery2]
+\begin{lstlisting}[language=SQL, caption=MySQL query 2 statement. All structures between Theiler Stage X and Y., label=code:mysqlquery2]
 SELECT t1.accession, t2.theilerstage
 FROM AnatomyStructures AS t1
 INNER JOIN Stages AS t2
@@ -159,7 +159,7 @@ The query was straightforward to create. Compared to Neo4j and Cassandra however
 The MongoDB query shown in code snippet \ref{code:mongoquery2} successfully returned the expected output.
 
 \parindent 0pt
-\begin{lstlisting}[language=json, caption=, label=code:mongoquery2]
+\begin{lstlisting}[language=json, caption=MongoDB query 2 statement. All structures between Theiler Stage X and Y., label=code:mongoquery2]
 db.emage.find(
 	{ $and:
 		[
@@ -181,7 +181,7 @@ The \$and logical operator denotes field and value pairs must all satisfy the ar
 \subsubsection*{Neo4j - Query 2 statement}\label{neoquery2statement}
 The Neo4j query shown in code snippet \ref{code:neoquery2} successfully returned the expected output. This was a basic query and I found it easy to construct as it was extremely similar to that of the MySQL query created previously.
 
-\begin{lstlisting}[language=SQL, caption=, label=code:neoquery2]
+\begin{lstlisting}[language=SQL, caption=Neo4j query 2 statement. All structures between Theiler Stage X and Y., label=code:neoquery2]
 MATCH (textannotation:TextAnnotation)-[]->(struct:AnatomyStructure)-[]->(stage:Stage)
 WHERE stage.theilerStage >= 4
 AND stage.theilerStage <=7
@@ -192,7 +192,7 @@ RETURN struct.accession AS Accession, stage.theilerStage AS TheilerStage;
 \subsubsection*{Apache Cassandra - Query 2 statement}\label{cassquery2statement}
 The Cassandra query shown in code snippet \ref{code:cassquery2} successfully returned the expected output. This was a simple query and quick to write. This was mainly due to the fact I had modelled the table around such an query.
 
-\begin{lstlisting}[language=SQL, caption=, label=code:cassquery2]
+\begin{lstlisting}[language=SQL, caption=Cassandra query 2 statement. All structures between Theiler Stage X and Y., label=code:cassquery2]
 SELECT *
 FROM structurebystage
 WHERE theilerstage IN (4,5,6,7)
@@ -207,7 +207,7 @@ The third query I created was to test if the systems could successfully return i
 \subsubsection*{MySQL - Query 3 statement}\label{mysqlquery3statement}
 The MySQL query shown in code snippet \ref{code:mysqlquery3} successfully returned the expected output. It returned each of the intended columns. There are two joins in this query, linking the Genes and TextAnnotations, and also the AnatomyStrucutres and TextAnnotations tables together. As with query 2, I used the GROUP BY clause to only return a distinct set of structure ID values.
 
-\begin{lstlisting}[language=SQL, caption=, label=code:mysqlquery3]
+\begin{lstlisting}[language=SQL, caption=MySQL query 3 statement. Where is gene X expressed?., label=code:mysqlquery3]
 SELECT t1.name AS GeneName, t3.term AS StructureTerm, t3.accession AS StructureID
 FROM Genes AS t1
 INNER JOIN TextAnnotations AS t2
