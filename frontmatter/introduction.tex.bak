@@ -35,13 +35,18 @@ The data source being used in this document comes from the biological field and 
     \textbf{Term} & \textbf{Definition} \\ \hline
     Edinburgh Mouse Atlas Project (EMAP) & The combined research projects of Dr Duncan Davidson and Prof Richard Baldock. \\ \hline
     EMAP anatomy & A freely available, structured, stage specific list of 13,000+ terms that describe visible anatomical structures in the developing mouse embryo. \\ \hline
-    Edinburgh Mouse Atlas Project Abstract (EMAPA) & A refined and algorithmically developed non-stage specific anatomical ontology representation of the EMAP anatomy. \\ \hline
-    Edinburgh Mouse Atlas of Gene Expression (EMAGE) & A database of in situ gene expression data in the developing mouse embryo  \\ \hline
+    Edinburgh Mouse Atlas Project Abstract (EMAPA) & A refined and algorithmically developed non-stage specific anatomical ontology. representation of the EMAP anatomy. \\ \hline
+    Edinburgh Mouse Atlas of Gene Expression (EMAGE) & A database of in situ gene expression data in the developing mouse embryo.  \\ \hline
     Theiler Stage (TS) & Each stages defines the development of a mouse embryo by a set of organism structure criteria. \\ \hline
-    Assay & One or more \textit{assay} comprises an experiment. \\ \hline
+    DNA & Deoxyribonucleic acid. Molecule which carries genetic instructions. \\ \hline
+    RNA & Ribonucleic acid. An acid which is present in all living cells.  \\ \hline
+    Assay & One or more assay comprises an experiment. \\ \hline
+    Gene & A hereditary unit consisting of a sequence of DNA. \cite{emap} \\ \hline
+    Gene expression & The specific activity of a gene when a segment of DNA is copied into RNA. \\ \hline
+    Specimen &  A sample of something. For example, an animal or a plant or a piece of human tissue.\\ \hline
+    In situ & Latin for `in place'. This term refers to the original position of the anatomy when being experimented on. \\ \hline
+    Probe & Used to detect DNA and RNA on membranes. \\ \hline
     Not only SQL (NoSQL) & A non-relational database environment which is useful for very large sets of distributed data. Allows rapid, ad-hoc organisation and analysis of extremely high-volume, disparate data types. \\ \hline
         Ontology & Refers to the science of describing the kinds of entities in the world and how they are related. \\ \hline
-            Web Ontology Language (OWL) & A language representation standard for designing and authoring Web ontologies produced from the World Wide Web Consortium W3C. \\ \hline
-          OBO & A flat file format ontology representation language \\ \hline
     \end{tabular}
 \end{center}

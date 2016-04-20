@@ -5,6 +5,14 @@
   year = "2015", 
   note = "[Online; accessed 01-November-2015]"
 }
+@BOOK {acidtrans,
+    author    = "BERNSTEIN, P. A. AND NEWCOMER, E.",
+    title     = "Principles of transaction processing",
+    publisher = "Morgan Kaufmann Publishers",
+    year      = "2009",
+    address   = "Burlington, MA",
+    edition   = "first"
+}
 @misc{w3c1,
   author = "W3C.org",
   title = "W3C SEMANTIC WEB ACTIVITY HOMEPAGE",
@@ -331,6 +339,13 @@
   year = "2016", 
   note = "[Online; accessed 20-March-2016]"
 }
+@misc{mysqlacid,
+  author = "Dev.mysql.com",
+  title = "MySQL :: MySQL 5.7 Reference Manual",
+  howpublished = {\url{https://dev.mysql.com/doc/refman/5.6/en/mysql-acid.html},
+  year = "2016", 
+  note = "[Online; accessed 20-April-2016]"
+}
 @misc{ds,
   author = "Planet Cassandra",
   title = "MySQL to Apache Cassandra Migrations",
@@ -344,4 +359,19 @@
   howpublished = {\url{https://docs.mongodb.org/manual/core/data-model-operations/#data-model-indexes}},
   year = "2016", 
   note = "[Online; accessed 20-March-2016]"
+}
+@misc{toad,
+  author = "Toadworld.com",
+  title = "Consistency models in nonrelational dbs - Toad for Cloud - Toad for Cloud Databases - Toad World",
+  howpublished = {\url{http://www.toadworld.com/products/toad-for-cloud-databases/w/wiki/320.consistency-models-in-nonrelational-dbs}},
+  year = "2016", 
+  note = "[Online; accessed 18-April-2016]"
+}
+@BOOK {acid,
+    author    = "HÄRDER, T. AND REUTER, A.",
+    title     = "Principles of transaction oriented database recovery",
+    publisher = "Fachbereich Informatik, Univ.",
+    year      = "1982",
+    address   = "Kaiserslautern",
+    edition   = "first"
 }

@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 A level-1 auxiliary file: chapters/literaturereview.aux
@@ -10,19 +10,37 @@ A level-1 auxiliary file: chapters/discussion.aux
 A level-1 auxiliary file: chapters/conclusion.aux
 The style file: plain.bst
 Database file #1: references.bib
-Repeated entry---line 183 of file references.bib
+Repeated entry---line 191 of file references.bib
  : @article {emap
  :               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 191 of file references.bib
+Repeated entry---line 199 of file references.bib
  : @article {biomed
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 271 of file references.bib
- : @misc{w3c1
- :           ,
+I was expecting a `,' or a `}'---line 349 of file references.bib
+ : 
+ : @misc{ds,
+(Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "owl"
+Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
+while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "MANYIKA, J., CHUI, M., BROWN, B., BUGHIN, J., DOBBS, R., ROXBURGH, C. AND HUNG BYERS, A." for entry mckinskey
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "MANYIKA, J., CHUI, M., BROWN, B., BUGHIN, J., DOBBS, R., ROXBURGH, C. AND HUNG BYERS, A." for entry mckinskey
@@ -43,30 +61,11 @@ Too many commas in name 1 of "MANYIKA, J., CHUI, M., BROWN, B., BUGHIN, J., DOBB
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "Min Chen, Shiwen Mao, Yin Zhang, Victor CM Leung" for entry bigdata
 while executing---line 1049 of file plain.bst
-Warning--to sort, need author or key in semantic
 Too many commas in name 1 of "ROBINSON, I., WEBBER, J. AND EIFREM, E." for entry gd
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "KUMARDWIVEDI, A., S. LAMBA, C. AND SHUKLA, S." for entry cd
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "HOWS, D., MEMBREY, P. AND PLUGGE, E." for entry md
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "BARD, J. B., KAUFMAN, M. H., DUBREUIL, C., BRUNE, R. M., BURGER, A., BALDOCK, R. A. AND DAVIDSON, D. R." for entry emap
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "HAYAMIZU, T. F., WICKS, M. N., DAVIDSON, D. R., BURGER, A., RINGWALD, M. AND BALDOCK, R. A." for entry biomed
 while executing---line 1049 of file plain.bst
@@ -160,45 +159,45 @@ Too many commas in name 1 of "VUKOTIC, A., WATT, N., ABEDRABBO, T., FOX, D. AND 
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "VUKOTIC, A., WATT, N., ABEDRABBO, T., FOX, D. AND PARTNER, J." for entry nd
 while executing---line 1090 of file plain.bst
-You've used 31 entries,
+You've used 29 entries,
             2118 wiz_defined-function locations,
-            644 strings with 7935 characters,
-and the built_in function-call counts, 7237 in all, are:
-= -- 706
-> -- 271
+            639 strings with 7969 characters,
+and the built_in function-call counts, 6927 in all, are:
+= -- 669
+> -- 275
 < -- 0
 + -- 112
-- -- 80
-* -- 295
-:= -- 1242
-add.period$ -- 111
-call.type$ -- 31
-change.case$ -- 130
+- -- 82
+* -- 300
+:= -- 1200
+add.period$ -- 101
+call.type$ -- 29
+change.case$ -- 125
 chr.to.int$ -- 0
-cite$ -- 32
-duplicate$ -- 274
-empty$ -- 691
-format.name$ -- 80
-if$ -- 1570
+cite$ -- 29
+duplicate$ -- 270
+empty$ -- 646
+format.name$ -- 82
+if$ -- 1492
 int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 21
-newline$ -- 176
-num.names$ -- 60
-pop$ -- 234
+int.to.str$ -- 29
+missing$ -- 25
+newline$ -- 162
+num.names$ -- 58
+pop$ -- 216
 preamble$ -- 1
-purify$ -- 102
+purify$ -- 99
 quote$ -- 0
-skip$ -- 198
+skip$ -- 190
 stack$ -- 0
-substring$ -- 198
-swap$ -- 31
+substring$ -- 188
+swap$ -- 29
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 106
-warning$ -- 1
-while$ -- 63
-width$ -- 33
-write$ -- 357
+type$ -- 94
+warning$ -- 0
+while$ -- 61
+width$ -- 31
+write$ -- 332
 (There were 71 error messages)

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.10.10)  18 APR 2016 23:20
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.10.10)  20 APR 2016 03:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1050,7 +1050,11 @@ File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.0 (rcs-revision 1.9)
 )) (./main.aux (./chapters/literaturereview.aux)
 (./chapters/evaluationstrategy.aux) (./chapters/design.aux)
 (./chapters/implementation.aux) (./chapters/dataload.aux)
-(./chapters/discussion.aux) (./chapters/conclusion.aux))
+(./chapters/discussion.aux
+
+LaTeX Warning: Label `tab:competency' multiply defined.
+
+) (./chapters/conclusion.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -1233,7 +1237,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 ]
-Overfull \hbox (25.19997pt too wide) in paragraph at lines 33--47
+Overfull \hbox (25.19997pt too wide) in paragraph at lines 33--52
  [] 
  []
 
@@ -1254,68 +1258,74 @@ File: images/worldpopgraph.png Graphic file (type QTm)
 File: images/etl.jpg Graphic file (type QTm)
 
 <use  "images/etl.jpg" > [7] [8]
+File: images/venncap.png Graphic file (type QTm)
+ <use  "images/venncap.png" >
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9] [10]
 File: images/mongodbmodel.png Graphic file (type QTm)
- <use  "images/mongodbmodel.png" > [9]
+ <use  "images/mongodbmodel.png" > [11]
 File: images/graphdb_twitter.png Graphic file (type QTm)
 
 <use  "images/graphdb_twitter.png" >
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10]
+[12]
 File: images/codb.png Graphic file (type QTm)
  <use  "images/codb.png" >
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11] [12]
+[13] [14] [15]
 File: images/cassandramodel.png Graphic file (type QTm)
- <use  "images/cassandramodel.png" > [13] [14] [15]
+ <use  "images/cassandramodel.png" > [16] [17] [18]
 File: images/emapachoroidplexus.png Graphic file (type QTm)
 
-<use  "images/emapachoroidplexus.png" > [16]) [17]
+<use  "images/emapachoroidplexus.png" > [19]) [20]
 \openout2 = `chapters/evaluationstrategy.aux'.
 
 
 (./chapters/evaluationstrategy.tex
 Chapter 3.
-[18
-
-
-
-
-] [19]) [20]
-\openout2 = `chapters/design.aux'.
-
- (./chapters/design.tex
-Chapter 4.
 [21
 
 
 
 
-] [22] [23] [24] [25]
+] [22]) [23]
+\openout2 = `chapters/design.aux'.
+
+ (./chapters/design.tex
+Chapter 4.
+[24
+
+
+
+
+] [25] [26] [27] [28]
 File: images/emage_erd.png Graphic file (type QTm)
- <use  "images/emage_erd.png" > [26] [27] [28]
+ <use  "images/emage_erd.png" > [29] [30] [31]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 114.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 132.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 132.
- [29]
-[30]
+ [32]
+[33]
 File: images/neo4j_model_er.png Graphic file (type QTm)
- <use  "images/neo4j_model_er.png" > [31] [32]
+ <use  "images/neo4j_model_er.png" > [34] [35]
 File: images/cass_model_er.png Graphic file (type QTm)
 
-<use  "images/cass_model_er.png" > [33] [34] [35]) [36] [37]
+<use  "images/cass_model_er.png" > [36] [37] [38]) [39] [40]
 \openout2 = `chapters/implementation.aux'.
 
 
 (./chapters/implementation.tex
 Chapter 5.
-[38
+[41
 
 
 
@@ -1323,89 +1333,87 @@ Chapter 5.
 ] (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
-[39] [40]
+[42] [43]
 File: images/embeddedex.png Graphic file (type QTm)
- <use  "images/embeddedex.png" > [41] [42] [43] [44] [45] [46]
-[47] [48]) [49]
+ <use  "images/embeddedex.png" > [44] [45] [46] [47] [48] [49]
+[50] [51]) [52]
 \openout2 = `chapters/dataload.aux'.
 
  (./chapters/dataload.tex
 Chapter 6.
-[50
+[53
 
 
 
 
-] [51] [52] [53]
+] [54] [55] [56]
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/09/06 1.5e listings language file
-) [54]
-
-LaTeX Warning: Citation `neo' on page 55 undefined on input line 80.
-
-[55] [56] [57] [58] [59] [60]
+) [57]
+[58] [59] [60] [61] [62] [63]
 File: images/loadvsfile.png Graphic file (type QTm)
- <use  "images/loadvsfile.png" > [61] [62]
-[63]
+ <use  "images/loadvsfile.png" > [64] [65]
+[66]
 File: images/nonvsin.png Graphic file (type QTm)
- <use  "images/nonvsin.png" > [64] [65]) [66]
+ <use  "images/nonvsin.png" > [67] [68]) [69]
 \openout2 = `chapters/discussion.aux'.
 
  (./chapters/discussion.tex
 Chapter 7.
-
-LaTeX Warning: Reference `queryevaluation' on page 67 undefined on input line 2
-.
-
-[67
+[70
 
 
 
 
-] [68] [69]
+] [71] [72]
 File: images/mysqlquery1.png Graphic file (type QTm)
- <use  "images/mysqlquery1.png" > [70]
+ <use  "images/mysqlquery1.png" > [73]
 File: images/mongoquery1.png Graphic file (type QTm)
 
-<use  "images/mongoquery1.png" > [71] [72]
+<use  "images/mongoquery1.png" > [74] [75]
 File: images/neo4jquery1terminal.png Graphic file (type QTm)
 
-<use  "images/neo4jquery1terminal.png" > [73]
+<use  "images/neo4jquery1terminal.png" > [76]
 File: images/neo4jquery1graph.png Graphic file (type QTm)
 
-<use  "images/neo4jquery1graph.png" > [74]
+<use  "images/neo4jquery1graph.png" > [77]
 File: images/cassandraquery1.png Graphic file (type QTm)
 
-<use  "images/cassandraquery1.png" > [75] [76] [77] [78] [79] [80] [81]
-[82] [83] [84] [85] [86] [87]
+<use  "images/cassandraquery1.png" > [78] [79] [80] [81] [82] [83] [84]
+[85] [86] [87] [88] [89] [90]
 File: images/closuretableER.png Graphic file (type QTm)
- <use  "images/closuretableER.png" > [88] [89])
-[90]
+ <use  "images/closuretableER.png" > [91] [92])
+[93]
 \openout2 = `chapters/conclusion.aux'.
 
  (./chapters/conclusion.tex
 Chapter 8.
-[91
+[94
 
 
 
 
-] [92] [93] [94]) [95] (./main.bbl
-LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 6.
+] [95] [96] [97]) [98] (./main.bbl
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 18.
+
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/euenc/eu1lmtt.fd
 File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [96
+) [99
 
 
 
 
-] [97]
-Invalid UTF-8 byte or sequence at line 193 replaced by U+FFFD.
+]
+Invalid UTF-8 byte or sequence at line 119 replaced by U+FFFD.
+Missing character: There is no � in font Georgia/OT:script=latn;language=DFLT;m
+apping=tex-text;!
+ [100]
+Invalid UTF-8 byte or sequence at line 180 replaced by U+FFFD.
 Missing character: There is no � in font Georgia/OT:script=latn;language=DFLT;m
 apping=tex-text;!
 )
-[98]
+[101]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 32.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 32.
  (./main.aux (./chapters/literaturereview.aux)
@@ -1416,20 +1424,17 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 32.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 32.
 
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 32.
  ) 
 Here is how much of TeX's memory you used:
- 35164 strings out of 493706
- 669726 string characters out of 6145768
- 873274 words of memory out of 5000000
+ 35165 strings out of 493706
+ 669794 string characters out of 6145768
+ 873390 words of memory out of 5000000
  37968 multiletter control sequences out of 15000+600000
  7899 words of font info for 58 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  71i,17n,62p,10388b,1772s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (105 pages).
+Output written on main.pdf (108 pages).

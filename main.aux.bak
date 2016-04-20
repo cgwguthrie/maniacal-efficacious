@@ -26,9 +26,10 @@
 \citation{schmidt}
 \HyPL@Entry{7<</S/D>>}
 \@writefile{toc}{\contentsline {chapter}{\hbox to\@tempdima {\hfil }Introduction}{1}{chapter*.1}}
+\citation{emap}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Objectives}{2}{section.1.1}}
 \newlabel{objectives}{{1.1}{2}{Objectives}{section.1.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Motivation}{2}{section.1.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Project Motivation}{2}{section.1.2}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.3}Definitions}{2}{section.1.3}}
 \@input{chapters/literaturereview.aux}
 \@input{chapters/evaluationstrategy.aux}
@@ -38,27 +39,31 @@
 \@input{chapters/discussion.aux}
 \@input{chapters/conclusion.aux}
 \bibdata{references}
-\bibcite{semantic}{1}
-\bibcite{jena}{2}
-\bibcite{moore}{3}
-\bibcite{etlref2}{4}
-\bibcite{etlref1}{5}
-\bibcite{schmidt}{6}
+\bibcite{emap}{1}
+\bibcite{statref}{2}
+\bibcite{nosql2}{3}
+\bibcite{ds}{4}
+\bibcite{cassandra}{5}
+\bibcite{ibm}{6}
 \bibcite{ndweb}{7}
-\bibcite{owl}{8}
-\bibcite{rdf}{9}
-\bibcite{statref}{10}
-\bibcite{cassandra}{11}
-\bibcite{ibm}{12}
-\bibcite{emap}{13}
-\bibcite{nosql2}{14}
-\bibcite{rdb}{15}
+\bibcite{etlref1}{8}
+\bibcite{mysqlworkbench}{9}
+\bibcite{mongdoc}{10}
+\bibcite{etlref2}{11}
+\bibcite{googref}{12}
+\bibcite{rdb}{13}
+\bibcite{biomed}{14}
+\bibcite{cass}{15}
 \bibcite{md}{16}
-\bibcite{cd}{17}
-\bibcite{mckinskey}{18}
-\bibcite{bigdata}{19}
-\bibcite{gd}{20}
-\bibcite{nosql1}{21}
-\bibcite{obo}{22}
-\bibcite{dd}{23}
+\bibcite{acid}{17}
+\bibcite{cd}{18}
+\bibcite{mckinskey}{19}
+\bibcite{bigdata}{20}
+\bibcite{gd}{21}
+\bibcite{nosql1}{22}
+\bibcite{moore}{23}
+\bibcite{schmidt}{24}
+\bibcite{toad}{25}
+\bibcite{nd}{26}
+\bibcite{dd}{27}
 \bibstyle{plain}
