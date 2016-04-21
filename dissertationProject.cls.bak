@@ -4,6 +4,12 @@
 \RequirePackage{geometry}
 \RequirePackage{setspace}
 \RequirePackage{float}
+\usepackage{tocloft}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} 
+\usepackage[tocindentauto]{tocstyle}
+\usetocstyle{standard}
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+%\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} 
 \RequirePackage{titlesec}
 \setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{2}
@@ -55,7 +61,9 @@ breaklines=true,        % sets automatic line breaking
 breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
 escapeinside={\\*}{\\*}          % if you want to add a comment within your code
 }
-
+\renewcommand{\thechapter}{\Roman{chapter}} 
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}} 
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
 \renewcommand{\lstlistingname}{Code snippet}
 \colorlet{punct}{red!60!black}
 \definecolor{delim}{RGB}{20,105,176}
@@ -121,7 +129,8 @@ escapeinside={\\*}{\\*}          % if you want to add a comment within your code
 \newcommand{\declaration}{
 \newpage
 	\vspace*{\fill}
-	\section*{Declaration}
+	   \setcounter{chapter}{0}
+	\addcontentsline{toc}{chapter}{Declaration}
 	\input{frontmatter/declaration}
 		\vspace*{\fill}
 }
@@ -129,44 +138,46 @@ escapeinside={\\*}{\\*}          % if you want to add a comment within your code
 \newcommand{\abstractpage}{
 \newpage
 	\vspace*{\fill}
-	\section*{\centering{Abstract}}
+	   \setcounter{chapter}{0}
+	\addcontentsline{toc}{chapter}{Abstract}
 	\input{frontmatter/abstract}
 		\vspace*{\fill}
 }
 
-
 \newcommand{\acknowledgments}{
 \newpage
 	\vspace*{\fill}
-	\section*{\centering{Acknowledgments}}
+	   \setcounter{chapter}{0}
+	\addcontentsline{toc}{chapter}{Acknowledgements}
 	\input{frontmatter/acknowledgments}
 	\vspace*{\fill}
 }
 
 \newcommand{\contents}{
+ \newpage
 \tableofcontents
-    \newpage
+   
 }
 \newcommand{\introduction}{
-    \newpage
-    \setcounter{chapter}{1}
-	\addcontentsline{toc}{chapter}{\numberline{}Introduction}
-	\chapter*{Introduction}
+   \newpage
+   \setcounter{chapter}{0}
+   \setcounter{secnumdepth}{0}
+	\addcontentsline{toc}{chapter}{Introduction}
+	\markboth{Introduction}{Introduction}
 	\input{frontmatter/introduction}
 }
 \newcommand{\makefrontmatter}{
 \setcounter{page}{1}
-\pagenumbering{roman}
+\pagenumbering{Roman}
 \doublespacing
 \declaration
  \acknowledgments
      \abstractpage
-
     	\contents
     	\doublespacing
-	\setcounter{page}{1}
-\pagenumbering{arabic}
-		\introduction
+    	\introduction
+    	      \setcounter{secnumdepth}{2}
+    	\pagenumbering{arabic}
 }
 
 \def\degree#1{\gdef\@degree{#1}}
