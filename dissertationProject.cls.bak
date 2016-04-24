@@ -12,6 +12,7 @@
 %\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} 
 \RequirePackage{titlesec}
 \setcounter{tocdepth}{2}
+\newcommand{\thedate}{\today}
 \setcounter{secnumdepth}{2}
 \geometry{margin=1in}
 \usepackage{enumitem}
@@ -61,7 +62,7 @@ breaklines=true,        % sets automatic line breaking
 breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
 escapeinside={\\*}{\\*}          % if you want to add a comment within your code
 }
-\renewcommand{\thechapter}{\Roman{chapter}} 
+\renewcommand{\thechapter}{\arabic{chapter}} 
 \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}} 
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
 \renewcommand{\lstlistingname}{Code snippet}
@@ -177,7 +178,7 @@ escapeinside={\\*}{\\*}          % if you want to add a comment within your code
     	\doublespacing
     	\introduction
     	      \setcounter{secnumdepth}{2}
-    	\pagenumbering{arabic}
+    
 }
 
 \def\degree#1{\gdef\@degree{#1}}

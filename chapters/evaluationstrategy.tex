@@ -1,39 +1,43 @@
 \chapter{Requirements}\label{evaluationstrategy}
-The purpose of this chapter is to discuss the project requirements used to carry out the primary research for the project. In order to achieve the objectives outlined in section \ref{objectives} a formal set of requirements have been established to meet each intended target. Section \ref{requirements} details how each objective will be achieved.
+The purpose of this chapter is to identify the project requirements and the strategies used to achieve the objectives outlined in section \ref{objectives}. Section \ref{projectrequirements} discusses the overall requirements for the project as a whole.
 
+A formal set of requirements were established to meet each intended target and are discussed in section \ref{requirements}. This section includes details on how each use case objective will be achieved. A use case in this instance is a single database solution.
 
-
-\section{Objective and Requirement Strategies}\label{requirements}
+\section{Project Requirements}\label{projectrequirements}
+The overall aim of this project is to compare and contrast leading NoSQL and indexing solutions. Therefore the first requirement of this project was identify the systems to be evaluated. These are:
+\begin{itemize}
+\item \textbf{MySQL}: Relational Database - This will be used to contrast the capabilities of an industry standard technology against the modern NoSQL systems.
+\item \textbf{MongoDB}: Document-orientated database - MongoDB is the worlds leading document-orientated database and its popularity is ever-growing.
+\item \textbf{Neo4j}: Graph database - Neo4j is the most popular graph database currently used.
+\item \textbf{Apache Cassandra}: Wide-column store - Cassandra's popularity is increasing steadily and is becoming one of the most used NoSQL databases.
+\end{itemize}
+The next requirement is to create prototype data models for each of the identified systems. They will all be based on the same datasets - EMAGE and EMAPA. This process will be broken down into two evaluation stages:\\[0.5em]
 \parindent 0pt
-\subsubsection*{Objective 1}
-\textbf{Evaluate the strengths, weaknesses and limitations of each query language.}
+\textbf{Data Modelling and Design.}
+\begin{addmargin}[2em]{0pt}
+One of the interesting aspects of big data is the veracity in which one can obtain a dataset. Therefore I will evaluate any challenges faced during the data cleansing stage of the project.
+\parindent 15pt
+Following on from this I will design the prototype data models. I will discuss the strengths and weaknesses of each system.
 
-The first objective it to investigate the strengths and weaknesses of querying functionality each technology provides. In order to evaluate the functional limitations of each technology, prototype data models will be developed for each solution. The solutions will then be loaded with the EMAPA and EMAGE datasets.
+Finally, I will evaluate the data models as a whole: Did I come across any limitations or restrictions when designing the systems?\\[0.5em]
+\end{addmargin}
+\parindent 0pt
+\textbf{Schema Implementation complexities.}
+\begin{addmargin}[2em]{0pt}
+Once the data models had been designed, and represented the data in a way which I believed to be the most performant I will physically implement the schemas. I will evaluate the ease of this process and discuss any challenges faced throughout.\\[0.5em]
+\end{addmargin}
 
-I have created a number of competency based questions. These questions will be translated in to the relevant query language for each of the datasets. The difficulty of the queries range from a basic level, where it is expected that all of the solutions will return the intended output, to an advanced complexity level. The difficulty of writing the queries will be evaluated to assess the overall performance of the database solution.
+The use case requirements in section \ref{requirements} represent how the systems will be evaluated in terms of functional and analytical capabilities.
+\parindent 0pt
+\section{Use Case Requirements}\label{requirements}
+\subsection*{Use Case - Objective 1}
+\textbf{Evaluate the strengths, weaknesses and limitations of each query language.}\\
+\parindent 0pt
+The first objective is to investigate the strengths and weaknesses of querying functionality each technology provides. In order to evaluate the functional limitations of each technology, prototype data models will be developed for each solution. The solutions will then be loaded with the EMAPA and EMAGE datasets.
 
-\subsubsection*{Objective 2}
-\textbf{Compare and contrast the analytical capabilities of each technology.}
+\parindent 15pt
+I have created a number of competency based questions listed in table \ref{tab:competency}. These questions will be translated in to the relevant query language for each of the datasets. The difficulty of the queries range from a basic level, where it is expected that all of the solutions will return the intended output, to an advanced complexity level. The difficulty of writing the queries will be evaluated to assess the overall performance of the database solution.
 
-This will follow on from the tasks undertaken in the first objective. This objective will also identify and analyse the difficulties which may or may not have arisen in the first objective on the ease of writing the query.
-
-\begin{itemize}
-\item If the query is possible in a given database how rich a return of the dataset can it provide.
-\item Does any database offer any querying capabilities/functionality which compared with another which aids the query in any way.
-\item Extra features which the system offers which are useful for analysis and visualisation.
-\end{itemize}
-
-\subsubsection*{Objective 3}
-\textbf{Assess the scalability of each of the database solutions.}
-
-The final key objective to be evaluated in this project is to conduct a comparative analysis of the scalability of each technology. This will be achieved by loading the data sources in to each prototype data model. The specific requirements which will measure the performance of each database are:
-
-\begin{itemize}
-\item Ease of ETL implementation - The focus of this requirement will be to evaluate any challenges which were faced during the ETL process.
-\item Did the data model handle the volume of data and were there any issues as a result.
-\end{itemize}
-
-\newpage
 \begin{table}[H]
 \centering
 \resizebox{\textwidth}{!}{
@@ -51,5 +55,28 @@ The final key objective to be evaluated in this project is to conduct a comparat
 \caption{Competency queries for each database system. Rating scale: 1 (simple - complex) 5}
 \label{tab:competency}
 \end{table}
+
+\subsection*{Use Case - Objective 2}
+\textbf{Compare and contrast the analytical capabilities of each technology.}\\
+\parindent 0pt
+This will follow on from the tasks undertaken in the first objective. This objective will also identify and analyse the difficulties which may or may not have arisen in the first objective, on the ease of writing the query. Questions which arise are:
+
+\parindent 15pt
+\begin{itemize}
+\item If the query is possible in a given database, how rich of a return of the dataset can it provide?
+\item Does any database offer any querying capability on functions which, compared with another, aid the query in any way?
+\item Are there extra features which the system offers which are useful for analysis and visualisation?
+\end{itemize}
+
+\subsection*{Use Case - Objective 3}
+\textbf{Assess the scalability of each of the database solutions.}\\
+\parindent 0pt
+The final key objective to be evaluated in this project is to conduct a comparative analysis of the scalability of each technology. This will be achieved by loading the data sources in to each prototype data model. The specific requirements which will measure the performance of each database are:
+
+\parindent 15pt
+\begin{itemize}
+\item Did the data models handle the volume of data; and were there any issues as a result?
+\item Did I face any challenges when loading the data into the data models; and were there any repercussions of these challenges?
+\end{itemize}
 
 \parindent 15pt
